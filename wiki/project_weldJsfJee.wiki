@@ -10,3 +10,14 @@
  or Web Profile). It includes a persistence unit and some sample persistence
  and transaction code to help you get your feet wet with database access in
  enterprise Java. 
+
+= Development =
+
+== Technology ==
+
+* CDI RI (Weld)
+* JSF 2.0 RI (Mojarra)
+
+== Deployment ==
+
+ Runs on JBoss 6.0.0.M1
