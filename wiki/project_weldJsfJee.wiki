@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+#labels Featured,weld,project,weldJsfJee,JavaEE
+
+= Introduction =
+
+ This is your project! It's a sample, deployable Maven 2 project to help you
+ get your foot in the door developing with Java EE 6. This project is setup to
+ allow you to create a compliant *Java EE 6 application using JSF 2.0, CDI 1.0,
+ EJB 3.1 and JPA 2.0*) that can run on a certified application server (Complete
+ or Web Profile). It includes a persistence unit and some sample persistence
+ and transaction code to help you get your feet wet with database access in
+ enterprise Java. 
