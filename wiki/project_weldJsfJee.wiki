@@ -13,11 +13,38 @@
 
 = Development =
 
+== IDE ==
+
+  * jdk 1.6.0_17
+  *  jboss-6.0.0.M1
+  *  (Maven 2.2.1)
+  *  weld-1.0.0.SP1
+  *  eclipse-jee-galileo-SR1-win32
+    * JBossTools-3.1.0.CR1
+    * M2Eclipse 0.9.9
+    * Subclipse 1.6/Subversion 1.6.5
+
 == Technology ==
 
   * CDI RI (Weld)
   * JSF 2.0 RI (Mojarra)
+  * JSR 303 - Bean Validation RI (Hibernate Validation)
+
+== Maven Archetype ==
+The project is build on this maven archetype:
+{{{
+<archetype>
+      <groupId>org.jboss.weld.archetypes</groupId>
+      <artifactId>weld-jsf-jee</artifactId>
+      <version>1.0.0-BETA1</version>
+      <description>Weld archetype for creating a Java EE 6 application using JSF 2.0, CDI 1.0, EJB 3.1 and JPA 2.0 (persistence unit included)</description>
+    </archetype>
+}}}
 
 == Deployment ==
 
- Runs on JBoss 6.0.0.M1
+  * Runs on JBoss 6.0.0.M1
+  * build and deploy with Maven:
+{{{  
+clean package jboss:hard-deploy
+}}}
