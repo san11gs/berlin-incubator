@@ -15,8 +15,8 @@
 
 == Technology ==
 
-*CDI RI (Weld)
-*JSF 2.0 RI (Mojarra)
+  * CDI RI (Weld)
+  * JSF 2.0 RI (Mojarra)
 
 == Deployment ==
 
