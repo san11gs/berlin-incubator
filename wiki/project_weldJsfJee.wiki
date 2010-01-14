@@ -44,7 +44,7 @@ The project is build up on this maven archetype:
 == Deployment ==
 
   * Runs on JBoss 6.0.0.M1
-  * build and deploy with Maven:
+  * build and deploy with Maven (set ${jboss.home} first):
 {{{  
 clean package jboss:hard-deploy
 }}}
