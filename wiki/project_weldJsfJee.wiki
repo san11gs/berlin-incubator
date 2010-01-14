@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary weldJsfJee project wiki site
 #labels Featured,weld,project,weldJsfJee,JavaEE
 
 = Introduction =
@@ -15,8 +15,8 @@
 
 == Technology ==
 
-* CDI RI (Weld)
-* JSF 2.0 RI (Mojarra)
+*CDI RI (Weld)
+*JSF 2.0 RI (Mojarra)
 
 == Deployment ==
 
