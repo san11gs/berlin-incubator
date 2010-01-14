@@ -31,7 +31,7 @@
   * JSR 303 - Bean Validation RI (Hibernate Validation)
 
 == Maven Archetype ==
-The project is build on this maven archetype:
+The project is build up on this maven archetype:
 {{{
 <archetype>
       <groupId>org.jboss.weld.archetypes</groupId>
