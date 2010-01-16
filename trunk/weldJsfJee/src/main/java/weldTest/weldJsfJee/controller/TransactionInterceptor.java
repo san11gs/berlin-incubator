@@ -30,15 +30,19 @@ public class TransactionInterceptor implements Serializable {
 	@AroundInvoke
 	public Object manageTransaction(InvocationContext ctx) throws Exception {
 
-		System.out.println("-- Invoking method: " + ctx.getMethod());
+		System.out.println("-- BEFO_RE Invoking method: " + ctx.getMethod());
 		// TODO TX-Verhalten
 //		tx.begin();
+		
+		Object result = ctx.proceed();
+		
+		System.out.println("-- after Invoking method: " + ctx.getMethod());
 
 		// TODO
 		// Aufruf kurz vor Abschluss??? --> 2 Interceptor bauen: TX_BEGIN, TX_COMMIT --> Multiple with one @Transactional
 		// tx.commit();
 
-		return ctx.proceed();
+		return result;
 	}
 
 }
