@@ -10,11 +10,6 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.transaction.HeuristicMixedException;
-import javax.transaction.HeuristicRollbackException;
-import javax.transaction.NotSupportedException;
-import javax.transaction.RollbackException;
-import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
 import weldTest.weldJsfJee.em.WeldEntityManager;
@@ -36,7 +31,7 @@ public class PersonController implements Serializable {
 	@WeldEntityManager
 	private EntityManager em;
 
-	// manuelle Transaktionsverwaltung
+	// manuelle JTA-Transaktionsverwaltung
 	@Inject
 	private UserTransaction tx;
 
@@ -45,7 +40,7 @@ public class PersonController implements Serializable {
 	 */
 	@Inject
 	private Logger log;
-	
+
 	/**
 	 * Injected das aktuell gewaehlte Person-Objekt.
 	 */
@@ -56,8 +51,7 @@ public class PersonController implements Serializable {
 	 * Id der ausgewaehlten Person
 	 */
 	private Long selectedPersonId;
-	
-	
+
 	/**
 	 * @Out-Verhalten: Zugriff auf die Liste erfolgt via #{personen}
 	 */
@@ -75,57 +69,26 @@ public class PersonController implements Serializable {
 	 * Anlegen einer neuen Person. Haendische Verwendung der
 	 * Transaktions-Steuerung - Wird spaeter von Seam 3 erledigt.
 	 * 
-	 * TODO sofortiges Refresh der Liste bei Veraenderungen
+	 * TODO dummy - alles Exceptions werden durchgereicht <br>
+	 * TODO sofortiges Refresh der Liste bei Veraenderungen<br>
+	 * TODO TX-Handling in Interceptor
 	 */
-	public void createPerson() {
-		// TODO Bug: person kann nicht direkt verwendet werden
-		Person p = new Person();
-		p.setAge(person.getAge());
-		p.setName(person.getName());
+	@Transactional
+	public void createPerson() throws Exception {
+		// TODO Bug?: person kann nicht direkt verwendet werden
+		Person p = new Person(person);
+
+		// startet JTA UserTransaction
+		tx.begin();
+
+		// verwendet die aktuelle TX
+		em.joinTransaction();
 
 		// persistiert die aktuelle Person
 		em.persist(p);
 
-		// startet JTA UserTransactionTransaction
-		try {
-			tx.begin();
-		} catch (NotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// verwendet die aktuelle Tx
-		em.joinTransaction();
-
-		// flush des EntityManagers
-		em.flush();
-
-		// TX commit
-		try {
-			tx.commit();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RollbackException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (HeuristicMixedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (HeuristicRollbackException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		// Committed die aktuelle TX
+		tx.commit();
 	}
 
 	/**
@@ -133,7 +96,7 @@ public class PersonController implements Serializable {
 	 */
 	public void selectPerson() {
 		log.info("person selected with id " + selectedPersonId);
-		
+
 	}
 
 	public Long getSelectedPersonId() {
@@ -143,6 +106,5 @@ public class PersonController implements Serializable {
 	public void setSelectedPersonId(Long selectedPersonId) {
 		this.selectedPersonId = selectedPersonId;
 	}
-	
-	
+
 }

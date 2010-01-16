@@ -29,6 +29,14 @@ public class Person implements Serializable {
 	private String name;
 	private String age;
 
+	public Person() {
+	}
+
+	public Person(Person person) {
+		this.name = person.getName();
+		this.age = person.getAge();
+	}
+
 	@Id
 	@GeneratedValue
 	public Long getId() {
