@@ -32,7 +32,7 @@ public class TransactionInterceptor implements Serializable {
 
 		System.out.println("-- BEFO_RE Invoking method: " + ctx.getMethod());
 		// TODO TX-Verhalten
-//		tx.begin();
+		tx.begin();
 		
 		Object result = ctx.proceed();
 		
@@ -40,7 +40,7 @@ public class TransactionInterceptor implements Serializable {
 
 		// TODO
 		// Aufruf kurz vor Abschluss??? --> 2 Interceptor bauen: TX_BEGIN, TX_COMMIT --> Multiple with one @Transactional
-		// tx.commit();
+		 tx.commit();
 
 		return result;
 	}

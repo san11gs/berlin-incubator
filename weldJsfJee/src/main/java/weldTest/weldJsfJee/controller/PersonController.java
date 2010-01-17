@@ -79,7 +79,7 @@ public class PersonController implements Serializable {
 		Person p = new Person(person);
 
 		// startet JTA UserTransaction
-		tx.begin();
+//		tx.begin();
 
 		// verwendet die aktuelle TX
 		em.joinTransaction();
@@ -88,7 +88,7 @@ public class PersonController implements Serializable {
 		em.persist(p);
 
 		// Committed die aktuelle TX
-		tx.commit();
+//		tx.commit();
 	}
 
 	/**
