@@ -1,4 +1,4 @@
-package weldTest.weldJsfJee.controller;
+package weldTest.weldJsfJee.controller.tx;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
