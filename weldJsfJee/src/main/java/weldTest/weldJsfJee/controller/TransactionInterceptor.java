@@ -27,16 +27,27 @@ public class TransactionInterceptor implements Serializable {
 	@Inject
 	private UserTransaction tx;
 
+	/**
+	 * Entspricht eine REQUIRES_NEW Ttansaction
+	 * 
+	 * TODO required new<br>
+	 * TODO AOP-Ansatz besser geeignet?
+	 */
 	@AroundInvoke
 	public Object manageTransaction(InvocationContext ctx) throws Exception {
+
+		// TODO generisch via ThreadLocal?
 		PersonController pc = (PersonController) ctx.getTarget();
 
+		// begin TX
 		tx.begin();
 
 		pc.getEm().joinTransaction();
 
+		// Aufruf der intercepteten Methode
 		Object result = ctx.proceed();
 
+		// commit TX
 		tx.commit();
 
 		return result;
