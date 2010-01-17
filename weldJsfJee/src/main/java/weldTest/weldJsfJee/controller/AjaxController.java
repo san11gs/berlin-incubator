@@ -2,8 +2,7 @@ package weldTest.weldJsfJee.controller;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Named;
+import weldTest.weldJsfJee.stereotype.GuiController;
 
 /**
  * Ajax-Test-Controller
@@ -11,8 +10,7 @@ import javax.inject.Named;
  * @author schuetz
  * @date 10.01.2010
  */
-@Named
-@SessionScoped
+@GuiController
 public class AjaxController implements Serializable {
 
 	private String name;

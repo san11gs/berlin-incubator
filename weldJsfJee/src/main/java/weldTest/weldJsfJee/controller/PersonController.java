@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.transaction.UserTransaction;
 
+import weldTest.weldJsfJee.controller.tx.Transactional;
 import weldTest.weldJsfJee.em.WeldEntityManager;
 import weldTest.weldJsfJee.model.Person;
+import weldTest.weldJsfJee.stereotype.GuiController;
 
 /**
  * JSF-Person-Controller
@@ -21,8 +21,7 @@ import weldTest.weldJsfJee.model.Person;
  * @author schuetz
  * @date 18.12.2009
  */
-@Named
-@SessionScoped
+@GuiController
 public class PersonController implements Serializable {
 
 	// Verwendung des PersistenceContext's im CDI-Style, @PersistenceContext
@@ -56,7 +55,6 @@ public class PersonController implements Serializable {
 	@RequestScoped
 	@SuppressWarnings("unchecked")
 	public List<Person> getPersonen() {
-		List<Person> sdf;
 		return em.createQuery("select o from Person o order by o.name")
 				.getResultList();
 	}
@@ -65,8 +63,8 @@ public class PersonController implements Serializable {
 	 * Anlegen einer neuen Person. Haendische Verwendung der
 	 * Transaktions-Steuerung - Wird spaeter von Seam 3 erledigt.
 	 * 
-	 *
-	 *  @see; @TransactionInterceptor
+	 * 
+	 * @see @TransactionInterceptor
 	 */
 	@Transactional
 	public void createPerson() throws Exception {
