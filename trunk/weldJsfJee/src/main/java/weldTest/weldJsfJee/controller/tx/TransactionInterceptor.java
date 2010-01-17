@@ -1,4 +1,4 @@
-package weldTest.weldJsfJee.controller;
+package weldTest.weldJsfJee.controller.tx;
 
 import java.io.Serializable;
 
@@ -7,6 +7,8 @@ import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 import javax.transaction.UserTransaction;
+
+import weldTest.weldJsfJee.controller.PersonController;
 
 /**
  * Interceptor fuer Transaction-Handling.
