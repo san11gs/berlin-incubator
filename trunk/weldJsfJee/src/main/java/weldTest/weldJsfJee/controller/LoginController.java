@@ -4,22 +4,18 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import weldTest.weldJsfJee.em.WeldEntityManager;
 import weldTest.weldJsfJee.identity.Credentials;
 import weldTest.weldJsfJee.identity.LoggedIn;
 import weldTest.weldJsfJee.model.User;
+import weldTest.weldJsfJee.stereotype.GuiController;
 import weldTest.weldJsfJee.util.FacesMessageHandler;
 
-@SessionScoped
-@Named
+@GuiController
 public class LoginController implements Serializable {
 
 	@Inject
@@ -31,7 +27,7 @@ public class LoginController implements Serializable {
 
 	@Inject
 	private FacesMessageHandler facesMessage;
-	
+
 	private User user;
 
 	@SuppressWarnings("unchecked")
