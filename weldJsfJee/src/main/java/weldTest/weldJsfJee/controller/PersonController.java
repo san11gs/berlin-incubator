@@ -31,10 +31,6 @@ public class PersonController implements Serializable {
 	@WeldEntityManager
 	private EntityManager em;
 
-	// manuelle JTA-Transaktionsverwaltung
-	@Inject
-	private UserTransaction tx;
-
 	/**
 	 * Logger-Injection
 	 */
@@ -69,26 +65,16 @@ public class PersonController implements Serializable {
 	 * Anlegen einer neuen Person. Haendische Verwendung der
 	 * Transaktions-Steuerung - Wird spaeter von Seam 3 erledigt.
 	 * 
-	 * TODO dummy - alles Exceptions werden durchgereicht <br>
-	 * TODO sofortiges Refresh der Liste bei Veraenderungen<br>
-	 * TODO TX-Handling in Interceptor
+	 *
+	 *  @see; @TransactionInterceptor
 	 */
 	@Transactional
 	public void createPerson() throws Exception {
 		// TODO Bug?: person kann nicht direkt verwendet werden
 		Person p = new Person(person);
 
-		// startet JTA UserTransaction
-//		tx.begin();
-
-		// verwendet die aktuelle TX
-		em.joinTransaction();
-
 		// persistiert die aktuelle Person
 		em.persist(p);
-
-		// Committed die aktuelle TX
-//		tx.commit();
 	}
 
 	/**
@@ -105,6 +91,10 @@ public class PersonController implements Serializable {
 
 	public void setSelectedPersonId(Long selectedPersonId) {
 		this.selectedPersonId = selectedPersonId;
+	}
+
+	public EntityManager getEm() {
+		return em;
 	}
 
 }
