@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>Customer details</h1>
+
+		<h:panelGrid columns="2">
+			<h:outputText value="name: " />
+			<h:outputText value="#{customerController.currentCustomer.name}" />
+
+			<h:outputText value="age " />
+			<h:outputText value="#{customerController.currentCustomer.age}" />
+		</h:panelGrid>
+		
+		<h:form id="removeCustomer">
+			<h:panelGrid columns="2">
+				<h:button outcome="customerEdit" value="Edit" />
+				<h:commandButton action="#{customerController.removeCustomer}" value="Remove">
+					<f:setPropertyActionListener
+						target="#{customerController.selectedCustomerId}"
+						value="#{customerController.currentCustomer.id}" />
+				</h:commandButton>
+			</h:panelGrid>
+		</h:form>
+		
+		<br/>
+		
+		<h:link outcome="customers" value="back" />
+
+	</ui:define>
+</ui:composition>

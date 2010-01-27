@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>Customers</h1>
+		<h:form id="listCustomers">
+			<h:dataTable var="_customer" value="#{customers}">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+            #{_customer.id}
+         </h:column>
+				<h:column>
+					<f:facet name="header">Name</f:facet>
+            #{_customer.name}
+         </h:column>
+				<h:column>
+					<f:facet name="header">Age</f:facet>
+            #{_customer.age}
+         </h:column>
+				<h:column>
+					<f:facet name="header">Action</f:facet>
+					<h:commandLink action="#{customerController.selectCustomer}" value="select">
+						<f:setPropertyActionListener
+							target="#{customerController.selectedCustomerId}"
+							value="#{_customer.id}" />
+					</h:commandLink>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+		
+		<br />
+		
+		<h:link outcome="customerAdd" value="Add new customer" />
+		
+	</ui:define>
+</ui:composition>

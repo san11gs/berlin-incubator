@@ -3,7 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	template="/WEB-INF/templates/personTemplate.xhtml">
+	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 
 		<h1>Login (admin|admin)</h1>
@@ -13,7 +13,7 @@
 				<h:outputLabel for="username">Username:</h:outputLabel>
 				<h:inputText id="username" value="#{credentials.username}" />
 				<h:outputLabel for="password">Password:</h:outputLabel>
-				<h:inputText id="password" value="#{credentials.password}" />
+				<h:inputSecret id="password" value="#{credentials.password}" />
 			</h:panelGrid>
 			<h:commandButton value="Login" action="#{loginController.login}"
 				rendered="#{!loginController.loggedIn}" />

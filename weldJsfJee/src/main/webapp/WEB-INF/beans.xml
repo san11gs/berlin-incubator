@@ -3,10 +3,17 @@
 	xsi:schemaLocation="
       http://java.sun.com/xml/ns/javaee 
       http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
-	<alternatives />
-	<decorators />
+	<alternatives>
+		<!-- useful for switching to developing mode, for example -->
+		<class>incubator.weldJsfJee.util.log.AlternativeLoggerImpl</class>
+	</alternatives>
+
+	<decorators>
+		<class>incubator.weldJsfJee.util.log.MyLoggerDecorator</class>
+	</decorators>
+
 	<interceptors>
-		<class>weldTest.weldJsfJee.controller.tx.TransactionInterceptor</class>
+		<class>incubator.weldJsfJee.tx.TransactionInterceptor</class>
 	</interceptors>
 
 </beans>
