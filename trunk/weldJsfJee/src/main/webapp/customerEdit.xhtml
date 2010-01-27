@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>Update Customer</h1>
+		<h:form id="addCustomer">
+			<h:panelGrid columns="2">
+				<h:outputText value="name: " />
+				<h:panelGroup>
+					<h:inputText id="customerName" value="#{customerController.currentCustomer.name}" />
+					<h:message for="customerName" errorClass="invalid" />
+				</h:panelGroup>
+
+				<h:outputText value="age " />
+				<h:panelGroup>
+					<h:inputText id="customerAge" value="#{customerController.currentCustomer.age}" />
+					<h:message for="customerAge" errorClass="invalid" />
+				</h:panelGroup>
+			</h:panelGrid>
+			<br />
+			<h:commandButton id="check" action="#{customerController.updateCustomer}"
+				value="Update" />
+		</h:form>
+		
+		<br/>
+		
+		<h:link outcome="customerDetail" value="back" />
+
+	</ui:define>
+</ui:composition>

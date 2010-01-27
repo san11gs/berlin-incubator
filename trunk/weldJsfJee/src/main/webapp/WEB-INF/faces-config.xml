@@ -12,10 +12,17 @@
 		Write your navigation rules here. You are encouraged to use CDI for
 		creating @Named managed beans.
 	-->
+	<!-- 
+	NOT required - default return String is used in CustomerController
 	<navigation-rule>
 		<navigation-case>
-			<from-action>#{personController.selectPerson}</from-action>
-			<to-view-id>/personDetail.xhtml</to-view-id>
+			<from-outcome>selectCustomer</from-outcome>
+			
+			TODO from-action does not work 
+			<from-action>#{customerController.selectCustomer}</from-action>
+			
+			<to-view-id>/customerDetail.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	-->
 </faces-config>
