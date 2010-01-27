@@ -1,0 +1,11 @@
+incubator.weldJsfJee
+incubator.weldJsfJee.config
+incubator.weldJsfJee.controller
+incubator.weldJsfJee.ejb
+incubator.weldJsfJee.em
+incubator.weldJsfJee.event
+incubator.weldJsfJee.identity
+incubator.weldJsfJee.model
+incubator.weldJsfJee.tx
+incubator.weldJsfJee.util
+incubator.weldJsfJee.util.log
