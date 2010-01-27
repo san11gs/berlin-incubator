@@ -47,6 +47,15 @@
       </dependencies>
    </dependencyManagement>
    <dependencies>
+   	
+   	  <!-- weld-logger  -->	
+      <dependency>
+      	<groupId>org.jboss.weld</groupId>
+      	<artifactId>weld-logger</artifactId>
+      	<version>${weld.extensions.version}</version>
+      	<scope>provided</scope>
+      </dependency>
+      
       <!-- CDI (JSR-299) -->
       <dependency>
          <groupId>javax.enterprise</groupId>
