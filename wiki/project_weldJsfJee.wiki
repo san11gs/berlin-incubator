@@ -26,9 +26,11 @@
 
 == Technology ==
 
-  * CDI RI (Weld)
-  * JSF 2.0 RI (Mojarra)
-  * JSR 303 - Bean Validation RI (Hibernate Validation)
+  * weld-1.0.0.SP1 (CDI reference implementation)
+  * Mojarra 2.0.1 (JSF 2.0 reference implementation)
+  * Hibernate-validator 4.0.0.GA (Bean validation reference implementation)
+  * jboss-ejb3 3.1.0 (EJB 3.1 implementation)
+
 
 == Maven Archetype ==
 The project is build up on this maven archetype:
