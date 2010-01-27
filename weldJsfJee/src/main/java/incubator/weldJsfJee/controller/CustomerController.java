@@ -31,7 +31,7 @@ import javax.persistence.EntityManager;
 public class CustomerController implements Serializable {
 
 	/**
-	 * Use persistence context in CDI style. PLain @PersistenceContext would be
+	 * Use persistence context in CDI style. Plain @PersistenceContext would be
 	 * fine here.
 	 */
 	@Inject
