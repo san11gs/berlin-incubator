@@ -15,7 +15,7 @@
 
  This dummy project provides a ready to go structure: Maven, persistence, transaction and Java EE dependencies are all configured. That is how Seam 3 might gonna look - So Seam 3 will be not more than a Weld SPI extension (which covers Seam Security, drools-, jbpm-, spring-, groovy-, guice- support, ..).
 
-To highlight the CDI features a simple customer-CRUD-application is implemented. Furthermore you can see how native JSF2 AJAX-support works.
+ To highlight the CDI features a simple customer-CRUD-application is implemented. Furthermore you can see how native JSF2 AJAX-support works.
 
 = Development =
 
