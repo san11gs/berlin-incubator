@@ -13,23 +13,27 @@
 
 = Development =
 
-== IDE ==
-
-  * jdk 1.6.0_18
-  *  jboss-6.0.0.M1
-  *  (Maven 2.2.1)
-  *  weld-1.0.0.SP1
-  *  eclipse-jee-galileo-SR1-win32
-    * JBossTools-3.1.0.CR1
-    * M2Eclipse 0.9.9
-    * Subclipse 1.6/Subversion 1.6.5
-
 == Technology ==
 
   * weld-1.0.0.SP1 (CDI reference implementation)
   * Mojarra 2.0.1 (JSF 2.0 reference implementation)
   * Hibernate-validator 4.0.0.GA (Bean validation reference implementation)
   * jboss-ejb3 3.1.0 (EJB 3.1 implementation)
+
+
+== Environment ==
+
+  * Server: jboss-6.0.0.M1
+  * Database: embedded hsql 1.8.0
+  * Java: jdk 1.6.0_18
+  * Build management: Maven 2.2.1
+
+== IDE ==
+
+  * eclipse-jee-galileo-SR1-win32
+    * JBossTools-3.1.0.CR1
+    * M2Eclipse 0.9.9
+    * Subclipse 1.6/Subversion 1.6.5
 
 
 == Maven Archetype ==
