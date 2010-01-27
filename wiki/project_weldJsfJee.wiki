@@ -1,5 +1,5 @@
 #summary weldJsfJee project wiki site
-#labels Featured,weld,project,weldJsfJee,JavaEE
+#labels Featured,weld,project,weldJsfJee,JavaEE,seam
 
 = Introduction =
 
@@ -10,6 +10,12 @@
  or Web Profile). It includes a persistence unit and some sample persistence
  and transaction code to help you get your feet wet with database access in
  enterprise Java. 
+
+= Content =
+
+ This dummy project provides a ready to go structure: Maven, persistence, transaction and Java EE dependencies are all configured. That is how Seam 3 might gonna look - So Seam 3 will be not more than a Weld SPI extension (which covers Seam Security, drools-, jbpm-, spring-, groovy-, guice- support, ..).
+
+To highlight the CDI features a simple customer-CRUD-application is implemented. Furthermore you can see how native JSF2 AJAX-support works.
 
 = Development =
 
