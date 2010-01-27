@@ -44,7 +44,7 @@
 
 
 == Maven Archetype ==
-The project is build up on this maven archetype:
+ The project is build up on this maven archetype:
 {{{
 <archetype>
       <groupId>org.jboss.weld.archetypes</groupId>
