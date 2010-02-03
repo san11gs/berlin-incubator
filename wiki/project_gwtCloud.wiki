@@ -22,6 +22,7 @@
   * eclipse-jee-galileo-SR1-win32
     * Google Plugin for Eclipse 3.5 1.2.0
     * Subclipse 1.6/Subversion 1.6.5
+    * Maven Plugin 0.9.9
 
 == Deployment ==
 
