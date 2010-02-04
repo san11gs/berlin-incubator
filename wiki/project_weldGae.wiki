@@ -31,4 +31,4 @@
 
 == Deployment ==
 
- http://weld-gae.appspot.com/helloWorld.jsf
+ The project is deployed on Google App Engine cloud: http://weld-gae.appspot.com/helloWorld.jsf
