@@ -1,5 +1,5 @@
 #summary weldGae project wiki site
-#labels Featured,Phase-Implementation,weld,cloud,GAE
+#labels Featured,Phase-Implementation,weld,Cloud,GAE
 
 = Introduction =
 
