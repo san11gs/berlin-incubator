@@ -30,9 +30,9 @@
 
 == Environment ==
 
-  * Server: jboss-6.0.0.M1
+  * Server: apache tomcat 6.0
   * Database: embedded hsql 1.8.0
-  * Java: jdk 1.6.0_18
+  * Java: jdk 1.6.0_12
   * Build management: Maven 2.2.1
 
 == IDE ==
