@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+	start-state="registerCustomer">
+
+	<secured attributes="ROLE_USER" />
+
+	<var name="customer" class="incubator.spring_faces.model.Customer" />
+	
+	<input name="phoneNumber" />
+
+	<on-start>
+		<evaluate expression="customer.setPhone(phoneNumber)" />
+	</on-start>
+	
+	<view-state id="registerCustomer">
+		<transition on="next" to="confirmNewCustomer" />
+	</view-state>
+
+	<view-state id="confirmNewCustomer" popup="true">
+		<on-entry>
+			<render fragments="confirmCustomerFragment" />
+		</on-entry>
+		<transition on="back" to="registerCustomer" />
+		<transition on="save" to="saveNewCustomer" />
+	</view-state>
+
+	<action-state id="saveNewCustomer">
+		<!-- Die Action / der Controller ist fuer das Speichern zustaendig -->
+		<evaluate expression="saveCustomerAction" />
+
+		<!--
+			Bei einem Fehler gehen wir zurück und zeigen dort eine Fehlermeldung
+			an
+		-->
+		<transition on-exception="java.lang.Exception" to="registerCustomer" />
+		<transition on="saved" to="newCustomerConfirmation" />
+
+	</action-state>
+
+	<view-state id="newCustomerConfirmation">
+		<transition on="next" to="finish" />
+	</view-state>
+
+	<end-state id="finish" >
+		<output name="customer" value="flowScope.customer" />
+	</end-state>
+
+	<end-state id="finish_by_cancel" >
+	</end-state>
+
+	<global-transitions>
+		<transition on="cancel" to="finish_by_cancel"/>
+    </global-transitions>
+
+</flow>

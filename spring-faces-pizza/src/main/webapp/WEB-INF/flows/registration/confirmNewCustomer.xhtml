@@ -1,0 +1,54 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+				template="../../layout/template.xhtml">
+
+<ui:define name="content">
+	<ui:fragment id="confirmCustomerFragment">
+		<div class="section centered">
+			<h:outputText value="#{resourceBundle['addCustomer.title']}" /><br/>
+			<h:form id="confirmCustomerForm">
+				<div style="width:70%;padding-left:15%;padding-top:20px;text-align:right;">
+					<h:panelGrid columns="1" >
+						<h:panelGrid columns="2">
+							<h:outputText class="bold" value="#{resourceBundle['askForPhoneNumber.phonenumber']}:" />
+							<h:outputText value="#{customer.phone}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.firstname']}:" />
+							<h:outputText value="#{customer.firstname}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.lastname']}:" />
+							<h:outputText value="#{customer.lastname}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.street']}:" />
+							<h:outputText value="#{customer.street}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.postal']}:" />
+							<h:outputText value="#{customer.postal}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.city']}:" />
+							<h:outputText value="#{customer.city}" />
+						</h:panelGrid>
+							
+					</h:panelGrid>
+					
+				</div>
+				<div class="buttonBox">
+					<div class="buttonLeft">
+						<sf:commandButton id="confirmCustomerBack" value="#{resourceBundle['confirmCustomer.back']}" 
+										  processIds="*" action="back" />
+					</div>
+					<div class="buttonRight">
+						<sf:commandButton id="confirmCustomerNext" value="#{resourceBundle['confirmCustomer.save']}" 
+										  processIds="*" action="save" />
+					</div>				
+				</div>
+			</h:form>
+		</div>
+	</ui:fragment>
+</ui:define>
+	
+</ui:composition>

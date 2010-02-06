@@ -1,0 +1,36 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+				template="../../layout/template.xhtml">
+
+<ui:define name="content">
+	<ui:fragment id="orderConfirmationFragment">
+		<h:form id="orderConfirmationForm">
+			<h:panelGroup style="padding-top:20px;">
+				<h:outputText value="#{resourceBundle['orderConfirmation.succeeded']}" /><br/>
+				<div style="width:70%;padding-left:15%;padding-top:10px;text-align:right;">
+					<h:panelGrid columns="1" >
+						<h:panelGrid columns="2">
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.firstname']}:" />
+							<h:outputText value="#{order.customer.firstname}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.lastname']}:" />
+							<h:outputText value="#{order.customer.lastname}" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</div>
+			</h:panelGroup>		
+									  
+			<div class="buttonBox">
+				<div class="buttonLeft">
+					<sf:commandLink id="cancel" value="#{resourceBundle['orderConfirmation.newOrder']}" processIds="*" action="cancel" immediate="true"/>					
+				</div>
+			</div>
+		</h:form>
+	</ui:fragment>
+</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,30 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+                xmlns:rich="http://richfaces.org/rich"
+				template="../../layout/template.xhtml">
+
+	<ui:define name="content">
+		<div class="section">
+			<h:form id="phoneInputForm">
+				<h2><h:outputText value="#{resourceBundle['askForPhoneNumber.title']}" /></h2>
+				
+				<h:panelGrid columns="3">
+					<h:outputText value="#{resourceBundle['askForPhoneNumber.phonenumber']}" />
+					<sf:clientTextValidator promptMessage="#{resourceBundle['askForPhoneNumber.input.phone.pattern']}"
+						required="true" regExp="[0-9]+[ ]?[/]?[ ]?[0-9]+">
+						<h:inputText id="inputPhoneId" value="#{phoneSearch.number}" />
+					</sf:clientTextValidator>
+					<h:message for="phoneInputForm:inputPhoneId" />
+					<sf:validateAllOnClick>
+						<sf:commandButton id="findCustomer" value="#{resourceBundle['askForPhoneNumber.search']}" processIds="*" action="search" />
+					</sf:validateAllOnClick>
+				</h:panelGrid>
+			</h:form>
+		</div>
+	</ui:define>
+	
+</ui:composition>
