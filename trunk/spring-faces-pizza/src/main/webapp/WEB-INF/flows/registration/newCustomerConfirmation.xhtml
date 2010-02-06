@@ -1,0 +1,40 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+				template="../../layout/template.xhtml">
+
+<ui:define name="content">
+	<div class="section">
+		<h:form id="newCustomerConfirmationForm">
+			<h:panelGroup style="padding-top:20px;">
+				<h:outputText value="#{resourceBundle['newCustomerConfirmation.succeeded']}" /><br/>
+				<div style="width:70%;padding-left:15%;padding-top:10px;text-align:right;">
+					<h:panelGrid columns="1" >
+						<h:panelGrid columns="2">
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.firstname']}:" />
+							<h:outputText value="#{customer.firstname}" />
+							
+							<h:outputText class="bold" value="#{resourceBundle['addCustomer.lastname']}:" />
+							<h:outputText value="#{customer.lastname}" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</div>
+			</h:panelGroup>		
+									  
+			<div class="buttonBox">
+				<div class="buttonLeft">
+					<sf:commandLink id="cancel" value="#{resourceBundle['flow.cancel']}" processIds="*" action="cancel" immediate="true"/>					
+				</div>
+				<div class="buttonRight">
+				<sf:commandButton id="newCustomerConfirmationBtn" value="#{resourceBundle['addCustomer.next']}" 
+								  processIds="*" action="next" />
+				</div>				
+			</div>
+		</h:form>
+	</div>
+</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,188 @@
+table {
+	margin: 0em;
+}
+
+a,a:visited,a:link,a:active {
+	color: #59924B;
+	background-color: transparent;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+form div,form p {
+	padding: 0px;
+	margin: 0 0 .5em 0;
+}
+
+#branding.pizza {
+	float: none;
+	width: 100%;
+	margin: 10px 0 0 0;
+	padding: 0 0 0 0;
+	text-align: none;
+}
+
+.content_pizza {
+	clear: both;
+	display: block;
+	min-height: 400px;
+	padding-top: 10px;
+	text-align: left;
+}
+
+div#leftImg {
+	float: left;	
+}
+
+#welcome {
+	padding: 10px 10px;
+}
+
+#welcome div.left {
+	float: left;
+}
+
+#welcome div.right {
+	float: right;
+}
+
+#footer.pizza {
+	padding: 25px 0;
+	background-color: white;
+	border-top: 1px solid #C3BBB6;
+}
+
+.errors {
+	font-weight: bold;
+	text-align: left;
+	color: #600;
+}
+
+.errors ul {
+	list-style: none;
+}
+
+.section {
+	text-align: left;
+	width: 505px;
+	float: left;
+	margin-bottom: 5px;
+}
+
+.field {
+	float: left;
+}
+
+.field .label {
+	float: left;
+	padding-top: 5px;
+	padding-right: 5px;
+	font-weight: bold;
+	width: 150px;
+	text-align: right;
+}
+
+.field .input {
+	float: left;
+	width: 250px;
+	text-align: left;
+}
+
+.field .output {
+	float: left;
+	width: 250px;
+	padding-top: 5px;
+	text-align: left;
+}
+
+.buttonGroup {
+	clear: both;
+	text-align: right;
+}
+
+.buttonGroup input[type="submit"],.buttonGroup input[type="button"],.buttonGroup button,.buttonGroup a
+	{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.summary {
+	width: 100%;
+	border: 1px solid #414f23;
+	border-collapse: collapse;
+}
+
+.summary thead th {
+	border-left: 1px solid #414f23;
+	border-bottom: 1px solid #414f23;
+	padding: 6px;
+	text-align: left;
+	font-size: small;
+}
+
+.summary tbody td {
+	border-left: 1px solid #9cac7c;
+	padding: 4px;
+	border-bottom: 1px solid #9cac7c;
+	font-size: 8pt;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.standardTable {
+	color: #000000;
+    padding: 2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C0CFA8;
+}
+
+.standardTable_Header {
+	color: #000000;
+    background-color: #ACCF74;
+    padding: 3;
+    text-align: center;
+    border: none;
+}
+
+.standardTable_Footer {
+    background-color: #FFFFE0;
+}
+
+.standardTable_Row1 {
+    background-color: #FFFFFF;
+}
+
+.standardTable_Row2 {
+    background-color: #CCEF95;
+}
+
+.standardTable_Column {
+}
+
+.standardTable_ColumnCentered {
+    text-align: center
+}
+
+.buttonLeft {
+	float: left;
+}
+
+.buttonRight {
+	float: right;
+}
+
+.centered {
+	text-align: center !important;
+}
+
+.buttonBox {
+	position:relative;
+	width:100%;
+}
+
+.fullWidth {
+	width: 100%;
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+	start-state="askForPhoneNumber">
+
+	<var name="order" class="incubator.spring_faces.model.Order" />
+	<var name="phoneSearch" class="incubator.spring_faces.model.PhoneSearch" />
+
+	<view-state id="askForPhoneNumber">
+		<on-entry>
+			<evaluate expression="phoneSearch.reset()" />
+		</on-entry>
+		<transition on="search" to="lookupCustomer" />
+	</view-state>
+
+	<action-state id="lookupCustomer">
+		<evaluate expression="lookupCustomerAction" />
+		<!--
+			Alternativ kann die Expression auch hier in XML definiert werden:
+			<evaluate expression="customerService.exists(phoneSearch.number)" />
+		-->
+		<evaluate expression="lookupCustomerAction" />
+
+		<transition on="true" to="showOrder" >
+			<evaluate expression="customerService.findCustomerByPhoneNumber(phoneSearch.number)" result="flowScope.order.customer" />
+		</transition>
+		<transition on="false" to="registerCustomer" />
+		
+		<!-- 
+		<on-exit>
+			<evaluate expression="customer.setPhone(phoneSearch.number)" />
+		</on-exit>
+		-->
+	</action-state>
+
+	<subflow-state id="registerCustomer" subflow="registration" >
+		<input name="phoneNumber" value="phoneSearch.number"/>
+		<output name="customer" value="flowScope.order.customer"/>
+		<transition on="finish" to="showOrder"/>
+		<transition on="finish_by_cancel" to="finish"/>
+	</subflow-state>
+
+	<view-state id="showOrder" >
+		<on-render>
+			<!--
+			Objects in view scope are updated before each render. Render actions are executed initial 
+			render as well as any subsequent refreshes, including any partial re-renderings of the view.
+			-->
+			<evaluate expression="pizzaService.loadPizzas()" result="viewScope.pizzas" result-type="dataModel"/>
+			<evaluate expression="order.getOrderedPizzas()" result="viewScope.orderedPizzas" result-type="dataModel"/>
+		</on-render>
+			
+		<transition on="addPizza" to="showOrder">
+			<set name="flowScope.pizza" value="pizzas.selectedRow" />
+			<evaluate expression="order.addPizza(flowScope.pizza)" />
+		</transition>
+			
+		<transition on="removePizza" to="showOrder">
+			<set name="flowScope.pizza2remove" value="orderedPizzas.selectedRow" />
+			<evaluate expression="order.removePizza(flowScope.pizza2remove)" />
+		</transition>
+
+		<transition on="next" to="confirmOrder" />
+		
+		<exception-handler bean="exceptionHandler"/>
+
+	</view-state>
+
+	<view-state id="confirmOrder">
+		<transition on="back" to="showOrder" />
+		<transition on="next" to="submitOrder" />
+	</view-state>
+
+	<action-state id="submitOrder">
+		<secured match="any" attributes="ROLE_USER, ROLE_SUPERVISOR" />
+		<evaluate expression="saveOrderAction" />
+		<transition on-exception="java.lang.Exception" to="confirmOrder"/>
+		<transition on="saved" to="orderConfirmation"/>
+	</action-state>
+
+	<view-state id="orderConfirmation">
+		<on-entry>
+			<render fragments="orderConfirmationFragment" />
+		</on-entry>
+		<transition on="next" to="finish" />
+	</view-state>
+
+	<end-state id="finish" view="flowRedirect:order" />
+
+	<global-transitions>
+		<transition on="cancel" to="finish"/>
+    </global-transitions>
+
+</flow>

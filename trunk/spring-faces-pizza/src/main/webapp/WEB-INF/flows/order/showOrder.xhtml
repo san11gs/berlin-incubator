@@ -1,0 +1,109 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+	  			xmlns:rich="http://richfaces.org/rich"
+	  			xmlns:a4j="http://richfaces.org/a4j"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+				template="../../layout/template.xhtml">
+
+	<style>
+		.pic {
+		    margin-bottom: -4px;
+		    margin-right: 2px;
+		}
+	</style>
+	
+	<ui:define name="content">
+		<div class="section">
+			<br/>
+			<h:form id="showOrderForm">
+				<h:panelGroup style="padding-top:20px;">
+					<rich:spacer height="20" />
+					
+					<h:outputText value="#{resourceBundle['showOrder.headline']}:" style="font-weight:bold;" />
+					<h:outputText value=" #{order.customer.firstname} #{order.customer.lastname}" />
+	
+					<div style="width:100%;padding-top:15px;">
+						<div>
+							<div style="padding-bottom:5px;">
+		                		<h:outputText value="#{resourceBundle['showOrder.available.pizzas']}"/>
+		                	</div>
+			                <h:dataTable id="availablePizzasTable" value="#{pizzas}" var="pizza2" styleClass="standardTable fullWidth" 
+			                		     headerClass="standardTable_Header"
+										 rowClasses="standardTable_Row1,standardTable_Row2"
+										 columnClasses="standardTable_ColumnCentered" >
+							    <h:column>
+							        <f:facet name="header" >
+							            <h:outputText value="#{resourceBundle['showOrder.column.pizza']}"/>
+							        </f:facet>    
+							        <h:outputText value="#{pizza2.name}"/>
+							    </h:column>
+							    <h:column>
+							        <f:facet name="header" >
+							            <h:outputText value="#{resourceBundle['showOrder.column.price']}"/>
+							        </f:facet>    
+							        <h:outputText value="#{pizza2.price}"/>
+							    </h:column>
+								<h:column>
+									<sf:commandLink id="addPizzaLink" action="addPizza">
+										<h:graphicImage value="/images/cart_go.png" />
+									</sf:commandLink>
+								</h:column>
+							</h:dataTable>
+						</div>
+						
+						<div style="height:40px;">&nbsp;</div>
+						
+						<div>
+							<div style="padding-bottom:5px;">
+			               		<h:outputText value="#{resourceBundle['showOrder.selected.pizzas']}"/>
+			               	</div>
+							<h:dataTable id="orderedPizzasTable" value="#{orderedPizzas}" var="orderedPizza" 
+										 styleClass="standardTable fullWidth" headerClass="standardTable_Header"
+										 rowClasses="standardTable_Row1,standardTable_Row2"
+										 columnClasses="standardTable_ColumnCentered" >
+							    <h:column>
+							        <f:facet name="header" >
+							            <h:outputText value="#{resourceBundle['showOrder.column.pizza']}"/>
+							        </f:facet>    
+							        <h:outputText value="#{orderedPizza.pizza.name}"/>
+							    </h:column>
+							    <h:column>
+							        <f:facet name="header" >
+							            <h:outputText value="#{resourceBundle['showOrder.column.price']}"/>
+							        </f:facet>    
+							        <h:outputText value="#{orderedPizza.pizza.price}"/>
+							    </h:column>
+							    <h:column>
+							        <f:facet name="header" >
+							            <h:outputText value="#{resourceBundle['showOrder.column.amount']}"/>
+							        </f:facet>    
+							        <h:outputText value="#{orderedPizza.amount}"/>
+							    </h:column>
+								<h:column>
+									<sf:commandLink id="removePizzaLink" action="removePizza" >
+										<h:graphicImage value="/images/cart_delete.png" />
+									</sf:commandLink>
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+					
+					<div class="buttonBox" style="margin-top:10px;">
+						<div class="buttonLeft">
+							<sf:commandLink id="cancel" value="#{resourceBundle['flow.cancel']}" processIds="*" action="cancel" immediate="true"/>					
+						</div>
+						<div class="buttonRight">
+							<sf:commandButton id="newCustomerConfirmationBtn" value="#{resourceBundle['addCustomer.next']}" 
+											  processIds="*" action="next" />
+						</div>				
+					</div>
+					
+				</h:panelGroup>
+			</h:form>
+		</div>
+	</ui:define>
+	
+</ui:composition>

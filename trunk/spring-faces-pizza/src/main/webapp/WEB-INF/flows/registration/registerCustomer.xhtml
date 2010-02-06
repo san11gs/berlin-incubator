@@ -1,0 +1,75 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:sf="http://www.springframework.org/tags/faces"
+				template="../../layout/template.xhtml">
+
+	<ui:define name="content">
+		<div class="section">
+			<h:form id="addCustomerForm">
+				<h2><h:outputText value="#{resourceBundle['addCustomer.title']}" /></h2>
+				<div>
+					<h:panelGrid columns="3">
+						
+						<h:outputText value="#{resourceBundle['askForPhoneNumber.phonenumber']}" />
+						<sf:clientTextValidator promptMessage="#{resourceBundle['askForPhoneNumber.input.phone.pattern']}"
+							required="true" regExp="[0-9]+[ ]?[/]?[ ]?[0-9]+"
+							invalidMessage="#{resourceBundle['error.askForPhoneNumber.phonenumber']}">
+							<h:inputText id="inputPhoneId" value="#{customer.phone}" />
+						</sf:clientTextValidator>
+						<h:message for="inputPhoneId" />
+						
+						<h:outputText value="#{resourceBundle['addCustomer.firstname']}" />
+						<sf:clientTextValidator required="true" 
+							invalidMessage="#{resourceBundle['error.addCustomer.firstname']}">
+							<h:inputText id="firstnameId" value="#{customer.firstname}"  />
+						</sf:clientTextValidator>
+						<h:message for="firstnameId" />
+						
+						<h:outputText value="#{resourceBundle['addCustomer.lastname']}" />
+						<sf:clientTextValidator required="true"
+							invalidMessage="#{resourceBundle['error.addCustomer.lastname']}">
+							<h:inputText id="lastnameId" value="#{customer.lastname}" required="true" />
+						</sf:clientTextValidator>
+						<h:message for="lastnameId" />
+						
+						<h:outputText value="#{resourceBundle['addCustomer.street']}" />
+						<sf:clientTextValidator required="true"
+							invalidMessage="#{resourceBundle['error.addCustomer.street']}">
+							<h:inputText id="streetId" value="#{customer.street}" />
+						</sf:clientTextValidator>
+						<h:message for="streetId" />
+						
+						<h:outputText value="#{resourceBundle['addCustomer.postal']}" />
+						<sf:clientTextValidator required="true"
+							invalidMessage="#{resourceBundle['error.addCustomer.postal']}">
+							<h:inputText id="postalId" value="#{customer.postal}" required="true" />
+						</sf:clientTextValidator>
+						<h:message for="postalId" />
+						
+						<h:outputText value="#{resourceBundle['addCustomer.city']}" />
+						<sf:clientTextValidator required="true"
+							invalidMessage="#{resourceBundle['error.addCustomer.city']}">
+							<h:inputText id="cityId" value="#{customer.city}" required="true" />
+						</sf:clientTextValidator>
+						<h:message for="cityId" />
+	
+					</h:panelGrid>
+					
+					<div class="buttonBox" style="margin-top:10px;">
+						<div class="buttonLeft">
+							<sf:commandLink id="cancel" value="#{resourceBundle['flow.cancel']}" processIds="*" action="cancel" immediate="true"/>					
+						</div>
+						<div class="buttonRight">
+							<sf:commandButton id="addCustomerNext" value="#{resourceBundle['addCustomer.next']}" 
+											  processIds="*" action="next" />
+						</div>				
+					</div>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+	
+</ui:composition>

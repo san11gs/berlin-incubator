@@ -1,0 +1,57 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:c="http://java.sun.com/jstl/core"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:h="http://java.sun.com/jsf/html"
+				template="layout/template.xhtml">
+
+<ui:define name="content">
+
+<div class="section">
+	<b>Login erforderlich</b>
+	<br/>
+	<br/>
+	<c:if test="${not empty param.login_error}">
+		<div class="errors">
+			Ihr Loginversuch ist fehlgeschlagen. Bitte versuchen Sie es noch einmal.<br />
+			Grund: #{sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}
+		</div>
+	</c:if>
+	<br/>
+	<p>Zugangsdaten (Benutzername/Passwort):</p>
+	<ul>
+			<li>mario/mario</li>
+		    <li>sofia/sofia</li>
+		    <li>luigi/luigi</li>
+		    <li>federica/federica</li>
+	</ul>
+</div>
+
+<div class="section">
+	<form name="f" action="${request.contextPath}/spring/loginProcess" method="post">
+		<fieldset>
+			<div class="field">
+				<div class="label">Benutzer:</div>
+				<div class="output">
+					<c:if test="${not empty param.login_error}">
+						<c:set var="username" value="${sessionScope.SPRING_SECURITY_LAST_USERNAME}"/>
+					</c:if>
+					<input type="text" name="j_username" value="#{username}"/>
+				</div>
+			</div>
+			<div class="field">
+				<div class="label">Passwort:</div>
+				<div class="output">
+					<input type="password" name="j_password" />
+				</div>
+			</div>
+		</fieldset>
+		<div class="buttonGroup">
+			<input name="submit" type="submit" value="Login" />
+		</div>
+	</form>
+</div>
+
+</ui:define>
+</ui:composition>
