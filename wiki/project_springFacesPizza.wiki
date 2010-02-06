@@ -9,7 +9,7 @@
  Spring Core, Spring MVC, Spring Webflow and JSF. Furthermore we include aspects like
  persistence and security managed by Spring. 
  I think this template project is a good entry point to see how to implement a web 
- application where the application's website do not base on free-flow navigation. 
+ application where the application's websites do not base on free-flow navigation. 
  This means that the application has the control and guides the user from one page 
  to the next one.    
 
