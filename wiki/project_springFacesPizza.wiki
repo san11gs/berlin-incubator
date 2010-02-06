@@ -1,4 +1,4 @@
-#summary weldJsfJee project wiki site
+#summary spring-faces-pizza project wiki site
 #labels Spring,Spring Webflow,Spring Faces,JSF,JPA,Maven
 
 = Introduction =
