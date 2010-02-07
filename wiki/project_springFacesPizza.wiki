@@ -1,5 +1,5 @@
 #summary spring-faces-pizza project wiki site
-#labels Spring,Spring Webflow,Spring Faces,JSF,JPA,Maven
+#labels Spring,SpringWebflow,SpringFaces,JSF,JPA,Maven,Featured
 
 = Introduction =
  This project realizes a conversational web application where one can order a pizza 
