@@ -10,6 +10,10 @@
 
  There is a simple Hello-World-CDI-Bean with el-access up to now.
 
+== JPA-Access ==
+See here for JPA access with GAE:
+[http://code.google.com/intl/de-DE/appengine/docs/java/datastore/usingjpa.html]
+
 = Development =
 
 == Technology ==
