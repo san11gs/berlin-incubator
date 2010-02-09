@@ -9,4 +9,8 @@
 		<property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
 	</system-properties>
 	
+	<!-- Disable DataNucleus checking for multiple PersistenceContextFactory instantiations. 
+	<property name="appengine.orm.disable.duplicate.emf.exception" value="true"/>
+	-->
+	
 </appengine-web-app>
