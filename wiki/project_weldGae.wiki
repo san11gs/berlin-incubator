@@ -11,10 +11,15 @@
  There is a simple Hello-World-CDI-Bean with el-access and JPA access to create and list employees.
 
 == JPA-Access ==
+
+=== Configuration ===
 "The App Engine Java SDK includes an implementation of JPA 1.0 for the App Engine datastore. The implementation is based on DataNucleus Access Platform. Since JPA presents a standard interface for interacting with relational databases and the App Engine datastore is not a relational database, there are features of JPA that the App Engine implementation simply cannot support. We have done our best to call attention to these features wherever possible."
 
 See here for how to access JPA with GAE:
 [http://code.google.com/intl/de-DE/appengine/docs/java/datastore/usingjpa.html]
+
+=== Data Viewer ===
+http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
 
 = Development =
 
