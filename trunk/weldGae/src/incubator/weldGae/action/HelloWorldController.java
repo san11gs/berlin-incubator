@@ -1,4 +1,4 @@
-package incubator.weldGae;
+package incubator.weldGae.action;
 
 import javax.inject.Named;
 
@@ -9,7 +9,7 @@ import javax.inject.Named;
  * @date 04.02.2010
  */
 @Named
-public class HelloWorld {
+public class HelloWorldController {
 	public String getMessage() {
 		return "Hello Weld World";
 	}
