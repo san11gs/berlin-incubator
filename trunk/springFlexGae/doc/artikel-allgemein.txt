@@ -1,0 +1,21 @@
+Thema: Neue Welten - Spring 3 mit Flex/Air in der Cloud
+
+Spring 3  + Flex/BlazeDS + Spring Tutorial als Flex und Air-Anwendung deploy - läuft auf GAE
+Ziel ist die Darstellung des ganzheitlichen Prozess.
+Der Code wird angeboten (auf Google Code und zum Download) und verspricht, out of the boy zu funktionieren.
+Alternativ ist die Überlegung, als Ergebnis des Artikels einen Maven-Archetypen zu erstellen.
+
+#######################
+
+Kontakt potentieller Zeitungen/Magazine:
+- JavaMagazin: javamagazin.de
+- JavaSpektrum: http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html
+http://www.sigs-datacom.de/fachzeitschriften/javaspektrum/hinweise-fuer-autoren/aufruf-zu-beitraegen.html
+- ix:  leserservice@heise.de
+- refacardz:  http://refcardz.dzone.com/faq/can-i-author-refcard
+
+#######################
+
+Projektverlauf:
+- 16.02 --> Mail an XX um allgemeines Interesse an dem Artikel zu erfragen
+- bis Fr., 19.02.: 2 Seiten Konzept
