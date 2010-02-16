@@ -1,0 +1,10 @@
+Gedanken-Spiel Maven-Archetyp "spring-flex": 
+Der Standard-Archetyp baut ein Maven-SPring-Flex-Projekt (mit den entsprechenden Sub-Projekten) auf Basis von BlazeDS und Flex-Maven-Plugin. Eine alternative Option könnte sein "GAE", damit entsprechende Einstellungen für die GAE genommen werden.
+--> Gibt es so etwas schon? Ist Interesse vorhanden?
+
+TODO Enticklungs-Projekt:
+- property-Datei rausziehen, die Flex-Home und Server-Home enthält
+- Migration Server-deploy-target (JBoss-Maven-Plugin, Migration Jetty)
+- Migration Flex-Build Prozess ins install goal
+- Persistenz mit Spring auf GAE (http://blog.jteam.nl/2010/02/04/free-java-hosting-with-the-google-app-engine/)
+
