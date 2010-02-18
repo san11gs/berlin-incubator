@@ -24,7 +24,7 @@ http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
 = Development =
 
 == Technology ==
-  * weld-1.0.0.SP1 (CDI reference implementation)
+  * weld-1.0.1.CR2 (CDI reference implementation)
   * Mojarra 2.0.1 (JSF 2.0 reference implementation) 
 
 == Environment ==
