@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="240" height="180" borderColor="#E0FBB5">
+    
+    <mx:Script>
+		<![CDATA[
+			[Bindable]
+			public var onOk:Function;
+			
+			[Bindable]
+			public var onCancel:Function; 
+			
+			[Bindable]
+			public var info:String;
+			
+			[Bindable]
+			public var cancellabe:Boolean = true;
+			
+			private function okHandler() : void {
+				onOk.call();
+			}
+			
+			private function cancelHandler() : void {
+				onCancel.call();
+			}
+			
+			private function okBtnEnabled() : Boolean {
+				return onOk != null;
+			}
+			
+			private function cancelBtnEnabled() : Boolean {
+				return onCancel != null;
+			}
+			
+		]]>
+	</mx:Script>
+
+	<mx:VBox paddingBottom="5" paddingLeft="5" paddingTop="5" paddingRight="5" width="100%" height="100%">
+		<mx:Text text="{info}" width="100%" color="#000000"/>
+	</mx:VBox>
+	<mx:ControlBar>
+		<mx:Spacer width="100%" />
+		<mx:Button label="OK" click="okHandler()" enabled="{okBtnEnabled()}"/>
+		<mx:Button label="Abbrechen" click="cancelHandler()" enabled="{cancelBtnEnabled()}" 
+				   includeInLayout="{cancellabe}" visible="{cancellabe}"/>
+	</mx:ControlBar>
+</mx:Panel>

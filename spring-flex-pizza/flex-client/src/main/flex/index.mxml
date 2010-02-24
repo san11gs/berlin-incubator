@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:com="com.flashdev.file.*" 
+	xmlns:inc="incubator.spring_flex.views.*" 
+	xmlns:order="incubator.spring_flex.views.order.*" 
+	backgroundGradientAlphas="[1.0, 1.0]" creationComplete="initApp()"
+	paddingTop="0" paddingLeft="0" paddingRight="0" paddingBottom="0"
+	backgroundGradientColors="[#E9FFC7, #F1FAE3]" layout="horizontal" borderColor="#FFFFFF" >
+	
+	<mx:Style>
+		Application {
+			font-size: 12;
+		}
+	</mx:Style>
+	 
+	<mx:Script>
+		<![CDATA[
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.managers.PopUpManager;
+			import incubator.spring_flex.components.Login;
+			import incubator.spring_flex.events.CustomerEvent;
+			import incubator.spring_flex.dto.Order;
+			import incubator.spring_flex.dto.Customer;
+			import mx.controls.Alert;
+			import incubator.spring_flex.events.PageChangeEvent;
+
+			private var loginPopup:Login;
+			
+			private var customer:Customer;
+			private var order:Order;
+			
+			[Bindable]
+			private var loggedInUser:String;
+			
+			private function initApp() : void {
+				// First check authentication
+				securityHelper.getAuthentication();
+			}
+
+			private function userHandler(event:ResultEvent) : void {
+				if(event.result != null){
+					loggedInUser = event.result.name;
+				}
+			}
+			
+			private function logout() : void {
+				securityHelper.channelSet.logout();
+				loggedInUser = null;
+				firePageChange_Home();
+			}
+
+			private function faultHandler(event:FaultEvent) : void {
+				Alert.show(event.fault.faultString, "Error accessing securityHelper");
+			}
+			
+			private function onPageChange(event:PageChangeEvent) : void {
+				
+				if(event.targetPage == PageChangeEvent.HOME) {
+					viewStack.selectedChild = home;
+					
+				} else if(event.targetPage == PageChangeEvent.PHONESEARCH) {
+					viewStack.selectedChild = phonesearch;
+					
+				} else if(event.targetPage == PageChangeEvent.CUSTOMER_ADD) {
+					customer_add.phoneNumber = phonesearch.phone;
+					viewStack.selectedChild = customer_add;
+					
+				} else if(event.targetPage == PageChangeEvent.ORDER_SHOW) {
+					order_show.customer = this.customer;
+					viewStack.selectedChild = order_show;
+				}
+			}
+			
+			private function firePageChange_Home() : void {
+				viewStack.selectedChild = home;
+			}
+			
+			private function onCustomerChanged(event:CustomerEvent) : void {
+				if(event.action == CustomerEvent.CUSTOMER_CREATED || 
+				   			event.action == CustomerEvent.CUSTOMER_CHANGED){
+					this.customer = event.customer;
+				}
+			}
+			
+			private function openLoginPromt() : void {
+				loginPopup = new Login();
+				loginPopup.onLoggedIn = onLoggedIn;
+				PopUpManager.addPopUp(loginPopup, this, true);
+				PopUpManager.centerPopUp(loginPopup);
+			}
+			
+			private function onLoggedIn() : void {
+				loggedInUser = loginPopup.loggedInUser;
+				loginPopup = null;
+			}
+			
+		]]>
+	</mx:Script>
+    
+	<mx:RemoteObject id="securityHelper" destination="securityHelper" fault="faultHandler(event)">
+		<mx:method name="getAuthentication" result="userHandler(event)"/>
+	</mx:RemoteObject>
+	
+	<mx:Blur id="blur" duration="500"/>
+	
+	<mx:VBox width="100%" height="100%" horizontalAlign="center"  paddingTop="20" paddingBottom="20">
+		<mx:VBox width="100%" height="100%" horizontalAlign="center"  >
+			<mx:Panel width="800" height="100%" layout="vertical" horizontalAlign="center"  >
+				<mx:HBox width="100%">
+					<mx:HBox width="100%" horizontalAlign="center" paddingTop="10" > 
+						<mx:Image id="loadedImage" source="@Embed('/icons/header.jpg')" click="firePageChange_Home()"
+								  useHandCursor="true" buttonMode="true"/>
+					</mx:HBox>
+				</mx:HBox>
+				<mx:HBox width="100%" horizontalAlign="right" paddingRight="15">
+					<mx:LinkButton label="Login" color="#0B8024" textDecoration="underline" fontWeight="bold" themeColor="#6FB063"
+									click="openLoginPromt()" visible="{loggedInUser == null}" includeInLayout="{loggedInUser == null}" />
+					<mx:HBox verticalAlign="middle">
+						<mx:Label text="Benutzer" visible="{loggedInUser != null}" includeInLayout="{loggedInUser != null}" fontWeight="bold"/>			
+						<mx:Label text="{loggedInUser}  |" visible="{loggedInUser != null}" includeInLayout="{loggedInUser != null}" />			
+						<mx:LinkButton label="Logout" color="#0B8024" textDecoration="underline" fontWeight="bold" themeColor="#6FB063"
+									click="logout()" visible="{loggedInUser != null}" includeInLayout="{loggedInUser != null}" 
+									paddingLeft="0"/>
+						
+					</mx:HBox>
+				</mx:HBox>
+
+				<mx:ViewStack id="viewStack" width="95%" height="100%" >
+					<inc:home id="home" changePage="onPageChange(event)" showEffect="{blur}"/>
+					<inc:phonesearch id="phonesearch" changePage="onPageChange(event)" customerEvent="onCustomerChanged(event)" showEffect="{blur}"/>
+					<inc:customer_add id="customer_add" changePage="onPageChange(event)" customerEvent="onCustomerChanged(event)" showEffect="{blur}"/>
+					<inc:order id="order_show" changePage="onPageChange(event)" showEffect="{blur}"/>
+				</mx:ViewStack>
+				
+				<mx:HBox width="95%" height="40" verticalAlign="bottom">
+					<mx:HBox width="100%" horizontalAlign="center" paddingBottom="15">
+						<mx:Label text="Pizza Bestellportal mit Spring, Flex und BlazeDS" />
+					</mx:HBox>
+				</mx:HBox>		
+			</mx:Panel>
+		</mx:VBox>
+	</mx:VBox>
+	
+</mx:Application>

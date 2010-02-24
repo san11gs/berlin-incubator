@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+			creationComplete="init()">
+
+    <mx:Metadata>
+        [Event(name="changePage", type="incubator.spring_flex.events.PageChangeEvent")]
+    </mx:Metadata>
+
+	<mx:Script>
+		<![CDATA[
+			import incubator.spring_flex.dto.OrderedPizza;
+			import incubator.spring_flex.dto.OrderedPizzaBase;
+			import incubator.spring_flex.dto.Pizza;
+			import incubator.spring_flex.events.PageChangeEvent;
+			import incubator.spring_flex.components.InfoPopup;
+			import mx.rpc.events.ResultEvent;
+			import mx.controls.Alert;
+			import mx.managers.PopUpManager;
+			import mx.rpc.events.FaultEvent;
+			import mx.collections.ArrayCollection;
+			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.dto.Order;
+			
+			[Bindable]
+			public var customer:Customer;
+			
+			[Bindable]
+			private var availablePizazs:ArrayCollection = new ArrayCollection(); 
+			
+			[Bindable]
+			private var shoppingCart:ArrayCollection = new ArrayCollection(); 
+			
+			private var popup:InfoPopup;
+			
+			private function init() : void { 
+			 	pizzaService.loadPizzas();
+			}
+			
+			private function resultHandlerLoad(event:ResultEvent) : void {
+				this.availablePizazs = event.result as ArrayCollection;
+			}
+			
+           	private function handleFault(event:FaultEvent) : void {
+           		PopUpManager.removePopUp(popup);
+           		if(event.fault.faultCode == "Client.Authentication"){
+           			Alert.show("Bitte loggen sie sich zuerst ein!", "Aktion verweigert");	
+           		} else {
+                	Alert.show(event.fault.faultString, 'Error');
+             	}
+            }
+
+			private function resultHandlerOrder(event:ResultEvent) : void {
+				//this.availablePizazs = event.result as ArrayCollection;
+				popup = new InfoPopup();
+				popup.onOk = onOkHandler;
+				popup.cancellabe = false;
+				popup.info = "Bestellung wurde übernommen";
+				popup.title= "Bestellbestätigung";
+				
+				PopUpManager.addPopUp(popup, this, true);
+				PopUpManager.centerPopUp(popup);
+			}
+
+			private function onOkHandler() : void {
+				PopUpManager.removePopUp(popup);
+				popup = null;
+
+				shoppingCart = new ArrayCollection();
+				
+				var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+				pageEvent.targetPage = PageChangeEvent.PHONESEARCH;
+				dispatchEvent(pageEvent);				
+			}
+			
+			public function onClickAddPizza(event:MouseEvent) : void {
+				var pizza:Pizza = dg_availablePizzas.selectedItem as Pizza;
+				
+				var orderedPizza:OrderedPizza = null;
+				
+				for (var i:int = 0; i < shoppingCart.length; i++) {
+					orderedPizza = shoppingCart.getItemAt(i) as OrderedPizza;
+					if(orderedPizza.pizza.id == pizza.id){
+						orderedPizza.amount = orderedPizza.amount + 1;
+						// self assignment to cause view refresh
+						dg_selectedPizzas = dg_selectedPizzas;
+						return;
+					}
+				}
+				
+				orderedPizza = new OrderedPizza();
+				orderedPizza.pizza = pizza;
+				orderedPizza.amount = 1;
+				
+				shoppingCart.addItem(orderedPizza);
+			}
+			
+			public function onClickRemovePizza(event:MouseEvent) : void {
+				var orderedPizza:OrderedPizza = dg_selectedPizzas.selectedItem as OrderedPizza;
+				
+				if(orderedPizza.amount == 1){
+					var index:int = shoppingCart.getItemIndex(orderedPizza);
+					shoppingCart.removeItemAt(index);
+				} else {
+					orderedPizza.amount = orderedPizza.amount - 1;
+					// self assignment to cause view refresh
+					dg_selectedPizzas = dg_selectedPizzas;
+				}
+			}			
+
+  			private function submitOrderHandler() : void {
+  				
+  				var pizzaOrder:Order = new Order();
+  				pizzaOrder.customer = this.customer;
+  				
+  				for (var i:int = 0; i < shoppingCart.length; i++) {
+					var orderedPizza:OrderedPizza = shoppingCart.getItemAt(i) as OrderedPizza;
+					pizzaOrder.orderedPizzas.addItem(orderedPizza);
+  				}
+
+				orderService.saveOrder(pizzaOrder);
+			}
+			  
+			private function cancelOrderHandler() : void {
+				
+				shoppingCart = new ArrayCollection();
+				
+				var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+				pageEvent.targetPage = PageChangeEvent.HOME;
+				dispatchEvent(pageEvent);
+			}
+			
+ 		]]>
+	</mx:Script>
+
+	<mx:RemoteObject id="pizzaService" destination="pizzaService">
+		<mx:method name="loadPizzas" result="resultHandlerLoad(event)" fault="handleFault(event)"/>
+	</mx:RemoteObject>
+
+	<mx:RemoteObject id="orderService" destination="orderService">
+		<mx:method name="saveOrder" result="resultHandlerOrder(event)" fault="handleFault(event)"/>
+	</mx:RemoteObject>
+
+	<mx:VBox width="100%" height="100%" verticalAlign="top" horizontalAlign="center"  borderStyle="none">
+		<mx:HBox width="100%" horizontalAlign="left">
+			<mx:Label text="Bestellung für:" color="#000000" fontWeight="bold" fontSize="14"/>
+			<mx:Label text="{customer.lastname},{customer.firstname}" color="#000000" />
+		</mx:HBox>
+		<mx:VBox width="100%" height="100%" horizontalAlign="center">
+			<mx:VBox width="70%" horizontalAlign="left" paddingBottom="15">
+				<mx:HBox width="100%" horizontalAlign="left">
+					<mx:Label text="Verfügbare Pizzen" color="#000000" />
+				</mx:HBox>
+				<mx:DataGrid id="dg_availablePizzas" width="100%" dataProvider="{availablePizazs}" height="135">
+		            <mx:columns>
+		                <mx:DataGridColumn dataField="name" headerText="Name"/>
+		                <mx:DataGridColumn dataField="price" headerText="Preis"/>
+		                <mx:DataGridColumn width="25" resizable="false">
+			                <mx:itemRenderer>
+			                    <mx:Component>
+			                        <mx:VBox horizontalAlign="center" verticalAlign="middle" >
+			                            <mx:Image source="@Embed('/icons/cart_add.png')" buttonMode="true" useHandCursor="true"
+			                            		  click="{outerDocument.onClickAddPizza(event)}"/>
+			                        </mx:VBox>
+			                    </mx:Component>
+			                </mx:itemRenderer>
+		                </mx:DataGridColumn>
+		            </mx:columns>
+	        	</mx:DataGrid>
+	        </mx:VBox>
+			<mx:VBox width="70%" horizontalAlign="left" paddingBottom="15">
+				<mx:HBox width="100%" horizontalAlign="left">
+					<mx:Label text="Ausgewählte Pizzen" color="#000000" />
+				</mx:HBox>
+				<mx:DataGrid id="dg_selectedPizzas" width="100%" height="130" dataProvider="{shoppingCart}">
+		            <mx:columns>
+		                <mx:DataGridColumn dataField="pizza.name" headerText="Name"/>
+		                <mx:DataGridColumn headerText="Preis">
+			                <mx:itemRenderer>
+						        <mx:Component>
+						            <mx:Label text="{data.pizza.price * data.amount}" />
+						        </mx:Component>
+						    </mx:itemRenderer>
+		                </mx:DataGridColumn>
+		                <mx:DataGridColumn dataField="amount" headerText="Anzahl"/>
+		                <mx:DataGridColumn width="25" resizable="false">
+			                <mx:itemRenderer>
+			                    <mx:Component>
+			                        <mx:VBox horizontalAlign="center" verticalAlign="middle" >
+			                            <mx:Image source="@Embed('/icons/cart_delete.png')" buttonMode="true" useHandCursor="true"
+			                            		  click="{outerDocument.onClickRemovePizza(event)}"/>
+			                        </mx:VBox>
+			                    </mx:Component>
+			                </mx:itemRenderer>
+		                </mx:DataGridColumn>
+		            </mx:columns>
+	        	</mx:DataGrid>
+	        </mx:VBox>
+			<mx:HBox width="100%" verticalAlign="middle" horizontalAlign="center" >
+				<mx:Button label="Bestellen" click="submitOrderHandler()"/>
+				<mx:Button label="Abbrechen" click="cancelOrderHandler()"/>
+			</mx:HBox>
+		</mx:VBox> 
+	</mx:VBox>
+</mx:Canvas>
