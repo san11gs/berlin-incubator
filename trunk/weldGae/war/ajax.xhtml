@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>JSF 2 - native ajax support</h1>
+		<h:form>
+			<h:panelGrid columns="1">
+				<h:inputText id="myinput" value="#{ajaxController.name}">
+					<f:ajax event="keyup" render="outtext" />
+				</h:inputText>
+
+				<h:outputText id="outtext" value="#{ajaxController.name}" />
+
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
