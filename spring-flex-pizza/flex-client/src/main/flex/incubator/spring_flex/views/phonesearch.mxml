@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" >
+
+    <mx:Metadata>
+        [Event(name="changePage", type="incubator.spring_flex.events.PageChangeEvent")]
+        [Event(name="customerEvent", type="incubator.spring_flex.events.CustomerEvent")]
+    </mx:Metadata>
+
+	<mx:Script>
+		<![CDATA[
+			import incubator.spring_flex.events.CustomerEvent;
+			import incubator.spring_flex.events.PageChangeEvent;
+			import incubator.spring_flex.components.InfoPopup;
+			import mx.managers.PopUpManager;
+			import incubator.spring_flex.dto.Customer;
+			import mx.controls.Alert;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+
+			public var customer:Customer;
+
+			private var popup:InfoPopup;
+
+			public var phone:String = "";
+
+			private function onSearchClicked() : void {
+				customerService.findCustomerByPhoneNumber(textInput_phone.text);
+			}
+
+			private function resultHandlerFind(event:ResultEvent) : void {
+				this.customer = event.result as Customer;
+				if(customer == null){
+					popup = new InfoPopup();
+					popup.onOk = onOkHandler;
+					popup.onCancel = onCancelHandler;
+					popup.info = "Zu der angegebenen Nummer existiert kein Kunde. Soll ein neuer Kunde angelegt werden?";
+					popup.title= "Neuen Kunden anlegen?";
+					popup.setStyle("hideEffect", fade);
+					
+					phone = textInput_phone.text;
+					
+					PopUpManager.addPopUp(popup, this, true);
+					PopUpManager.centerPopUp(popup);
+					
+				} else {
+					textInput_phone.text = "";
+					
+					var ce:CustomerEvent = new CustomerEvent("customerEvent");
+					ce.customer = this.customer;
+					ce.action = CustomerEvent.CUSTOMER_CHANGED;
+					dispatchEvent(ce);
+					
+					var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+					pageEvent.targetPage = PageChangeEvent.ORDER_SHOW;
+					dispatchEvent(pageEvent);
+				}
+			}
+			
+           	private function handleFaultFind(event:FaultEvent) : void {
+           		PopUpManager.removePopUp(popup);
+                Alert.show(event.fault.faultString, 'Error');
+            }
+
+			private function onOkHandler() : void {
+				PopUpManager.removePopUp(popup);
+				popup = null;
+
+				textInput_phone.text = "";
+
+				var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+				pageEvent.targetPage = PageChangeEvent.CUSTOMER_ADD;
+				dispatchEvent(pageEvent);
+			}
+
+			private function onCancelHandler() : void {
+				PopUpManager.removePopUp(popup);
+				popup = null;
+			}
+
+ 		]]>
+	</mx:Script>
+
+	<mx:Fade id="fade" />
+
+	<mx:RemoteObject id="customerService" destination="customerService">
+		<mx:method name="findCustomerByPhoneNumber" result="resultHandlerFind(event)"  fault="handleFaultFind(event)"/>
+	</mx:RemoteObject>
+
+	<mx:VBox width="100%" height="100%" verticalAlign="top" horizontalAlign="center"  borderStyle="none">
+		<mx:VBox width="100%" horizontalAlign="left">
+			<mx:Label text="Kundensuche" color="#000000" fontWeight="bold" fontSize="14"/>
+		</mx:VBox>
+		<mx:HBox width="100%" horizontalAlign="left" verticalAlign="middle">
+			<mx:Label text="Telefonnummer:" color="#000000" />
+			<mx:TextInput id="textInput_phone" text="" width="200" restrict=" 0-9"/>
+			<mx:Button label="Suchen" enabled="{textInput_phone.text.length > 0}" click="onSearchClicked()"/>
+		</mx:HBox>
+	</mx:VBox>
+</mx:Canvas>

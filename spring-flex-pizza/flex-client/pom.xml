@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>incubator.spring_flex</groupId>
+		<artifactId>spring-flex-pizza</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>flex-client</artifactId>
+	<packaging>swf</packaging>
+	<name>Flex Client For The Sample Flex-Web-Application</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>flex-framework</artifactId>
+			<type>pom</type>
+		</dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>model-as</artifactId>
+            <version>${project.version}</version>
+            <type>swc</type>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<finalName>flex-app</finalName>
+		<sourceDirectory>src/main/flex</sourceDirectory>
+		<testSourceDirectory>src/test/flex</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<ignoreVersionIssues>true</ignoreVersionIssues>
+<!--					<output>${basedir}/../testdrive/src/main/webapp/${project.build.finalName}/${project.build.finalName}.swf</output>-->
+<!--					<output>${basedir}/target/${project.build.finalName}/${project.build.finalName}.swf</output>-->
+					<services>${basedir}/src/main/config/services-config.xml</services>
+					<contextRoot>/spring-flex-pizza</contextRoot>
+					<locales>
+						<locale>en_US</locale>
+					</locales>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<build>
+				<finalName>flex-app</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.flexmojos</groupId>
+						<artifactId>flexmojos-maven-plugin</artifactId>
+						<extensions>true</extensions>
+						<configuration>
+							<ignoreVersionIssues>true</ignoreVersionIssues>
+							<services>${basedir}/src/main/config/services-config-local.xml</services>
+							<contextRoot>/spring-flex-pizza</contextRoot>
+							<locales>
+								<locale>en_US</locale>
+							</locales>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
