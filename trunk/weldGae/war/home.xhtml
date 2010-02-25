@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Hello Weld!</h1>
+
+		Testing Java EE 6 including Servlet 3.0, JSF 2.0, CDI(JSR 299/JSR 330), Bean Validation/ JSR 303, and EJB3.1.
+
+		<h2>Versions</h2>
+		<ul>
+			<li>weld-1.0.1.FINAL (CDI reference implementation)</li>
+			<li>Mojarra 2.0.1 (JSF 2.0 reference implementation)</li>
+			<li>Hibernate-validator 4.0.0.GA (Bean validation reference implementation)</li>
+			<li>jboss-ejb3 3.1.0 (EJB 3.1 implementation)</li>
+		</ul>
+		
+		<h2>Environment</h2>
+		<ul>
+			<li>deployed on Google App Engine</li>
+			<li>Data storage: Google Big Table</li>
+		</ul>
+		
+	</ui:define>
+</ui:composition>
