@@ -53,7 +53,7 @@
 
 	<!-- Default page to serve -->
 	<welcome-file-list>
-		<welcome-file>helloWorld.jsf</welcome-file>
+		<welcome-file>home.jsf</welcome-file>
 	</welcome-file-list>
 
 </web-app>
