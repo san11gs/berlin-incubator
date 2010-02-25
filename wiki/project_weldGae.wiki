@@ -46,3 +46,15 @@ http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
 == Deployment ==
 
  The project is deployed on Google App Engine cloud: http://weld-gae.appspot.com
+
+= Restrictions =
+== Java ==
+ * Whitelist
+
+== JPA ==
+ * JPA1.0 implementation is used
+ * Google restrictions --> link
+
+== EJB ==
+ --> not avaiable --> double check
+ 
