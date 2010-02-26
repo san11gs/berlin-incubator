@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>Login (admin|admin)</h1>
+		<h:messages />
+		<h:form>
+			<h:panelGrid columns="2" rendered="#{!loginController.loggedIn}">
+				<h:outputLabel for="username">Username:</h:outputLabel>
+				<h:inputText id="username" value="#{credentials.username}" />
+				<h:outputLabel for="password">Password:</h:outputLabel>
+				<h:inputSecret id="password" value="#{credentials.password}" />
+			</h:panelGrid>
+			<h:commandButton value="Login" action="#{loginController.login}"
+				rendered="#{!loginController.loggedIn}" />
+			<h:commandButton value="Logout" action="#{loginController.logout}"
+				rendered="#{loginController.loggedIn}" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>
