@@ -3,6 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/weld-servlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/weld-servlet.jar" sourcepath="C:/01-Development/Projekte/incubator-gae/.m2/repository/org/jboss/weld/servlet/weld-servlet/1.0.1-Final/weld-servlet-1.0.1-Final-sources.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jsf-api.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
