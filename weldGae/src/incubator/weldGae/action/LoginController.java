@@ -28,17 +28,17 @@ public class LoginController implements Serializable {
 	@Inject
 	private Credentials credentials;
 
-//	@Inject
-//	private FacesMessageHandler facesMessage;
+	@Inject
+	private FacesMessageHandler facesMessage;
 
 	private User user;
 
 	@SuppressWarnings("unchecked")
 	public void login() {
-System.out.println("--- login");
-		
+		System.out.println("--- login user" + credentials.getUsername());
+
 		// TODO
-//		facesMessage.add("TODO login user, ");
+		facesMessage.add("TODO login user, ");
 
 		// List<User> results = em
 		// .createQuery(
