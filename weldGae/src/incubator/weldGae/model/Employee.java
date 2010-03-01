@@ -1,5 +1,6 @@
 package incubator.weldGae.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ import com.google.appengine.api.datastore.Key;
  * @date 09.02.2010
  */
 @Entity
-public class Employee {
+public class Employee implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Key key;

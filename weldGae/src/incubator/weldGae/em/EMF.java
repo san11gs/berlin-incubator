@@ -1,10 +1,13 @@
 package incubator.weldGae.em;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- * Factory class for accessing EntityManager.
+ * Factory class for accessing EntityManager. Static hook required for user with
+ * GAE. Use EMD this way: <br/>
+ * <code>private EntityManager em = EMF.get().createEntityManager();</code/
  * 
  * @author m.schuetz
  * @date 09.02.2010

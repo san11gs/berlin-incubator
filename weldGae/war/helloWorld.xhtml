@@ -1,35 +1,30 @@
-<?xml version="1.0" encoding="iso-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<f:view xmlns="http://www.w3.org/1999/xhtml"
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" contentType="text/html">
-	<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	</head>
-	<body>
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
 
-	<h1>#{helloWorldController.message}</h1>
+		<h1>#{helloWorldController.message}</h1>
 
-	<hr />
-	<br />
-	<h:dataTable var="_employee" value="#{employees}">
-		<h:column>
-			<f:facet name="header">First name</f:facet>
+		<hr />
+		<br />
+		<h:dataTable var="_employee" value="#{employees}">
+			<h:column>
+				<f:facet name="header">First name</f:facet>
             #{_employee.firstName}
          </h:column>
-		<h:column>
-			<f:facet name="header">Last name</f:facet>
+			<h:column>
+				<f:facet name="header">Last name</f:facet>
             #{_employee.lastName}
          </h:column>
-	</h:dataTable>
+		</h:dataTable>
 
-	<h:form>
-		<h:commandButton value="Create Employee"
-			action="#{employeeController.createEmployee}" />
-	</h:form>
+		<h:form>
+			<h:commandButton value="Create Employee"
+				action="#{employeeController.createEmployee}" />
+		</h:form>
 
-	</body>
-	</html>
-</f:view>
+	</ui:define>
+</ui:composition>
