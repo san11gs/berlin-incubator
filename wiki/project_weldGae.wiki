@@ -54,6 +54,7 @@ http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
 == JPA ==
  * JPA1.0 implementation is used
  * Google restrictions --> link
+ * java.lang.UnsupportedOperationException: No support for uniqueness constraints
 
 == EJB ==
  --> not avaiable --> double check
