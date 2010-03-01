@@ -1,7 +1,10 @@
 package incubator.weldGae.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
@@ -12,7 +15,7 @@ import javax.persistence.Transient;
  * @date 14.01.2010
  */
 @Entity
-public class User {
+public class User implements Serializable {
 	private Long id;
 	private String username;
 	private String name;
@@ -29,7 +32,7 @@ public class User {
 	}
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}

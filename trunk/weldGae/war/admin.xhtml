@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h1>Administration</h1>
+		<h:messages />
+		
+		<h:dataTable var="_user" value="#{users}">
+		<h:column>
+			<f:facet name="header">username</f:facet>
+            #{_user.username}
+         </h:column>
+	</h:dataTable>
+		
+		<h:form>
+			<h:commandButton value="Create admin user"
+				action="#{adminController.createAdminUser}" />
+		</h:form>
+		
+		<br /><br/>
+		<a href="https://appengine.google.com" target="_blank">https://appengine.google.com</a>
+
+	</ui:define>
+</ui:composition>
