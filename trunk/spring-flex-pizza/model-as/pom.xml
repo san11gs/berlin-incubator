@@ -113,7 +113,7 @@
 						</goals>
 						<configuration>
 							<includeJavaClasses>
-								<includeJavaClass>incubator.spring_flex.dto.*</includeJavaClass>
+								<includeJavaClass>incubator.spring_flex.domain.*</includeJavaClass>
 							</includeJavaClasses>
                             <beanTemplate>
                                 <template>${basedir}/src/main/template/beanBase.gsp</template>
