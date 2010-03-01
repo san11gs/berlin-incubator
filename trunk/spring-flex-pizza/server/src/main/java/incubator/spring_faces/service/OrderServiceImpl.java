@@ -1,7 +1,7 @@
 package incubator.spring_faces.service;
 
 import incubator.spring_faces.manager.OrderManager;
-import incubator.spring_flex.dto.Order;
+import incubator.spring_flex.domain.Order;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.flex.remoting.RemotingDestination;

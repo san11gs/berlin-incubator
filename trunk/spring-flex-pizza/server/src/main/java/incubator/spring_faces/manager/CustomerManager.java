@@ -1,6 +1,6 @@
 package incubator.spring_faces.manager;
 
-import incubator.spring_flex.dto.Customer;
+import incubator.spring_flex.domain.Customer;
 
 import java.util.ArrayList;
 import java.util.HashMap;

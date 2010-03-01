@@ -1,6 +1,6 @@
 package incubator.spring_faces.service;
 
-import incubator.spring_flex.dto.Pizza;
+import incubator.spring_flex.domain.Pizza;
 
 import java.util.List;
 

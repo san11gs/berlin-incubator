@@ -1,4 +1,4 @@
-package incubator.spring_flex.dto;
+package incubator.spring_flex.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

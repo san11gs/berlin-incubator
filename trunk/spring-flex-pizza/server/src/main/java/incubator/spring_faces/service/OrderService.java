@@ -1,6 +1,6 @@
 package incubator.spring_faces.service;
 
-import incubator.spring_flex.dto.Order;
+import incubator.spring_flex.domain.Order;
 
 /**
  * Business interface of the order services.

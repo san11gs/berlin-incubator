@@ -2,7 +2,7 @@ package incubator.spring_faces.manager;
 
 import org.springframework.stereotype.Component;
 
-import incubator.spring_flex.dto.Order;
+import incubator.spring_flex.domain.Order;
 
 
 /**
