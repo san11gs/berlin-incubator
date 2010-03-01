@@ -17,7 +17,7 @@
 			import incubator.spring_flex.events.PageChangeEvent;
 			import mx.rpc.events.FaultEvent;
 			import mx.controls.Alert;
-			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.domain.Customer;
 			import mx.rpc.events.ResultEvent;
 			
 			public var phoneNumber:String = "";

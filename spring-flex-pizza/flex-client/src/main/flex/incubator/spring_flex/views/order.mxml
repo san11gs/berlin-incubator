@@ -8,9 +8,9 @@
 
 	<mx:Script>
 		<![CDATA[
-			import incubator.spring_flex.dto.OrderedPizza;
-			import incubator.spring_flex.dto.OrderedPizzaBase;
-			import incubator.spring_flex.dto.Pizza;
+			import incubator.spring_flex.domain.OrderedPizza;
+			import incubator.spring_flex.domain.OrderedPizzaBase;
+			import incubator.spring_flex.domain.Pizza;
 			import incubator.spring_flex.events.PageChangeEvent;
 			import incubator.spring_flex.components.InfoPopup;
 			import mx.rpc.events.ResultEvent;
@@ -18,8 +18,8 @@
 			import mx.managers.PopUpManager;
 			import mx.rpc.events.FaultEvent;
 			import mx.collections.ArrayCollection;
-			import incubator.spring_flex.dto.Customer;
-			import incubator.spring_flex.dto.Order;
+			import incubator.spring_flex.domain.Customer;
+			import incubator.spring_flex.domain.Order;
 			
 			[Bindable]
 			public var customer:Customer;

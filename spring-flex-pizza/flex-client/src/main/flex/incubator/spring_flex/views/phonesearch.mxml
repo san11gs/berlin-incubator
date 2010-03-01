@@ -12,7 +12,7 @@
 			import incubator.spring_flex.events.PageChangeEvent;
 			import incubator.spring_flex.components.InfoPopup;
 			import mx.managers.PopUpManager;
-			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.domain.Customer;
 			import mx.controls.Alert;
 			import mx.rpc.events.FaultEvent;
 			import mx.rpc.events.ResultEvent;

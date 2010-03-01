@@ -1,7 +1,7 @@
 package incubator.spring_faces.service;
 
 import incubator.spring_faces.manager.CustomerManager;
-import incubator.spring_flex.dto.Customer;
+import incubator.spring_flex.domain.Customer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.flex.remoting.RemotingDestination;

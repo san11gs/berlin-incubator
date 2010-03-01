@@ -19,8 +19,8 @@
 			import mx.managers.PopUpManager;
 			import incubator.spring_flex.components.Login;
 			import incubator.spring_flex.events.CustomerEvent;
-			import incubator.spring_flex.dto.Order;
-			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.domain.Order;
+			import incubator.spring_flex.domain.Customer;
 			import mx.controls.Alert;
 			import incubator.spring_flex.events.PageChangeEvent;
 

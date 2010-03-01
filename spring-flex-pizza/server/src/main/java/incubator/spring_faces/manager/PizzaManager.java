@@ -1,6 +1,6 @@
 package incubator.spring_faces.manager;
 
-import incubator.spring_flex.dto.Pizza;
+import incubator.spring_flex.domain.Pizza;
 
 import java.util.ArrayList;
 import java.util.HashMap;

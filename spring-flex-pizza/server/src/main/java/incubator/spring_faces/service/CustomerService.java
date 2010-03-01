@@ -1,6 +1,6 @@
 package incubator.spring_faces.service;
 
-import incubator.spring_flex.dto.Customer;
+import incubator.spring_flex.domain.Customer;
 
 /**
  * Business interface of the customer services.

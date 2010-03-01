@@ -5,10 +5,10 @@
  * your custom code here.
  */
 
-package incubator.spring_flex.dto {
+package incubator.spring_flex.domain {
 
     [Bindable]
-    [RemoteClass(alias="incubator.spring_flex.dto.Customer")]
-    public class Customer extends CustomerBase {
+    [RemoteClass(alias="incubator.spring_flex.domain.Topping")]
+    public class Topping extends ToppingBase {
     }
 }

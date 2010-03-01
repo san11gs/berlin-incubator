@@ -1,7 +1,7 @@
 package incubator.spring_faces.service;
 
 import incubator.spring_faces.manager.PizzaManager;
-import incubator.spring_flex.dto.Pizza;
+import incubator.spring_flex.domain.Pizza;
 
 import java.util.List;
 
