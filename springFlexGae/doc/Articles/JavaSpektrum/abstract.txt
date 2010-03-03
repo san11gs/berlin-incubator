@@ -1,0 +1,29 @@
+"Neue Welten - Spring 3 mit Flex in der Cloud"
+
+
+Ziel des Artikels ist es, einen sinnvollen praktischen Bezug für die Verwendung des Cloud-Computing's aufzuzeigen. Dabei soll eine Anwendung demonstriert werden, 
+die auf Spring in der aktuellsten Version basiert und mit einem RIA-Flex-GUI wahlweise in einem Browser mittels Flahsplayer oder als Desktop-AIR-Umgebung lauffähig ist. 
+Gerade das Zusammenspiel der Technologien soll als Großes Ganzes vermittelt werden. Daher spielen auch Themen wie das saubere Build-Management mit Maven oder die 
+Anbindung von JPA an Google BigTable eine starke Rolle.
+
+######
+Spring
+
+
+#######
+Flex
+- Anbindung
+
+#########
+Cloud
+- Google App Engine
+- Persistenz mit JPA
+- Mapping über DataNucleus
+- Datastore Bigtable (NoSQL)
+
+Es gibt weitere Ideen, wie zB. die Entwicklung eines Spring-Maven-Archetypen als Arbeitsergebnis.
+
+
+Mit freundlichen Grüßen
+Michael Schütz (akquinet engineering GmbH)
+Marek Iwaszkiewicz (adesso AG)
