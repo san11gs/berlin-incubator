@@ -2,9 +2,9 @@
 Marek Iwaszkiewicz (adesso AG)
 
 
-
 ################################
 
 
-Michael Schütz (akquinet AG)
-Michael Schütz ist Software Engineer bei der akquinet AG in Berlin und beschäftigt sich seit Jahren mit Java EE ...
+Michael Schütz
+Michael Schütz ist Software Engineer bei der akquinet tech@spree GmbH  in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
+Moderatot der größten deutschsprachigen Plattforum zum Thema Seam auf Xing.
