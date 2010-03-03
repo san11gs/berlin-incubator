@@ -6,6 +6,9 @@ die auf Spring in der aktuellsten Version basiert und mit einem RIA-Flex-GUI wah
 Gerade das Zusammenspiel der Technologien soll als Großes Ganzes vermittelt werden. Daher spielen auch Themen wie das saubere Build-Management mit Maven oder die 
 Anbindung von JPA an Google BigTable eine starke Rolle.
 
+#####
+Technologie-Landschaft
+
 ######
 Spring
 
@@ -21,6 +24,7 @@ Cloud
 - Mapping über DataNucleus
 - Datastore Bigtable (NoSQL)
 
+################
 Es gibt weitere Ideen, wie zB. die Entwicklung eines Spring-Maven-Archetypen als Arbeitsergebnis.
 
 
