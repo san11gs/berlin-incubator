@@ -1,0 +1,45 @@
+Title: CDI Implementations Frontier: Goals, Milestones and Perspectives
+Type: Birds-of-a-Feather
+
+Abstract:
+The Context and Dependency Injection for Java EE (CDI) API is a key part
+of Java EE 6. It provides robust context management, conversations,
+type-safe next-generation generic dependency injection, stereotypes,
+interceptors, decorators, events and a comprehensive SPI intended for
+portable extensions. CDI already has a lot of industry traction with
+three independent open source implementations – Resin’s CanDI, Apache’s
+OpenWebBeans and JBoss’ Weld/Seam 3.
+
+This session is your opportunity to get the perspectives of the folks
+working on these implementations. We will talk about each project's
+goals, approach, features, status, milestones, road map, modular
+portable extensions and perspectives on the future directions for CDI.
+Please do feel free to bring your questions, concerns and ideas!
+
+Summary:
+As a key part of Java EE 6, CDI already has three early open source
+implementations. This includes the JBoss reference implementation Weld
+(as well as the Seam 3 CDI modules), Caucho's CanDI included in the
+Resin application server as well as Apache's OpenWebBeans. This informal
+session is a chance for attendees to get an overview of these projects
+and interact closely with the folks working on them.
+
+The session will loosely follow the outline below:
+
+* An overview of CDI
+* Overview and details of each CDI project including:
+  - Goals, implementation approach, features beyond the CDI
+specification, current status, milestones achieved, road-map and community
+  - Closely related projects such as JBoss Seam 3, JBoss Arquillian,
+Embedded JBoss, Apache OpenEJB and Resin
+  - CDI portable extensions being developed with each implementation
+such as support for XML configuration, localization,
+internationalization, security, Spring, GWT, Quartz, Struts 2, Wicket,
+iBATIS, JUnit, Drools and Apache projects.
+* Views on future directions for CDI.
+* Open-ended Q & A with attendees.
+
+This session is intended for Java server side developers, architects and
+managers. A moderate understanding of dependency injection and Java EE
+is assumed.
+============
