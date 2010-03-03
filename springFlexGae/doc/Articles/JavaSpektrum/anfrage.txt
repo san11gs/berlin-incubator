@@ -1,0 +1,30 @@
+#########################################################################################
+JavaSPEKTRUM 16.02.:
+
+
+javaspektrum@sigs-datacom.de
+Artikelvorschlag JavaSPEKTRUM: Neue Welten - Spring 3 mit Flex/Air in der Cloud
+
+Sehr geehrte Damen und Herren,
+
+ich möchte Ihnen gern einen Artikel für die kommende Ausgabe des JavaSPEKTRUM's vorschlagen zum Thema Cloud-Computing. Leider habe ich ihren Autoren-Aufruf (http://www.sigs-datacom.de/fachzeitschriften/javaspektrum/hinweise-fuer-autoren/aufruf-zu-beitraegen.html) erst jetzt gelesen. Ich weiß, dass die Frist vom 12.02.2010 schon verstrichen ist. Ich bin allerdings überzeugt, dass der vorgeschlagene Artikel sehr gut in das Thema passen würde. Ich möchte Ihnen dieses daher kurz vorstellen:
+
+"Neue Welten - Spring 3 mit Flex/Air in der Cloud"
+Ziel des Artikels ist es, einen sinnvollen praktischen Bezug für die Verwendung des Cloud-Computing's aufzuzeigen. Dabei soll eine Anwendung demonstriert werden, die auf Spring in der aktuellsten Version basiert und mit einem RIA-Flex-GUI wahlweise in einem Browser mittels Flahsplayer oder als Desktop-AIR-Umgebung lauffähig ist. Gerade das Zusammenspiel der Technologien soll als Großes Ganzes vermittelt werden. Daher spielen auch Themen wie das saubere Build-Management mit Maven oder die Anbindung von JPA an Google BigTable eine starke Rolle.
+
+Es gibt weitere Ideen, wie zB. die Entwicklung eines Spring-Maven-Archetypen als Arbeitsergebnis.
+
+Ich würde den Artikel zusammen mit meinem Kollen Marek Iwaszkiewicz verfassen. Wir beiden besitzen umfangreiche und langjährige professionelle Erfahrung auf dem Gebiet der Java EE Entwicklung.
+
+Haben Sie Interesse an dem Artikel? Falls ja, würden wir uns sehr freuen und Ihnen bis diesen Freitag, 19.02.2010, folgenden Informationen nachreichen:
+- Ausführliche Thesis und Projekt-Beschreibung
+- ausführliche Kontaktinformationen und Vorstellung der Autoren (inklusive Foto)
+
+Da wir uns auch privat intensiv mit den Technologien beschäftigen, ist für uns der 12.03.2010 als Abgabe-Termin trotzdem der wenigen verbleibenden Restzeit kein Problem. Vorschläge und Feedback jeder Art sind sehr willkommen.
+
+Wir freuen uns auf Ihre Antwort
+
+
+Mit freundlichen Grüßen
+Michael Schütz (akquinet engineering GmbH)
+Marek Iwaszkiewicz (adesso AG)
