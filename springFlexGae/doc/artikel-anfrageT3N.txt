@@ -1,0 +1,35 @@
+Refcardz
+----------------------------
+http://refcardz.dzone.com/faq/can-i-author-refcard
+New Horizons - Spring 3 with Flex/Air on GAE Cloud
+
+Dear Sir or Madam,
+
+New Horizons - Spring 3 with Flex/Air on GAE Cloud
+
+Doesnt' sound new to you? The new thing is to provide an all-in-one overview with following targets:
+* very practical and straight forward 
+* Covers Maven, BlazeDS, Flex, Air, Google App Engine, JPA on GAE, PermissionHandling.
+* Tunraround of the hole eco-system
+
+What we want to do is to provide a ready-to-go solution for interested developers. A result of the refcard might be a Spring-maven-archetype.
+
+I would like to write this refcard together with my colleague Marek Iwaszkiewicz. 
+We both are equipped with huge experience in the field of Java Enterprise. 
+
+I personally host the largest german-speaking Seam-platform - Yes, it's german.
+
+What I can provide is the place where I store my demonstration applications with state of the art technology. Hope you get a feeling than for the quality we provide.
+
+
+Are you interested?
+
+
+Kind regards
+Michael Schütz (akquinet engineering GmbH)
+Marek Iwaszkiewicz (adesso AG)
+
+
+
+
+
