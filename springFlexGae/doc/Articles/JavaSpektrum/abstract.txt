@@ -16,6 +16,8 @@ und zu riskant. Dennoch brauch die Firma eine felxible und skalierbare IT-Infras
 In der Regel ist die Serverauslastung eher durchschnittlich, nachdem Werbung im Fernsehen geschaltet wurde hat man kurzfristig große Peeks. Da in diesen aber besonders viele Neukunden 
 generiert werden, müssen die unbedingt bedient werden können. 
 
+ 
+
 Stellen Sie sich vor, sie 
 ################
 junges aufstrebendes unternehmen
