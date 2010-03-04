@@ -13,7 +13,8 @@ Das aufstrebende und sich entwcikelnde Start-Up Unternehmen "NAME_XX" bietet Pro
 angelegt MArkerintgn-Kampagner mit TV-Werbun geschaltet. Doch, bereits nach kürzester Zeit verpufft der Effekt, da der Server völlig überlastet zusammenbricht. MAn hat Geld verbrannt. 
 - sol  nicht wieder passieren. - da der kunde sehr agil ist,weiß er nicht was in einem jahr ist und will schnellst möglich umsatz generieren. Ausbau der IT-Infrastruktur ist noch verfrüht 
 und zu riskant. Dennoch brauch die Firma eine felxible und skalierbare IT-Infrastruktur. 
-In der Regel ist die Serverauslastung eher durchschnittlich, nachdem Werbung im Fernsehen geschaltet wurde hat man kurzfristig große Peeks. 
+In der Regel ist die Serverauslastung eher durchschnittlich, nachdem Werbung im Fernsehen geschaltet wurde hat man kurzfristig große Peeks. Da in diesen aber besonders viele Neukunden 
+generiert werden, müssen die unbedingt bedient werden können. 
 
 Stellen Sie sich vor, sie 
 ################
