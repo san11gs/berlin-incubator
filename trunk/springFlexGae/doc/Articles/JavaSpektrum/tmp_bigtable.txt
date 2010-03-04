@@ -22,7 +22,7 @@ r1.Delete("anchor:www.abc.com");
 Operation op;
 Apply(&op, &r1)
 
-Zur Kapselung dieses Zugriffs verwendet Google DataNucleus, eine JDO und JPA-Implementierung.
+Zur Kapselung dieses Zugriffs verwendet GoogleAppEngine DataNucleus, eine JDO und JPA-Implementierung.
 
 Wie sind Eure Meinungen und Erfahrungen zu diesem Thema?
 
