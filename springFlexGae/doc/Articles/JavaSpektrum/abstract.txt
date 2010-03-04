@@ -6,9 +6,21 @@ die auf Spring in der aktuellsten Version basiert und mit einem RIA-Flex-GUI wah
 Gerade das Zusammenspiel der Technologien soll als Großes Ganzes vermittelt werden. Daher spielen auch Themen wie das saubere Build-Management mit Maven oder die 
 Anbindung von JPA an Google BigTable eine starke Rolle.
 
-ausgangslage:
+Beispiel ahand konkrete Kundeproblem
+
+Ausgangssituation:
+Das aufstrebende und sich entwcikelnde Start-Up Unternehmen "NAME_XX" bietet Profukt XX an. sehr erflgreich --> erste investtoern um wachsen zu können. Daraufhin wird ein groß
+angelegt MArkerintgn-Kampagner mit TV-Werbun geschaltet. Doch, bereits nach kürzester Zeit verpufft der Effekt, da der Server völlig überlastet zusammenbricht. MAn hat Geld verbrannt. 
+- sol  nicht wieder passieren. - da der kunde sehr agil ist,weiß er nicht was in einem jahr ist und will schnellst möglich umsatz generieren.
+
+Stellen Sie sich vor, sie 
 ################
-kunde 
+junges aufstrebendes unternehmen
+
+kunde
+- will
+
+- bietet
 
 
 
