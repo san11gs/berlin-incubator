@@ -1,111 +1,66 @@
 "Neue Welten - Java Enterprise mit Spring in der Cloud"
-oder
-"Neue Welten - Spring und Flex in der Cloud" (im Fall von zwei Artikeln)
+
+Ausgangssituation:
+Das aufstrebende und sich entwickelnde Start-Up Unternehmen "SIM4u" bietet Produkt""your-Sim an". Nach den ersten Erfolgen steigen die ersten Investoren in das 
+Unternehmen ein. Durch den neuen Kapitalzufluss ist es nun zum ersten Mal m?glich, eine gr??ere Marketing-Kampagne mit TV-Werbung zu schalten. Zur Freude der 
+Unternehmer kommt der ausgestrahlte Werbespot sehr gut an - das Interesse ist augenblicklich da. Doch bereits nach k?rzester Zeit ist der Server v?llig ?berlastet 
+und bricht zusammen - der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden abgeschreckt. So etwas darf nicht noch einmal passieren. In 
+der Regel ist die Serverauslastung eher durchschnittlich, nach dem Schalten von Werbungen in den Medien sind jedoch immer kurzfristig gro?e Peeks zu erwarten. Und 
+da in diesen aber besonders viele Neukunden 
+generiert werden, müssen die unbedingt bedient werden können. Jedoch ist das Unternehmen noch sehr jung - eine l?ngerfristige Planung ist noch nicht m?glich. Der 
+Ausbau der IT-Infrastruktur ist noch verfr?ht und daher zu riskant. Dennoch braucht die Firma eine felxible und skalierbare IT-Infrastruktur und entscheidet sich 
+daher, ihre bereits bestehende auf Java und Flex basierende Web-Anwendung in der Cloud laufen zu lassen. 
 
 
-Ziel unseres Beitrags ist es, einen praktischen Bezug für die Verwendung des 
-Cloud-Computing's aufzuzeigen und zudem einen Brückenschlag zu Java EE zu schaffen. 
-Es soll eine Anwendung demonstriert werden, die auf Spring in der aktuellsten 
-Version basiert und mit einem Flex-Client ein interaktive und anspruchsvolles 
-RIA-GUI implementiert, welches wahlweise in einem Browser mittels Flahsplayer 
-oder als AIR-Umgebung auf dem Desktop lauffähig ist. 
+Zielstellung:
+Ziel des Beitrages ist, einen praktischen Bezug für die Verwendung des 
+Cloud-Computing's in einem Java EE Umfeld aufzuzeigen. Es soll eine Anwendung demonstriert werden, die auf Spring 
+in der aktuellsten Version basiert und mit einem Flex-Client eine interaktive und anspruchsvolles 
+RIA-GUI implementiert. 
 
-Gerade das Zusammenspiel der Technologien soll als großes Ganzes vermittelt werden. 
+Gerade das Zusammenspiel der Technologien soll als gro?es Ganzes vermittelt werden. 
 Daher spielen auch Themen wie das saubere Build-Management mit Maven sowie die 
 Anbindung von JPA an Google BigTable eine starke Rolle. Dem Leser soll am Ende 
-ein Vorlage für das Erstellen ähnlicher Anwendungen mit auf den Weg gegeben werden.
+ein Vorlage f?r das Erstellen ?hnlicher Anwendungen mit auf den Weg gegeben werden.
 
-Um mit der großen Masse an eingesetzten Technologien den Leser nicht zu erschlagen, 
-möchten wir die Fallstudie auf zwei verschiedene Artikel verteilen, in 
+Um mit der gro?en Masse an eingesetzten Technologien den Leser nicht zu erschlagen, 
+m?chten wir die Fallstudie  auf zwei verschiedene Artikel verteilen.
+, Im ersten Teil fokussieren wir uns auf in 
 welchen wir zuerst den Fokus auf die Integration einer Java EE Anwendung in die 
 GAE beleuchten. Hier gehen wir kurz auf den Paradigmenkonflikt zwischen Google's 
 BigTable und dem relationalen Datenbankmodell ein. Wir zeigen, wie man die JPA in 
-der GAE nutzen kann - jedoch auch welche Einschränkungen man in Kauf nehmen muss.
+der GAE nutzen kann - jedoch auch welche Einschr?nkungen man in Kauf nehmen muss.
 Zum Abschluss zeigen wir auf, wie man die diskutierten Themen in einem sauberen 
-Build-Management mit Maven umsetzt. Hier zeigen wir die für unsere Zwecke relevanten 
+Build-Management mit Maven umsetzt. Hier zeigen wir die f?r unsere Zwecke relevanten 
 Maven-Plugins inklusive der notwendigen Konfigurationsbeschreibung.
 
 Im zweiten Teil betrachten wir den Frontend-Teil der Beispielanwendung. Es 
-soll die teilweise modellgetriebene Entwicklung eines Flex-Clients vorgestellt werden. 
+soll die teilweise modellgetriebene Entwicklung  eines Flex-Clients vorgestellt werden. 
 Der modellgetriebene Teil betrifft die Generierung der ActionScript-Klassen aus den 
-Java-Domain-Klassen während des Build-Prozesses. Die generierten ActionScript-Klassen 
-werden anschließend in eine Flex-Komponentendatei kompiliert und in einem 
-Flex-Client-Projekt eingebunden und genutzt. Anschließend widmen wir uns der Kommunikation 
+Java-Domain-Klassen w?hrend des Build-Prozesses. Die generierten ActionScript-Klassen 
+werden anschlie?end in eine Flex-Komponentendatei kompiliert und in einem 
+Flex-Client-Projekt eingebunden und genutzt.  Anschlie?end widmen wir uns der Kommunikation 
 des Flex-Clients mit dem Server indem wir einige Worte zu BlazeDS verlieren. 
 Auch hier setzen wir ein starkes Augenmerk auf ein sauberes Build-Management mit Maven.
-Bisher unerwähnt, jedoch allgegenwärtig, ist der Einsatz von Spring. Wir nutzen Spring 
+Bisher unerw?hnt, jedoch allgegenw?rtig, ist der Einsatz von Spring. Wir nutzen Spring 
 als leichtgewichtiges Framework als Fundament unserer Architektur. So erfolgt die 
-Integration von BlazeDS zum Beispiel über Spring. Weiterhin enthält die Beispielanwendung 
+Integration von BlazeDS zum Beispiel ?ber Spring. Weiterhin enth?lt die Beispielanwendung 
 sicherheitskritische Aspekte, welche ebenfalls mit Spring Security umgesetzt werden.
 
-Den Rahmen und praktischen Bezug stellt die nachfolgend beschriebene, aus der Realität 
-stammende Ausgangssituation eines Star-Up-Unternehmens dar. 
+Den Rahmen und praktischen Bezug stellt die nachfolgend beschriebene, aus der Realit?t 
+stammende Ausgangssituation eines Start-Up-Unternehmens dar. 
 
-Ausgangssituation:
-Das aufstrebende und sich entwickelnde Start-Up Unternehmen "ABC" bietet Produkt XYZ an. Nach den 
-ersten Erfolgen steigen die ersten Investoren in das Unternehmen ein. Durch den neuen Kapitalzufluss
-ist es nun zum ersten Mal möglich, eine größere Marketing-Kampagne mit TV-Werbung zu schalten. Zur 
-Freude der Unternehmer kommt der ausgestrahlte Werbespot sehr gut an - das Interesse ist augenblicklich 
-da. Doch bereits nach kürzester Zeit ist der Server völlig überlastet und bricht zusammen - der erhoffte 
-Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden abgeschreckt. So etwas darf nicht 
-noch einmal passieren. 
-In der Regel ist die Serverauslastung eher durchschnittlich, nach dem Schalten von Werbungen in den Medien 
-sind jedoch immer kurzfristig große Peeks zu erwarten. Und da in diesen aber besonders viele Neukunden 
-generiert werden, müssen die unbedingt bedient werden können. Jedoch ist das Unternehmen noch sehr 
-jung - eine längerfristige Planung ist noch nicht möglich. Der Ausbau der IT-Infrastruktur ist noch 
-verfrüht und daher zu riskant. Dennoch braucht die Firma eine felxible und skalierbare IT-Infrastruktur 
-und entscheidet sich daher, ihre bereits bestehende auf Java und Flex basierende Web-Anwendung in der 
-Cloud laufen zu lassen. 
-
-Gründe des Kunden für die Cloud:
+ 
+Gr?nde des Kunden f?r die Cloud:
 	- Skalierbarkeit
-	- Flexibilität (Kapazitäten einfach über Admin-Oberfläche konfigurierbar)
+	- Flexibilit?t (Kapazit?ten einfach ?ber Admin-Oberfl?che konfigurierbar)
 	- Kosten (keine Waruntungs- und Personalkosten)
-	
+ 	
 
-Stellen Sie sich vor, sie 
-################
-junges aufstrebendes unternehmen
-
-kunde
-- will
-
-- bietet
-
-
-
-4 ebene
-- überblick
-- build mit maven
-- persistence
-- gui mit flex
-
-zieL:
-java ee auf gae
-
-
-#####
-Technologie-Landschaft
-
-######
-Spring
-
-
-#######
-Flex
-- Anbindung
-
-#########
-Cloud
-- Google App Engine
-- Persistenz mit JPA
-- Mapping über DataNucleus
-- Datastore Bigtable (NoSQL)
-
-################
-Es gibt weitere Ideen, wie zB. die Entwicklung eines Spring-Maven-Archetypen als Arbeitsergebnis.
-
-
-Mit freundlichen Grüßen
-Michael Schütz (akquinet engineering GmbH)
-Marek Iwaszkiewicz (adesso AG)
+1.	Teil – Backend: Integration von JEE und Google App Engine
+a.	Spring als Framework (Spring Security)	
+b.	Build: Management mit Maven
+b.	Persistenz: 
+i.	JPA
+ii.	Datastore Bigtable (NoSQL)
+iii.	Anbindung von JPA an Google BigTable
