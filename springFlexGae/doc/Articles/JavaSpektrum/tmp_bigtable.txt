@@ -1,4 +1,3 @@
-Bigtable: Blick in die NoSQL-Bewegung
 Hallo zusammen,
 
 NoSQL, also "not only SQL", vereint die Familie der nicht relationalen Datenbanken.
@@ -22,7 +21,7 @@ r1.Delete("anchor:www.abc.com");
 Operation op;
 Apply(&op, &r1)
 
-Zur Kapselung dieses Zugriffs verwendet GoogleAppEngine DataNucleus, eine JDO und JPA-Implementierung.
+Zur Kapselung von Zugriffen dieser Art unterstützt Google App Engine beispielsweise die Anbindung von JDO und JPA, dank der entsprechenden Implementierungen von DataNucleus.
 
 Wie sind Eure Meinungen und Erfahrungen zu diesem Thema?
 
@@ -38,4 +37,4 @@ Your Ultimate Guide to the non - Relational Universe!
 http://nosql-databases.org/
 
 viele Grüße
-Michael 
+Michael
