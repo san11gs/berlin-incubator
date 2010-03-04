@@ -3,12 +3,11 @@
 Ausgangssituation:
 Das aufstrebende und sich entwickelnde Start-Up Unternehmen "SIM4u" bietet Produkt""your-Sim an". Nach den ersten Erfolgen steigen die ersten Investoren in das 
 Unternehmen ein. Durch den neuen Kapitalzufluss ist es nun zum ersten Mal m?glich, eine gr??ere Marketing-Kampagne mit TV-Werbung zu schalten. Zur Freude der 
-Unternehmer kommt der ausgestrahlte Werbespot sehr gut an - das Interesse ist augenblicklich da. Doch bereits nach k?rzester Zeit ist der Server v?llig ?berlastet 
+Unternehmer kommt der ausgestrahlte Werbespot sehr gut an - das Interesse ist augenblicklich da. Doch bereits nach kürzester Zeit ist der Server völlig überlastet 
 und bricht zusammen - der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden abgeschreckt. So etwas darf nicht noch einmal passieren. In 
-der Regel ist die Serverauslastung eher durchschnittlich, nach dem Schalten von Werbungen in den Medien sind jedoch immer kurzfristig gro?e Peeks zu erwarten. Und 
-da in diesen aber besonders viele Neukunden 
-generiert werden, müssen die unbedingt bedient werden können. Jedoch ist das Unternehmen noch sehr jung - eine l?ngerfristige Planung ist noch nicht m?glich. Der 
-Ausbau der IT-Infrastruktur ist noch verfr?ht und daher zu riskant. Dennoch braucht die Firma eine felxible und skalierbare IT-Infrastruktur und entscheidet sich 
+der Regel ist die Serverauslastung eher durchschnittlich, nach dem Schalten von Werbungen in den Medien sind jedoch immer kurzfristig große Peeks zu erwarten. Und 
+da in diesen aber besonders viele Neukunden generiert werden, müssen die unbedingt bedient werden können. Jedoch ist das Unternehmen noch sehr jung - eine längerfristige Planung ist noch nicht m?glich. Der 
+Ausbau der IT-Infrastruktur ist noch verfrüht und daher zu riskant. Dennoch braucht die Firma eine felxible und skalierbare IT-Infrastruktur und entscheidet sich 
 daher, ihre bereits bestehende auf Java und Flex basierende Web-Anwendung in der Cloud laufen zu lassen. 
 
 
@@ -34,28 +33,15 @@ Zum Abschluss zeigen wir auf, wie man die diskutierten Themen in einem sauberen
 Build-Management mit Maven umsetzt. Hier zeigen wir die f?r unsere Zwecke relevanten 
 Maven-Plugins inklusive der notwendigen Konfigurationsbeschreibung.
 
-Im zweiten Teil betrachten wir den Frontend-Teil der Beispielanwendung. Es 
-soll die teilweise modellgetriebene Entwicklung  eines Flex-Clients vorgestellt werden. 
-Der modellgetriebene Teil betrifft die Generierung der ActionScript-Klassen aus den 
-Java-Domain-Klassen w?hrend des Build-Prozesses. Die generierten ActionScript-Klassen 
-werden anschlie?end in eine Flex-Komponentendatei kompiliert und in einem 
-Flex-Client-Projekt eingebunden und genutzt.  Anschlie?end widmen wir uns der Kommunikation 
-des Flex-Clients mit dem Server indem wir einige Worte zu BlazeDS verlieren. 
-Auch hier setzen wir ein starkes Augenmerk auf ein sauberes Build-Management mit Maven.
-Bisher unerw?hnt, jedoch allgegenw?rtig, ist der Einsatz von Spring. Wir nutzen Spring 
-als leichtgewichtiges Framework als Fundament unserer Architektur. So erfolgt die 
+
+Wir nutzen Spring als leichtgewichtiges Framework als Fundament unserer Architektur. So erfolgt die 
 Integration von BlazeDS zum Beispiel ?ber Spring. Weiterhin enth?lt die Beispielanwendung 
 sicherheitskritische Aspekte, welche ebenfalls mit Spring Security umgesetzt werden.
 
-Den Rahmen und praktischen Bezug stellt die nachfolgend beschriebene, aus der Realit?t 
-stammende Ausgangssituation eines Start-Up-Unternehmens dar. 
+cloud - 
+Gr?nde des Kunden f?r die Cloud werden untersucht.
+skalierbarkeit, pflege und verwaltung
 
- 
-Gr?nde des Kunden f?r die Cloud:
-	- Skalierbarkeit
-	- Flexibilit?t (Kapazit?ten einfach ?ber Admin-Oberfl?che konfigurierbar)
-	- Kosten (keine Waruntungs- und Personalkosten)
- 	
 
 1.	Teil – Backend: Integration von JEE und Google App Engine
 a.	Spring als Framework (Spring Security)	
