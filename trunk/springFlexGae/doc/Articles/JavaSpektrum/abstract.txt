@@ -1,61 +1,17 @@
 "Neue Welten - Java EE in der Cloud"
 
 Ausgangssituation:
-Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up dazu, Investoren aufzunehmen. 
-Die dadurch erlagten größeren finanziellen Mittel ermöglichen nun den Start einer groß aufgelegten Marketing-Kampagne mit TV-Werbung gestartet. Gut ist, 
-dass die Kampagne bei den Kunden sehr gut ankam. Schlecht ist, dass die daraus resultierenden deutlich h�heren Zugriffe den 
-Server bereits nach k�rzester Zeit v�lig lahm gelegt haben. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und 
-potentielle Neukunden abgeschreckt. Das darf nicht noch einmal passieren.
-
-Die Serverauslastung ist in der Regel eher durchschnittlich, nach Schalten von Werbung sind jedoch immer kurzfristig gro�e Peeks zu erwarten. Das Unternehmen ist noch sehr jung 
-und das Gesch�ft ist auf schnellen Erfolg ausgelegt. Der Kunde ben�tigt also eine flexible und skalierbare IT-Infrastruktur mit minimalem initialen finanziellen Aufwand und hat entschieden, die Anwendung in einer Cloud zu hosten. 
-Diesen Auftrag haben wir gewonnen.
-
+Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
+Die dadurch erlagten größeren finanziellen Mittel ermöglichen nun den Start einer Marketing-Kampagne mit TV-Werbung. Bereits die 
+erste Ausstrahlung des Werbe-Spots erreicht ein großes Publikum und führt unmittelbar zu einem extremen jedoch kurzzeitigen Anstieg 
+der Zugriffe auf die Homepage - jedoch leider auch zum Zusammenbruch des Servers. Der erhoffte Effekt der Marketing-Kampagne ist verpufft 
+und potentielle Neukunden sind abgeschreckt. 
+Damit es zu keinem erneuten Zusammenbruch des Servers nach dem nächsten Werbe-Spot kommt, muss schnellstmöglich eine dynamisch skalierbare 
+und dennoch kostengünstige Lösung her.
 
 Abstract:
 Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit möglichst geringem Aufwand auf die GAE migrieren und dabei 
 weiterhin die JPA als Persistenz-Framework nutzen kann. Es wird diskutiert, welche Probleme und Anforderungen sich für die zu 
 migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des Paradigmenkonflikts vom relationalen Datenbankmodell 
 mit Google's BigTable. Mit "DataNucleus" stellen wir schließlich ein Persistenz-Framework vor, welches als Persistenzschicht für die GAE 
-Standards JDO und JPA unterstützt.  
-
-
-
-Ziel des Beitrages ist, einen praktischen Bezug f�r die Verwendung des 
-Cloud-Computing's in einem Java EE Umfeld aufzuzeigen. Es soll eine Anwendung demonstriert werden, die auf Spring 
-in der aktuellsten Version basiert und mit einem Flex-Client eine interaktive und anspruchsvolles 
-RIA-GUI implementiert. 
-
-Gerade das Zusammenspiel der Technologien soll als gro?es Ganzes vermittelt werden. 
-Daher spielen auch Themen wie das saubere Build-Management mit Maven sowie die 
-Anbindung von JPA an Google BigTable eine starke Rolle. Dem Leser soll am Ende 
-ein Vorlage f?r das Erstellen ?hnlicher Anwendungen mit auf den Weg gegeben werden.
-
-Um mit der gro?en Masse an eingesetzten Technologien den Leser nicht zu erschlagen, 
-m?chten wir die Fallstudie  auf zwei verschiedene Artikel verteilen.
-, Im ersten Teil fokussieren wir uns auf in 
-welchen wir zuerst den Fokus auf die Integration einer Java EE Anwendung in die 
-GAE beleuchten. Hier gehen wir kurz auf den Paradigmenkonflikt zwischen Google's 
-BigTable und dem relationalen Datenbankmodell ein. Wir zeigen, wie man die JPA in 
-der GAE nutzen kann - jedoch auch welche Einschr?nkungen man in Kauf nehmen muss.
-Zum Abschluss zeigen wir auf, wie man die diskutierten Themen in einem sauberen 
-Build-Management mit Maven umsetzt. Hier zeigen wir die f?r unsere Zwecke relevanten 
-Maven-Plugins inklusive der notwendigen Konfigurationsbeschreibung.
-
-
-Wir nutzen Spring als leichtgewichtiges Framework als Fundament unserer Architektur. So erfolgt die 
-Integration von BlazeDS zum Beispiel ?ber Spring. Weiterhin enth?lt die Beispielanwendung 
-sicherheitskritische Aspekte, welche ebenfalls mit Spring Security umgesetzt werden.
-
-cloud - 
-Gr?nde des Kunden f?r die Cloud werden untersucht.
-skalierbarkeit, pflege und verwaltung
-
-
-1.	Teil � Backend: Integration von JEE und Google App Engine
-a.	Spring als Framework (Spring Security)	
-b.	Build: Management mit Maven
-b.	Persistenz: 
-i.	JPA
-ii.	Datastore Bigtable (NoSQL)
-iii.	Anbindung von JPA an Google BigTable
+Standards JDO und JPA implementiert.  
