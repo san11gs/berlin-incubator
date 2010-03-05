@@ -11,4 +11,4 @@ Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit m
 weiterhin die JPA als Persistenz-Framework nutzen kann. Dabei wird die Entscheidung für die Wahl der Cloud beleuchtet. Es wird diskutiert, 
 welche Probleme und Anforderungen sich für die zu migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des 
 Paradigmenkonflikts vom relationalen Datenbankmodell mit Google's BigTable. Mit "DataNucleus" stellen wir eine JPA-Implementierung für 
-die Persistenz-Framework der GAE vor.
+die Persistenzschicht der GAE vor.
