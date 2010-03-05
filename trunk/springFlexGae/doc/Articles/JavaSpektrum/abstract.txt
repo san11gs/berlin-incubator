@@ -1,18 +1,27 @@
-"Neue Welten - Java Enterprise mit Spring in der Cloud"
+"Neue Welten - Java EE in der Cloud"
 
 Ausgangssituation:
-Das aufstrebende Start-Up Unternehmen "SIM4u" bietet das Handy-prepaid-Angebot "YourSIM an" auf einer optisch sehr ansprechenden Flex-Web-Anwendung mit Java EE/ Spring Backend an. Nach dem ersten schnellen Erfolg haben 
-sich Investoren gefunden um den nächsten Wachstumsschritt zu meistern. So wurde eine großaufgelegte Marketing-Kampagne mit TV-Werbung gestartet. Gut ist, dass die Kampagne bei den Kunden sehr gut ankam. Schlecht ist, dass 
-die daraus resultierenden deutlich höheren Zugriffe den Server bereits nach kürzester Zeit völig lahm gelegt haben. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden abgeschreckt. 
-Das darf nicht noch einmal passieren.
+Um den nÃ¤chsten Wachstumsschritt zu meistern, entschlieÃŸt sich ein aufstrebendes Start-Up dazu, Investoren aufzunehmen. 
+Die dadurch erlagten grÃ¶ÃŸeren finanziellen Mittel ermÃ¶glichen nun den Start einer groÃŸ aufgelegten Marketing-Kampagne mit TV-Werbung gestartet. Gut ist, 
+dass die Kampagne bei den Kunden sehr gut ankam. Schlecht ist, dass die daraus resultierenden deutlich hï¿½heren Zugriffe den 
+Server bereits nach kï¿½rzester Zeit vï¿½lig lahm gelegt haben. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und 
+potentielle Neukunden abgeschreckt. Das darf nicht noch einmal passieren.
 
-Die Serverauslastung ist in der Regel eher durchschnittlich, nach Schalten von Werbung sind jedoch immer kurzfristig große Peeks zu erwarten. Das Unternehmen ist noch sehr jung 
-und das Geschäft ist auf schnellen Erfolg ausgelegt. Der Kunde benötigt also eine flexible und skalierbare IT-Infrastruktur mit minimalem initialen finanziellen Aufwand und hat entschieden, die Anwendung in einer Cloud zu hosten. 
+Die Serverauslastung ist in der Regel eher durchschnittlich, nach Schalten von Werbung sind jedoch immer kurzfristig groï¿½e Peeks zu erwarten. Das Unternehmen ist noch sehr jung 
+und das Geschï¿½ft ist auf schnellen Erfolg ausgelegt. Der Kunde benï¿½tigt also eine flexible und skalierbare IT-Infrastruktur mit minimalem initialen finanziellen Aufwand und hat entschieden, die Anwendung in einer Cloud zu hosten. 
 Diesen Auftrag haben wir gewonnen.
 
 
-Zielstellung:
-Ziel des Beitrages ist, einen praktischen Bezug für die Verwendung des 
+Abstract:
+Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit mÃ¶glichst geringem Aufwand auf die GAE migrieren und dabei 
+weiterhin die JPA als Persistenz-Framework nutzen kann. Es wird diskutiert, welche Probleme und Anforderungen sich fÃ¼r die zu 
+migrierende Java EE Anwendung ergeben - hierzu zÃ¤hlen zum Beispiel die Auswirkungen des Paradigmenkonflikts vom relationalen Datenbankmodell 
+mit Google's BigTable. Mit "DataNucleus" stellen wir schlieÃŸlich ein Persistenz-Framework vor, welches als Persistenzschicht fÃ¼r die GAE 
+Standards JDO und JPA unterstÃ¼tzt.  
+
+
+
+Ziel des Beitrages ist, einen praktischen Bezug fï¿½r die Verwendung des 
 Cloud-Computing's in einem Java EE Umfeld aufzuzeigen. Es soll eine Anwendung demonstriert werden, die auf Spring 
 in der aktuellsten Version basiert und mit einem Flex-Client eine interaktive und anspruchsvolles 
 RIA-GUI implementiert. 
@@ -43,7 +52,7 @@ Gr?nde des Kunden f?r die Cloud werden untersucht.
 skalierbarkeit, pflege und verwaltung
 
 
-1.	Teil – Backend: Integration von JEE und Google App Engine
+1.	Teil ï¿½ Backend: Integration von JEE und Google App Engine
 a.	Spring als Framework (Spring Security)	
 b.	Build: Management mit Maven
 b.	Persistenz: 
