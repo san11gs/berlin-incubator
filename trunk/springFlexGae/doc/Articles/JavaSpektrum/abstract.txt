@@ -2,12 +2,9 @@
 
 Ausgangssituation:
 Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
-Die dadurch erlagten größeren finanziellen Mittel ermöglichen nun den Start einer Marketing-Kampagne mit TV-Werbung. Bereits die 
-erste Ausstrahlung des Werbe-Spots erreicht ein großes Publikum und führt unmittelbar zu einem extremen jedoch kurzzeitigen Anstieg 
-der Zugriffe auf die Homepage - jedoch leider auch zum Zusammenbruch des Servers. Der erhoffte Effekt der Marketing-Kampagne ist verpufft 
-und potentielle Neukunden sind abgeschreckt. 
-Damit es zu keinem erneuten Zusammenbruch des Servers nach dem nächsten Werbe-Spot kommt, muss schnellstmöglich eine dynamisch skalierbare 
-und dennoch kostengünstige Lösung her.
+Die dadurch erlangten größeren finanziellen Mittel ermöglichen den Start einer Marketing-Kampagne inklusive TV-Werbung. Der Werbespot erreicht ein großes Publikum, 
+führt jedoch leider auch zum Zusammenbruch des Servers. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden sind abgeschreckt. 
+Damit es zu keinem erneuten Zusammenbruch des Servers kommt, muss schnellstmöglich eine dynamisch skalierbare und dennoch kostengünstige Lösung her.
 
 Abstract:
 Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit möglichst geringem Aufwand auf die GAE migrieren und dabei 
