@@ -5,15 +5,9 @@ Derzeit arbeitet er an einem Maven-basierten Generator im Rahmen der Anbindung v
 aktuellen Arbeitsergebnisse unter code.google.com/p/berlin-incubator öffentlich zur Verfügung.
 marek.iwaszkiewicz@adesso.de
 
-
-
-(..mit Spring sowie verteilten Systemlandschaften)
-(Sein Fokus liegt auf Java Enterprise Architekturen und verteilten Systemen )
-
 ################################
 
-
 Michael Schütz
-Michael ist Software Engineer bei der akquinet tech@spree GmbH in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
-Moderatot der größten deutschsprachigen Plattform zum Thema Seam auf Xing und beschäftigt sich gerade intensiv in das Thema Java EE 6 und CDI/Weld.
+Michael ist Software Engineer bei der akquinet AG in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
+Moderator der größten deutschsprachigen Plattform zum Thema Seam auf Xing und beschäftigt sich gerade intensiv mit dem Thema Java EE 6 und CDI/Weld.
 Michael.Schuetz@akquinet.de
