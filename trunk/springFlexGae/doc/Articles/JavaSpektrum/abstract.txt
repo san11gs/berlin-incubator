@@ -8,7 +8,7 @@ Damit es zu keinem erneuten Zusammenbruch des Servers kommt, muss schnellstmögl
 
 Abstract:
 Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit möglichst geringem Aufwand auf die GAE migrieren und dabei 
-weiterhin die JPA als Persistenz-Framework nutzen kann. Es wird diskutiert, welche Probleme und Anforderungen sich für die zu 
-migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des Paradigmenkonflikts vom relationalen Datenbankmodell 
-mit Google's BigTable. Mit "DataNucleus" stellen wir schließlich ein Persistenz-Framework vor, welches als Persistenzschicht für die GAE 
-Standards JDO und JPA implementiert.  
+weiterhin die JPA als Persistenz-Framework nutzen kann. Dabei wird die Entscheidung für die Wahl der Cloud beleuchtet. Es wird diskutiert, 
+welche Probleme und Anforderungen sich für die zu migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des 
+Paradigmenkonflikts vom relationalen Datenbankmodell mit Google's BigTable. Mit "DataNucleus" stellen wir schließlich ein Persistenz-Framework 
+vor, welches als Persistenzschicht für die GAE Standards JDO und JPA implementiert. 
