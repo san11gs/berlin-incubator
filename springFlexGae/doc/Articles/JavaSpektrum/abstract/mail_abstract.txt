@@ -1,15 +1,19 @@
 Hallo Herr Stal,
 
-wir schicken Ihnen heute wie besprochen die gewünschten Dokumente.
+wir schicken Ihnen heute wie besprochen die gewÃ¼nschten Dokumente.
 
-Eine Anmerkung zum Abstract: Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass Flex/Air nicht so recht in den Java EE + GAE Artikel passt.
-Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur ausgewählte Technologie separt betrachtet werden.
+Eine Anmerkung zum Abstract: 
+Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass die Menge der in unserer Beispielanwendung 
+eingesetzten Technologien den Umfang eines Artikels sprengen wÃ¼rde. Daher betrachten wir in dem Artikel 
+nur einen Teil und setzen den Fokus auf das Zusammenspiel von Java EE und GAE.
 
-Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air zu veröffentlichen. Oder fänden Sie eine Serie besser geeignet?
+Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur ausgewÃ¤hlte Technologie separt betrachtet werden.
+
+Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air zu verÃ¶ffentlichen. Oder fÃ¤nden Sie eine Serie besser geeignet?
 
 Wir freuen uns auf ein kurzes Feedback.
 
 
-viele Grüße
-Michael Schütz (akquinet AG)
+viele GrÃ¼ÃŸe
+Michael SchÃ¼tz (akquinet AG)
 Marek Iwaszkiewicz (adesso AG)
