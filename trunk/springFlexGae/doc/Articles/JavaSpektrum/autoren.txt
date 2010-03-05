@@ -16,3 +16,4 @@ marek.iwaszkiewicz@adesso.de
 Michael Schütz
 Michael ist Software Engineer bei der akquinet tech@spree GmbH in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
 Moderatot der größten deutschsprachigen Plattform zum Thema Seam auf Xing und beschäftigt sich gerade intensiv in das Thema Java EE 6 und CDI/Weld.
+Michael.Schuetz@akquinet.de
