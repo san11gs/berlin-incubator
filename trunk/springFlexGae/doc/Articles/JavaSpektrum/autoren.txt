@@ -1,10 +1,14 @@
 
-Marek Iwaszkiewicz (adesso AG)
+Marek Iwaszkiewicz
+Marek arbeitet bei adesso als Software Engineer und widmet sich Java Enterprise Architekturen mit Spring. Momentan arbeitet er an einem Maven-basierten Generator zur Anbindung von Flex an Java EE 
+und stellt seine aktuellen Arbeitsergebnisse unter code.google.com/p/berlin-incubator öffentlich zur Verfügung.
 
+(..mit Spring sowie verteilten Systemlandschaften)
+(Sein Fokus liegt auf Java Enterprise Architekturen und verteilten Systemen )
 
 ################################
 
 
 Michael Schütz
-Michael Schütz ist Software Engineer bei der akquinet tech@spree GmbH  in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
-Moderatot der größten deutschsprachigen Plattforum zum Thema Seam auf Xing.
+Michael ist Software Engineer bei der akquinet tech@spree GmbH in Berlin und beschäftigt sich seit Jahren intensiv mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
+Moderatot der größten deutschsprachigen Plattform zum Thema Seam auf Xing und beschäftigt sich gerade intensiv in das Thema Java EE 6 und CDI/Weld.
