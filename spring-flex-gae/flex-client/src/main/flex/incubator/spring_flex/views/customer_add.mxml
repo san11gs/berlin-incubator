@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%"
+		creationComplete="init()" >
+
+    <mx:Metadata>
+        [Event(name="changePage", type="incubator.spring_flex.events.PageChangeEvent")]
+        [Event(name="customerEvent", type="incubator.spring_flex.events.CustomerEvent")]
+    </mx:Metadata>
+
+	<mx:Script>
+		<![CDATA[
+			import incubator.spring_flex.events.CustomerEvent;
+			import mx.validators.Validator;
+			import mx.events.ValidationResultEvent;
+			import mx.managers.PopUpManager;
+			import incubator.spring_flex.components.InfoPopup;
+			import incubator.spring_flex.events.PageChangeEvent;
+			import mx.rpc.events.FaultEvent;
+			import mx.controls.Alert;
+			import incubator.spring_flex.domain.Customer;
+			import mx.rpc.events.ResultEvent;
+			
+			public var phoneNumber:String = "";
+			
+			[Bindable]
+			private var customer:Customer; 
+
+			private var popup:InfoPopup;
+			
+            [Bindable]
+            private var validatorArr:Array;
+ 
+            private function init() : void {
+                validatorArr = new Array();
+                validatorArr.push(phone_stringValidator);
+                validatorArr.push(firstname_stringValidator);
+                validatorArr.push(lastname_stringValidator);
+                validatorArr.push(street_stringValidator);
+                validatorArr.push(postal_stringValidator);
+                validatorArr.push(city_stringValidator);
+            }
+            
+			private function resultHandlerCreate(event:ResultEvent) : void {
+				customer = event.result as Customer;
+				
+				if(isNaN(customer.id)){
+					Alert.show("Kunde konnte nicht gespeichert werden!", 'Error');
+					
+				} else {
+					popup = new InfoPopup();
+					popup.onOk = onOkHandler;
+					popup.cancellabe = false;
+					popup.info = "Kunde '" + customer.firstname + " " + customer.lastname + "' wurde angelegt";
+					popup.title= "Kunde angelegt";
+					
+					PopUpManager.addPopUp(popup, this, true);
+					PopUpManager.centerPopUp(popup);
+					
+					var ce:CustomerEvent = new CustomerEvent("customerEvent");
+					ce.customer = this.customer;
+					ce.action = CustomerEvent.CUSTOMER_CREATED;
+					dispatchEvent(ce);
+				}
+			}
+			
+           	private function handleFaultCreate(event:FaultEvent) : void {
+           		if(event.fault.faultCode == "Client.Authentication"){
+           			Alert.show("Bitte loggen sie sich zuerst ein!", "Aktion verweigert");	
+           		} else {
+                	Alert.show(event.fault.faultString, 'Error');
+             	}
+            }
+  
+  			private function cancelHandler() : void {
+				var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+				pageEvent.targetPage = PageChangeEvent.HOME;
+				dispatchEvent(pageEvent);
+			}
+			  
+			private function okHandler() : void {
+				
+				var validatorErrorArray:Array = Validator.validateAll(validatorArr);
+				var isValidForm:Boolean = validatorErrorArray.length == 0;
+
+				if (isValidForm) {
+					var newCustomer:Customer = new Customer();
+					
+					newCustomer.firstname = textInput_firstname.text;
+					newCustomer.lastname = textInput_lastname.text;
+					newCustomer.phone = textInput_phone.text;
+					newCustomer.street = textInput_street.text;
+					newCustomer.postal = textInput_postal.text;
+					newCustomer.city = textInput_city.text;
+					
+					customerService.createCustomer(newCustomer);
+					
+				} else {
+					var err:ValidationResultEvent;
+                    var errorMessageArray:Array = [];
+                    for each (err in validatorErrorArray) {
+                        var errField:String = FormItem(err.currentTarget.source.parent).label
+                        errorMessageArray.push(errField + ": " + err.message);
+                    }
+                    Alert.show(errorMessageArray.join("\n\n"), "Dateneingabe ungültig...", Alert.OK);
+				}
+			}
+
+			private function onOkHandler() : void {
+				PopUpManager.removePopUp(popup);
+				popup = null;
+
+				resetForm();
+				
+				var pageEvent:PageChangeEvent = new PageChangeEvent("changePage");
+				pageEvent.targetPage = PageChangeEvent.ORDER_SHOW;
+				dispatchEvent(pageEvent);
+			}		
+			
+            private function resetForm():void {
+                textInput_phone.text = "";
+                textInput_firstname.text = "";
+                textInput_lastname.text = "";
+                textInput_street.text = "";
+                textInput_postal.text = "";
+                textInput_city.text = "";
+            }
+				
+ 		]]>
+	</mx:Script>
+	
+	<mx:RemoteObject id="customerService" destination="customerService">
+		<mx:method name="createCustomer" result="resultHandlerCreate(event)"  fault="handleFaultCreate(event)"/>
+	</mx:RemoteObject>
+
+	<mx:StringValidator id="phone_stringValidator"
+	        source="{textInput_phone}"
+	        property="text"
+	        tooShortError="Telefonnummer muss mind. 5 Zeichen enthalten"
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        minLength="5" />
+
+	<mx:StringValidator id="firstname_stringValidator"
+	        source="{textInput_firstname}"
+	        property="text"
+	        tooShortError="Vorname muss mind. 2 Zeichen enthalten" 
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        minLength="2" />
+
+	<mx:StringValidator id="lastname_stringValidator"
+	        source="{textInput_lastname}"
+	        property="text"
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        tooShortError="Nachname muss mind. 2 Zeichen enthalten" 
+	        minLength="2" />
+
+	<mx:StringValidator id="street_stringValidator"
+	        source="{textInput_street}"
+	        tooShortError="Straße muss mind. 2 Zeichen enthalten" 
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        property="text"
+	        minLength="2" />
+
+	<mx:StringValidator id="postal_stringValidator"
+	        source="{textInput_postal}"
+	        property="text"
+	        tooShortError="Mindestens 3 Zeichen"
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        minLength="3" />
+
+	<mx:StringValidator id="city_stringValidator"
+	        source="{textInput_city}"
+	        property="text"
+	        tooShortError="Stadt muss mind. 2 Zeichen enthalten" 
+	        requiredFieldError="Eingabe darf nicht leer sein"
+	        minLength="2" />
+
+	<mx:VBox width="100%" height="100%" verticalAlign="top" horizontalAlign="center"  borderStyle="none">
+		<mx:VBox width="100%" horizontalAlign="left">
+			<mx:Label text="Neuer Kunde" color="#000000" fontWeight="bold" fontSize="14"/>
+		</mx:VBox>
+		<mx:Form xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:custom="components.*" >
+		   	<mx:FormItem required="true" label="Telefonnummer">
+		        <mx:TextInput id="textInput_phone" text="{phoneNumber}" restrict=" 0-9"/>
+		    </mx:FormItem>
+		   	<mx:FormItem required="true" label="Vorname">
+		        <mx:TextInput id="textInput_firstname"/>
+		    </mx:FormItem>
+		    <mx:FormItem required="true" label="Nachname">
+		        <mx:TextInput id="textInput_lastname"/>
+		    </mx:FormItem>
+		    <mx:FormItem required="true" label="Straße"> 
+		        <mx:TextInput id="textInput_street"/>
+		    </mx:FormItem>
+		    <mx:FormItem required="true" label="PLZ"> 
+		        <mx:TextInput id="textInput_postal" restrict="0-9"/>
+		    </mx:FormItem>
+		    <mx:FormItem required="true" label="Stadt"> 
+		        <mx:TextInput id="textInput_city"/>
+		    </mx:FormItem>
+		    <mx:FormItem>
+				<mx:HBox width="100%" verticalAlign="middle" horizontalAlign="center" >
+					<mx:Button label="OK" click="okHandler()"/>
+					<mx:Button label="Abbrechen" click="cancelHandler()"/>
+				</mx:HBox>
+			</mx:FormItem>
+		</mx:Form>
+	</mx:VBox>
+</mx:Canvas>
