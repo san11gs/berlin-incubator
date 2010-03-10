@@ -94,11 +94,26 @@
 				loginPopup = null;
 			}
 			
+			private function mackBackendCall() : void {
+				customerService.helloMichael();
+			}
+			
+			private function helloResult(event:ResultEvent): void {
+				Alert.show("helloResult", "");
+			}
+			
+			private function helloFault(event:FaultEvent): void {
+				Alert.show("helloFault: " + event.fault.faultString, "");
+			}
+			
 		]]>
 	</mx:Script>
     
 	<mx:RemoteObject id="securityHelper" destination="securityHelper" fault="faultHandler(event)">
 		<mx:method name="getAuthentication" result="userHandler(event)"/>
+	</mx:RemoteObject>
+	<mx:RemoteObject id="customerService" destination="customerService">
+		<mx:method name="helloMichael" result="helloResult(event)"  fault="helloFault(event)"/>
 	</mx:RemoteObject>
 	
 	<mx:Blur id="blur" duration="500"/>
@@ -123,6 +138,10 @@
 									paddingLeft="0"/>
 						
 					</mx:HBox>
+				</mx:HBox>
+				<mx:HBox>
+					<mx:LinkButton label="Click  Mich" textDecoration="underline" fontWeight="bold" themeColor="#6FB063"
+									click="mackBackendCall()" />
 				</mx:HBox>
 
 				<mx:ViewStack id="viewStack" width="95%" height="100%" >
