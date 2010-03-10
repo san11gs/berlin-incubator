@@ -28,6 +28,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return this.customerRepository.existsCustomer(phoneNumber);
 	}
 
+	public void helloMichael() {
+	    throw new IllegalArgumentException("NYI"); 
+	}
+	
 	/**
 	 * Transactional read-only method.
 	 * 

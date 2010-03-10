@@ -10,6 +10,8 @@ import incubator.spring_flex.domain.Customer;
  */
 public interface CustomerService {
 
+    void helloMichael();
+    
     /**
      * Checks whether a custoer with the passed phone number already exists. <br/>
      * (pssst - the result should be boolean)
