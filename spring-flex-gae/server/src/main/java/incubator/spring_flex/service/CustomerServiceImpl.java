@@ -29,9 +29,24 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void helloMichael() {
-	    throw new IllegalArgumentException("NYI"); 
+		GAE_EntityManagerFactory factory = new GAE_EntityManagerFactory(
+				"pizza-pu");
+		EntityManager em = factory.entityManagerFactory().createEntityManager();
+
+		em.createQuery("select o from Customer o order by o.firstname")
+		.getResultList();
+		
+//		Customer cust = new Customer();
+//		cust.setFirstname("firstName");
+//
+//		try {
+//			em.persist(cust);
+//		} finally {
+//			em.close();
+//		}
+
 	}
-	
+
 	/**
 	 * Transactional read-only method.
 	 * 
