@@ -1,0 +1,86 @@
+Ausgangssituation:
+Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
+Die dadurch erlangten größeren finanziellen Mittel ermöglichen den Start einer Marketing-Kampagne inklusive TV-Werbung. Der Werbespot erreicht ein großes Publikum, 
+führt jedoch leider auch zum Zusammenbruch des Servers. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden sind abgeschreckt. 
+Damit es zu keinem erneuten Zusammenbruch des Servers kommt, muss schnellstmöglich eine dynamisch skalierbare und dennoch kostengünstige Lösung her.
+
+Abstract:
+Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit möglichst geringem Aufwand auf die GAE migrieren und dabei 
+weiterhin die JPA als Persistenz-Framework nutzen kann. Dabei wird die Entscheidung für die Wahl der Cloud beleuchtet. Es wird diskutiert, 
+welche Probleme und Anforderungen sich für die zu migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des 
+Paradigmenkonflikts vom relationalen Datenbankmodell mit Google's BigTable. Mit "DataNucleus" stellen wir eine JPA-Implementierung für 
+die Persistenzschicht der GAE vor.
+
+Links:
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+
+
+###################
+
+Das Pizza-Projekt
+
+
+
+##################
+Die Projekt-Struktur
+Beschreibung von Projektstruktur und Build-Prozess. Es wird der Stand beschrieben, den der Kunde uns zur Verfügung gestellt hat,
+
+Spring
+- Spring3
+- Verwendung von CDI (@Inject statt @Autowire)
+
+Maven
+- multimodules
+
+Flex
+- Kunde zielt primär auf den Neukundenmarkt und hat daher einen starkes Fokus auf die Oberfläche. Entscheidung zu RIA, weil:...
+- Flex Entwicklungsmodell (in Extra-Punkt rausziehen?)
+
+
+##################
+Cloud - Einführung
+
+Überleitung und Bezug zum Intro: Entscheidung für Cloud. Warum?? 
+- Geld
+- Risiko
+- Flexibilität
+
+Cloud:
+- Was ist das?
+PAAS, SAAS
+
+- Welche Anbieter gibt es?
+
+- Warum Google?
+Klein, leicht skalierbar, gut geignet für Startup, da kein Admin-KnowHow erforderlich
+
+##################
+Anbindung der Anwendung an Google
+
+- Projektstruktur
+
+- Eclipse-Plugin | Ant | Maven - Build
+
+- Deployment, Google accounr, Jetty
+
+- Migration:
+	-  App Engine account anlegen
+	- Bibliothken ins WAR --> dependency.. in Java
+	- Anwendung bauen
+	web.xml
+	listener>
+    <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+  </listener>
+
+  
+  Zwischen TEst samt Deploy --Anwendung lkäuft. Aber. noch keine PErsistenz
+  
+- Peristent:
+Anbindung:
+- BigTable
+Hände
+
+fertig und test.
+Link auf Test-Ptojekt
+
+
