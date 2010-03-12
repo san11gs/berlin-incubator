@@ -1,3 +1,17 @@
+Neue Welten - Java EE in der Cloud
+(Neue Welten - Java EE mit Spring und Flex in der Cloud)
+wir schicken Ihnen heute wie besprochen die gewünschten Dokumente. Eine Anmerkung zum Abstract: Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass die Menge der in unserer Beispielanwendung eingesetzten Technologien den Umfang eines Artikels sprengen würde. Daher betrachten wir in dem Artikel nur einen Teil und setzen den Fokus auf das Zusammenspiel von Java EE und GAE. Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur ausgewählte Technologien separat betrachtet werden.
+
+Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air zu veröffentlichen. Oder fänden Sie eine Serie besser geeignet?
+
+Wir freuen uns auf ein kurzes Feedback.
+
+#################
+Umfang: 21.3. eine Version an mich zu senden - vielleicht klappt's ja doch noch.Umfang wären 5 Wordseiten inkl. Bilder + Listings
+
+Stil siehe: JS_Formatierungsrichtlinien
+##########
+
 Ausgangssituation:
 Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
 Die dadurch erlangten größeren finanziellen Mittel ermöglichen den Start einer Marketing-Kampagne inklusive TV-Werbung. Der Werbespot erreicht ein großes Publikum, 
@@ -13,6 +27,7 @@ die Persistenzschicht der GAE vor.
 
 Links:
 http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart2
 
 
 ###################
@@ -74,13 +89,56 @@ Anbindung der Anwendung an Google
 
   
   Zwischen TEst samt Deploy --Anwendung lkäuft. Aber. noch keine PErsistenz
-  
-- Peristent:
-Anbindung:
-- BigTable
-Hände
+
+######################  
+- Persistent:
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+
+Anbindung: Hintegrund
+- DB NoSQL - BigTable
+- Zugriff auf DB via "Mapper" DataNucles
+= RI von JDO. JPA-Hook
+
+Resitrictions und Lösung:
+-nur JPA 1.0
+-keine unique Constraints
+- keine nzum
+
 
 fertig und test.
 Link auf Test-Ptojekt
+
+######################
+Ausbau-Stufe
+- Build-Prozess
+- Maven Archetype?
+
+######################
+Administration:
+- Google Backend
+- Möglichkeiten
+- GQL
+- LOGS
+- Timer
+- Google-API
+
+#####################
+Zusammenfassung /Fazit
+
+Tabelle: ÜBerblick der verwendeteen Versionen:
+	- Spring
+	- Maven
+	- Flex
+	- GAE
+	- DataNucleus
+
+
+
+... Bezug zum Kunden:
+Beispiel: Last steigt, Instanzen kaufen.
+- technische Einschränk
+
+
+Code auf berlin-incubator.org (oder "../article")
 
 
