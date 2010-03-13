@@ -1,0 +1,16 @@
+"Java EE und GAE" --> Java Spektrum
+
+Context GAE?
+- nicht Anbindung an Anwendung im Fokus
+- Fokussierung auf GAE Extended
+
+ODER:
+Umforumulierung Thema und sich mit JavaMagazin und JavaSpektrum abstimmen
+
+------------
+Spring + Maven + Flex/AIR
+(ohne GAE) dann dieser Artikel nicht in JavaSpaktrum
+
+------------
+Java EE 6 / CDI / Weld
+- volle Bandbreite, ja nach Wunsch
