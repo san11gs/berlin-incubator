@@ -1,3 +1,5 @@
+INFO
+
 Neue Welten - Java EE in der Cloud
 (Neue Welten - Java EE mit Spring und Flex in der Cloud)
 wir schicken Ihnen heute wie besprochen die gewünschten Dokumente. Eine Anmerkung zum Abstract: Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass die Menge der in unserer Beispielanwendung eingesetzten Technologien den Umfang eines Artikels sprengen würde. Daher betrachten wir in dem Artikel nur einen Teil und setzen den Fokus auf das Zusammenspiel von Java EE und GAE. Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur ausgewählte Technologien separat betrachtet werden.
@@ -6,56 +8,105 @@ Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air 
 
 Wir freuen uns auf ein kurzes Feedback.
 
-#################
+
 Umfang: 21.3. eine Version an mich zu senden - vielleicht klappt's ja doch noch.Umfang wären 5 Wordseiten inkl. Bilder + Listings
 
 Stil siehe: JS_Formatierungsrichtlinien
-##########
+http://www.sigs-datacom.de/fachzeitschriften/javaspektrum/hinweise-fuer-autoren/aufruf-zu-beitraegen.html
+14.000 und 22.000 Zeichen haben (ohne Leerzeichen)
 
-Ausgangssituation:
+Links:
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart2
+
+- Verwendung von CDI (@Inject statt @Autowire)??
+
+
+    * Was genau verbirgt sich hinter Cloud Computing?
+    * Welche Plattformen existieren und was sind deren charekteristischen Eigenschaften, Vorteile aber auch Grenzen?
+    * Wie nutzt der Java-Entwickler oder -Architekt diese Plattformen effektiv?
+    * Welche Entwicklungswerkzeuge unterstützen die Entwicklung von Cloud-Applikationen am besten?
+    * Wie schaut es mit Interoperabilitätsaspekten aus?
+    * Welche Anwendungsdomänen sind für die Nutzung von Cloud-Technologien prädestiniert?
+    * Welche Beispielsanwendungen gibt es bereits?
+
+Schedule:
+- Fertig bis  19.
+- Review bis 21. 15:Uhr
+- Abgabe 21. bis 24.00 Uhr
+
+Review (Artikel und Link zur Anwendung):
+- Thomas (the brain)
+- Frank Ratzlow (+ code Review)
+- Jan Groth
+- Dirk Ludwig
+- Alexandra Döring
+- Alphonse Bendt
+- Torsten Fink
+- Steffi (Stil)
+
+#############################################################
+
+Neue Welten - Java EE in der Cloud
+
+----------
+Einleitung
+----------
+Pizza4U
+
 Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
 Die dadurch erlangten größeren finanziellen Mittel ermöglichen den Start einer Marketing-Kampagne inklusive TV-Werbung. Der Werbespot erreicht ein großes Publikum, 
 führt jedoch leider auch zum Zusammenbruch des Servers. Der erhoffte Effekt der Marketing-Kampagne ist verpufft und potentielle Neukunden sind abgeschreckt. 
 Damit es zu keinem erneuten Zusammenbruch des Servers kommt, muss schnellstmöglich eine dynamisch skalierbare und dennoch kostengünstige Lösung her.
 
-Abstract:
 Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt mit möglichst geringem Aufwand auf die GAE migrieren und dabei 
 weiterhin die JPA als Persistenz-Framework nutzen kann. Dabei wird die Entscheidung für die Wahl der Cloud beleuchtet. Es wird diskutiert, 
 welche Probleme und Anforderungen sich für die zu migrierende Java EE Anwendung ergeben - hierzu zählen zum Beispiel die Auswirkungen des 
 Paradigmenkonflikts vom relationalen Datenbankmodell mit Google's BigTable. Mit "DataNucleus" stellen wir eine JPA-Implementierung für 
 die Persistenzschicht der GAE vor.
 
-Links:
-http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
-http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart2
 
-
-###################
-
-Das Pizza-Projekt
-
-
-
-##################
+--------------------
 Die Projekt-Struktur
-Beschreibung von Projektstruktur und Build-Prozess. Es wird der Stand beschrieben, den der Kunde uns zur Verfügung gestellt hat,
+--------------------
+Pizza4U stellt uns die kompletten Sourcen seiner Web-Anwendung zur Verfügung.
+Die Anwendung basiert auf Spring 3 im Backend, und Flex im Frontend. Der Build-Prozess wird mittels Maven organisiert.
+Bezüglich Infratruktur wird MySQL Datenbank und JBossAS als Applikatins-Server eingesetzt
 
-Spring
-- Spring3
-- Verwendung von CDI (@Inject statt @Autowire)
+Um ein Gefühl für die Anwendung und damit für mögliche Probleme bei der geplanten Umstellung zu bekommen, werden die folgenden Kern-Technologien kurz vertieft.
+
+* Spring
+Spring ist ein leichtgewichtiges, auf POJO(Plain Old Java Objects) basierendes Programmiermodell, welches einen alternativen Entwicklungs-Ansatz zur Entwrpise Entwicklung mit EJB (Enterprise Java Beans) darsetellt.
+Der Zugriff auf den persistenten Datenbestand erfolgt mittel JPA/Hibernate. Spring verwendet eigens Transaktionshandling und ein eigenes Sicherheits-Konzeot in Form von Spring Security.
+ 
 
 Maven
-- multimodules
+------
+Maven ist ein Tool für das Build-Management.
+Das Prjoekt ist in mehrere Module aufgeteilt.
+- 
+-
+-
+
 
 Flex
-- Kunde zielt primär auf den Neukundenmarkt und hat daher einen starkes Fokus auf die Oberfläche. Entscheidung zu RIA, weil:...
-- Flex Entwicklungsmodell (in Extra-Punkt rausziehen?)
+------
+Der Kunde zielt primär auf den Neukundenmarkt und hat daher einen starkes Fokus auf die Oberfläche. Aus diesem Grund setzt die bestehende Anwendung auf die Frontend-Technologie Flex. 
+Nach dem Kompilieren entsteht eine Flash-Datei die im Brower abgespielt wird und mittels AMF-Protokoll über HTTP mit dem Backend kommuniziert. Das Flash wirdi initial komplett in den Client geladen,
+weshalb die Anwendung auch bei einer hohen Anzahl grafischer Effekte sehr flüssig und geschmeidig wirkt. Knackpunkt stellen erforderliche Backend-Zugriffe wie bespielksweise das Abschicken einer Bestellung.
+
+Das Kompilieren der Flex-Anwendung sowie das Generieren der erforderlichen Value Objects (Also die ActionScript-Repräsentation auf Client-Seite von Java-Klassen) iat komplett in den Maven-Build-Prozess dank eines 
+eines entsprechenden Plugins integriert.
 
 
-##################
+--------------------
+Ab in die Wolke
+--------------------
+Pizza4U hat sich dafür entschieden, zukünftig auf eine Cloud-Infrastruktur zu setzen. Zunächst soll geklärt werdeb, was denn eine Cloud eigentlich ist und warum sich Pizza4U für diesen Weg entschieden hat.
+
+
 Cloud - Einführung
-
-Überleitung und Bezug zum Intro: Entscheidung für Cloud. Warum?? 
+------------------
 - Geld
 - Risiko
 - Flexibilität
@@ -66,8 +117,19 @@ PAAS, SAAS
 
 - Welche Anbieter gibt es?
 
+[iX / t3n]
+[Grafik --> SAAS, PAAS]
+
+Entscheidung für Cloud. Warum?
+------------------------------
+
 - Warum Google?
+---------------
 Klein, leicht skalierbar, gut geignet für Startup, da kein Admin-KnowHow erforderlich
+
+
+
+
 
 ##################
 Anbindung der Anwendung an Google
@@ -104,23 +166,29 @@ Resitrictions und Lösung:
 -keine unique Constraints
 - keine nzum
 
+Übernahme von Altdaten:
+
 
 fertig und test.
 Link auf Test-Ptojekt
 
 ######################
-Ausbau-Stufe
-- Build-Prozess
-- Maven Archetype?
-
-######################
 Administration:
+- DatenMigration
+Wie kommen die Daten der bereits profuktiben MySQL-Datenbank
+
+-FEatures APP-Server --> Scheduling
 - Google Backend
 - Möglichkeiten
 - GQL
 - LOGS
 - Timer
 - Google-API
+
+#####################
+Ausbau-Stufe
+- Build-Prozess
+- Maven Archetype?
 
 #####################
 Zusammenfassung /Fazit
@@ -140,5 +208,3 @@ Beispiel: Last steigt, Instanzen kaufen.
 
 
 Code auf berlin-incubator.org (oder "../article")
-
-
