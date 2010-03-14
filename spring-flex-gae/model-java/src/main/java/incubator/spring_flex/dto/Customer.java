@@ -1,31 +1,10 @@
-package incubator.spring_flex.domain;
+package incubator.spring_flex.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-
-/**
- * Class implementing a customer entity.
- * 
- * @author iwaszkiewicz
- * @date 06.02.2010
- */
-@Table(name = "customer")
-@Entity
-@NamedQueries({
-    @NamedQuery(name = "Customer.findCustomerByPhoneNumber", query = "SELECT c FROM Customer c WHERE c.phone=:phone")
-})
 public class Customer implements Serializable {
  
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String key;
 
     private String firstname;
 
@@ -43,16 +22,16 @@ public class Customer implements Serializable {
      * getter & setter
      */
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getPhone() {
         return this.phone;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public void setPhone(String phone) {
