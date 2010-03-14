@@ -8,6 +8,11 @@
     </services>
 
     <channels>
+<!--        <channel-definition id="my-amf" class="mx.messaging.channels.HTTPChannel">-->
+<!--            <endpoint url="http://{server.name}:{server.port}/messagebroker/http"-->
+<!--                      class="flex.messaging.endpoints.HTTPEndpoint"/>-->
+<!--        </channel-definition>-->
+            
         <channel-definition id="my-amf" class="mx.messaging.channels.AMFChannel">
             <endpoint url="http://{server.name}:{server.port}/messagebroker/amf"
                       class="flex.messaging.endpoints.AMFEndpoint"/>

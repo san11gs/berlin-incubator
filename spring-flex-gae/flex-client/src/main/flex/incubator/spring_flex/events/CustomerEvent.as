@@ -1,6 +1,6 @@
 package incubator.spring_flex.events {
 	
-	import incubator.spring_flex.domain.Customer;
+	import incubator.spring_flex.dto.Customer;
 	
 	import mx.events.FlexEvent;
 	

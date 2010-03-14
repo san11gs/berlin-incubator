@@ -17,17 +17,25 @@
 			import mx.rpc.events.FaultEvent;
 			import mx.rpc.events.ResultEvent;
 			import mx.managers.PopUpManager;
+			import incubator.spring_flex.components.InfoPopup;
 			import incubator.spring_flex.components.Login;
 			import incubator.spring_flex.events.CustomerEvent;
-			import incubator.spring_flex.domain.Order;
-			import incubator.spring_flex.domain.Customer;
+			import incubator.spring_flex.dto.Order;
+			import incubator.spring_flex.dto.Pizza;
+			import incubator.spring_flex.dto.Ingredient;
+			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.dto.OrderedDish;
+			import incubator.spring_flex.dto.Dish;
 			import mx.controls.Alert;
 			import incubator.spring_flex.events.PageChangeEvent;
+			import mx.collections.ArrayCollection;
+			import mx.collections.ListCollectionView;
 
 			private var loginPopup:Login;
 			
 			private var customer:Customer;
 			private var order:Order;
+			private var popup:InfoPopup;
 			
 			[Bindable]
 			private var loggedInUser:String;
@@ -94,16 +102,138 @@
 				loginPopup = null;
 			}
 			
-			private function mackBackendCall() : void {
-				customerService.helloMichael();
+			private function machBackendCall() : void {
+				customerService.createDemoUser();
+			}
+			
+			private function getAll() : void {
+				customerService.getAllCustomers();
+			}
+			
+			private function getAllOrders() : void {
+				orderService.getAllOrders();
+			}
+			
+			private function getAllPizzas() : void {
+				pizzaService.getAllPizzas();
 			}
 			
 			private function helloResult(event:ResultEvent): void {
-				Alert.show("helloResult", "");
+				var res:Boolean = event.result as Boolean;
+				Alert.show("helloResult: " + res, "");
 			}
 			
 			private function helloFault(event:FaultEvent): void {
 				Alert.show("helloFault: " + event.fault.faultString, "");
+			}
+			
+			private function getAllResult(event:ResultEvent): void {
+				var res:ArrayCollection = event.result as ArrayCollection;
+				var info:String = "Anzahl gespeicherter Kunden:" + res.length + "\n---------------\n";
+				for (var i:int = 0; i < res.length; i++){
+					var stData:String = "";
+					var c:Customer = res.getItemAt(i) as Customer;
+					stData = stData + 'ID=' + c.key;
+					stData = stData + ', Firstname=' + c.firstname;    
+					stData = stData + ', Lastname=' + c.lastname;
+					stData = stData + ', Phone=' + c.phone;
+					stData = stData + ', PLZ=' + c.postal;
+					stData = stData + ', Street=' + c.street;
+					stData = stData + ', City=' + c.city;
+					stData = stData + "\n---------------\n";
+					
+					info = new String(info + stData);
+   				}
+								
+				popup = new InfoPopup();
+				popup.cancellabe =true;
+				popup.onCancel = onCancelHandler;
+				popup.info = info;
+				popup.width=750;
+				popup.height=600;
+				popup.title= "Alle gespeicherten Kunden";
+				
+				PopUpManager.addPopUp(popup, this, true);
+				PopUpManager.centerPopUp(popup);
+			}
+
+			private function getAllOrdersResult(event:ResultEvent): void {
+				var res:ArrayCollection = event.result as ArrayCollection;
+				
+				var info:String = "Anzahl gespeicherter Bestellungen:" + res.length + "\n---------------\n";
+				for (var i:int = 0; i < res.length; i++){
+					var o:Order = res.getItemAt(i) as Order;
+					var stData:String = "";
+					stData = stData + 'ID=' + o.id;
+					stData = stData + ', Customer=' + o.customer.firstname;    
+					stData = stData + ', Dishes=[';   
+					var orderedDishes:ListCollectionView =  o.orderedDishes;
+					if(orderedDishes != null){
+						for (var j:int = 0; j < orderedDishes.length; j++){
+							var orderedDish:OrderedDish = orderedDishes.getItemAt(j) as OrderedDish;
+							stData = stData + '(' + orderedDish.dish.name + ',' + orderedDish.amount + ')';
+						}
+					}
+					stData = stData + ']';   
+					stData = stData + "\n---------------\n";
+					
+					info = new String(info + stData);
+   				}
+								
+				popup = new InfoPopup();
+				popup.cancellabe =true;
+				popup.onCancel = onCancelHandler;
+				popup.info = info;
+				popup.width=750;
+				popup.height=600;
+				popup.title= "Alle gespeicherten Bestellungen";
+				
+				PopUpManager.addPopUp(popup, this, true);
+				PopUpManager.centerPopUp(popup);
+			}
+
+			private function getAllPizzasResult(event:ResultEvent): void {
+				var res:ArrayCollection = event.result as ArrayCollection;
+				var info:String = "Azahl gespeicherter Pizzen:" + res.length + "\n---------------\n";
+				for (var i:int = 0; i < res.length; i++){
+					var p:Pizza = res.getItemAt(i) as Pizza;
+					var stData:String = "";
+					stData = stData + 'key=' + p.key;
+					stData = stData + ', name=' + p.name;
+					stData = stData + ', price=' + p.price;
+					stData = stData + ', pizzaType=' + p.pizzaType;
+					stData = stData + ', ingredients=[';
+					for(var j:int = 0; j<p.ingredients.length; j++){
+						var ingredient:Ingredient = p.ingredients.getItemAt(j) as Ingredient;
+						stData = stData + ingredient.name;
+						if(j+1 < p.ingredients.length){
+						stData = stData + ', ';
+						}
+					}
+					stData = stData + ']';
+					stData = stData + "\n---------------\n";
+					
+					info = new String(info + stData);
+				}
+				popup = new InfoPopup();
+				popup.cancellabe =true;
+				popup.onCancel = onCancelHandler;
+				popup.info = info;
+				popup.width=750;
+				popup.height=600;
+				popup.title= "Alle gespeicherten Pizzen";
+				
+				PopUpManager.addPopUp(popup, this, true);
+				PopUpManager.centerPopUp(popup);
+			}
+			
+			private function onCancelHandler() : void {
+				PopUpManager.removePopUp(popup);
+				popup = null;
+			}		
+			
+			private function getAllFault(event:FaultEvent): void {
+				Alert.show("getAllFault: " + event.fault.faultString, "");
 			}
 			
 		]]>
@@ -113,7 +243,14 @@
 		<mx:method name="getAuthentication" result="userHandler(event)"/>
 	</mx:RemoteObject>
 	<mx:RemoteObject id="customerService" destination="customerService">
-		<mx:method name="helloMichael" result="helloResult(event)"  fault="helloFault(event)"/>
+		<mx:method name="createDemoUser" result="helloResult(event)"  fault="helloFault(event)"/>
+		<mx:method name="getAllCustomers" result="getAllResult(event)"  fault="getAllFault(event)"/>
+	</mx:RemoteObject>
+	<mx:RemoteObject id="orderService" destination="orderService">
+		<mx:method name="getAllOrders" result="getAllOrdersResult(event)"  fault="getAllFault(event)"/>
+	</mx:RemoteObject>
+	<mx:RemoteObject id="pizzaService" destination="pizzaService">
+		<mx:method name="getAllPizzas" result="getAllPizzasResult(event)"  fault="getAllFault(event)"/>
 	</mx:RemoteObject>
 	
 	<mx:Blur id="blur" duration="500"/>
@@ -128,6 +265,12 @@
 					</mx:HBox>
 				</mx:HBox>
 				<mx:HBox width="100%" horizontalAlign="right" paddingRight="15">
+					<mx:HBox width="100%" horizontalAlign="left">
+						<mx:LinkButton label="Demo User" textDecoration="underline" themeColor="#6FB063" click="machBackendCall()" toolTip="Demo Benutzer erstellen: Name=Demo, Telefon=11111"/>
+						<mx:LinkButton label="Kunden" textDecoration="underline" themeColor="#6FB063" click="getAll()" toolTip="Alle gespeicherten Kunden anzeigen"/>
+						<mx:LinkButton label="Bestellungen" textDecoration="underline" themeColor="#6FB063" click="getAllOrders()" toolTip="Alle gespeicherten Bestellungen anzeigen"/>
+						<mx:LinkButton label="Pizzen" textDecoration="underline" themeColor="#6FB063" click="getAllPizzas()" toolTip="Alle gespeicherten Pizzen anzeigen"/>
+					</mx:HBox>
 					<mx:LinkButton label="Login" color="#0B8024" textDecoration="underline" fontWeight="bold" themeColor="#6FB063"
 									click="openLoginPromt()" visible="{loggedInUser == null}" includeInLayout="{loggedInUser == null}" />
 					<mx:HBox verticalAlign="middle">
@@ -138,10 +281,6 @@
 									paddingLeft="0"/>
 						
 					</mx:HBox>
-				</mx:HBox>
-				<mx:HBox>
-					<mx:LinkButton label="Click  Mich" textDecoration="underline" fontWeight="bold" themeColor="#6FB063"
-									click="mackBackendCall()" />
 				</mx:HBox>
 
 				<mx:ViewStack id="viewStack" width="95%" height="100%" >
