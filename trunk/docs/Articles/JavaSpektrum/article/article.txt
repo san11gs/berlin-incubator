@@ -45,13 +45,13 @@ Review (Artikel und Link zur Anwendung):
 - Torsten Fink
 - Steffi (Stil)
 
-#############################################################
+--------------------------------------------------------------------------------
 
 Neue Welten - Java EE in der Cloud
 
-----------
+--------------------------------------------------------------------------------
 Einleitung
-----------
+--------------------------------------------------------------------------------
 Pizza4U
 
 Um den nächsten Wachstumsschritt zu meistern, entschließt sich ein aufstrebendes Start-Up-Unternehmen dazu, Investoren aufzunehmen. 
@@ -66,12 +66,20 @@ Paradigmenkonflikts vom relationalen Datenbankmodell mit Google's BigTable. Mit 
 die Persistenzschicht der GAE vor.
 
 
---------------------
+--------------------------------------------------------------------------------
 Die Projekt-Struktur
---------------------
+--------------------------------------------------------------------------------
 Pizza4U stellt uns die kompletten Sourcen seiner Web-Anwendung zur Verfügung.
 Die Anwendung basiert auf Spring 3 im Backend, und Flex im Frontend. Der Build-Prozess wird mittels Maven organisiert.
-Bezüglich Infratruktur wird MySQL Datenbank und JBossAS als Applikatins-Server eingesetzt
+Bezüglich Infratruktur wird MySQL Datenbank und JBossAS als Applikatins-Server eingesetzt.
+
+Die Beispiel-Anwendung basiert auf folgenden Technologien:
+ - Spring 3
+ - Maven 2
+ - Flex 3.3
+ - GAE 1.3.1
+ - DataNucleus 1.15
+
 
 Um ein Gefühl für die Anwendung und damit für mögliche Probleme bei der geplanten Umstellung zu bekommen, werden die folgenden Kern-Technologien kurz vertieft.
 
@@ -99,44 +107,69 @@ Das Kompilieren der Flex-Anwendung sowie das Generieren der erforderlichen Value
 eines entsprechenden Plugins integriert.
 
 
---------------------
+--------------------------------------------------------------------------------
 Ab in die Wolke
---------------------
-Pizza4U hat sich dafür entschieden, zukünftig auf eine Cloud-Infrastruktur zu setzen. Zunächst soll geklärt werdeb, was denn eine Cloud eigentlich ist und warum sich Pizza4U für diesen Weg entschieden hat.
-
+--------------------------------------------------------------------------------
+Pizza4U hat sich dafür entschieden, zukünftig auf eine Cloud-Infrastruktur zu setzen. Zunächst soll geklärt werdeb, was denn eine Cloud eigentlich ist und warum sich Pizza4U für diesen Weg entschieden hat. 
 
 Cloud - Einführung
 ------------------
-- Geld
-- Risiko
-- Flexibilität
-
-Cloud:
-- Was ist das?
-PAAS, SAAS
-
-- Welche Anbieter gibt es?
-
+http://de.wikipedia.org/w/index.php?title=Datei:Architektur_cloudcomputing.png&filetimestamp=20090712151913
 [iX / t3n]
 [Grafik --> SAAS, PAAS]
 
-Entscheidung für Cloud. Warum?
-------------------------------
+Cloud-Computing beschreibt den Ansatz, Programme und Infrstruktur über das Internet zu hosten. Das angstrebte Ziel ist die Reduzierunf von Kosten, Abhängigkeiten und Engpässeen.
 
+- Kosten-Ersparnis
+	-	Wenig/verringert Administrations-Kosten
+	-   Abrechnung nach Verrtbauch.
+- Risiko-Minimierung
+	- Erhöhgun
+- Flexibilität / Skalierbarkeit
+
+So gibt es folgende Ausprägungen von Cloud Computing
+- Infrastructure as a Service (IAAS)
+	- Beispiel: Amazon Elastic Compute Cloud (EC2) 
+- Software as Service (PAAS)
+	- Beispiel: Windows Azure von Microsoft, App Engine von Google oder force.com von Salesforce.com
+- Appliation as a Setrvicee (AAAS)
+	- Beispiel: Google Docs, Sharepoint Online,
+
+Bei IAAS kan der eigene virtuelle sErver im Baukastensyste integriert werden. Da hier ein explizite Administration erfolgen muss, ist ein admin unabdingbar.
+
+PAAS hinschreibt eher den Anwednungsrahmen. und AAA konkret noch nicht.
+
+Entscheidung für Cloud. Warum?
+
+--------------------------------------------------------------------------------
 - Warum Google?
----------------
+--------------------------------------------------------------------------------
+Die Google App Engine eignet sich hervorragend auf eine Standard-Integration. Die Plattform ist sehr intuitiv zu bedienen, leicht skalierbar und erfordert 
+kein Admin-Know-How, da komplett auf die Infrastruktur von Google gesetzt wird. Ideal also für ein Startup und damit für Pizza4U.
 Klein, leicht skalierbar, gut geignet für Startup, da kein Admin-KnowHow erforderlich
 
+Kein IAAS
+Kein AAAS
+PAAS
 
+Beispiel Rechnung Kosten
+Ab wann kostet's:
+CPU Time 	n/a 	$0.10/CPU hour 	n/a 	6.50 	6.50 CPU hours
+Bandwidth Out 	n/a 	$0.12/GByte 	n/a 	1.00 	1.00 GBytes
+Bandwidth In 	n/a 	$0.10/GByte 	n/a 	1.00 	1.00 GBytes
+Stored Data 	n/a 	$0.005/GByte-day 	n/a 	1.00 	1.00 GBytes
+Recipients Emailed 	n/a 	$0.0001/Email 	n/a 	2,000.00 	2,000.00 Emails 
 
-
-
-##################
+--------------------------------------------------------------------------------
 Anbindung der Anwendung an Google
+--------------------------------------------------------------------------------
 
 - Projektstruktur
+An der Projekstrucrur änder sich nicht nichts.
 
-- Eclipse-Plugin | Ant | Maven - Build
+- Build maangement
+	--> - Eclipse-Plugin | Ant | Maven - Build
+
 
 - Deployment, Google accounr, Jetty
 
@@ -152,8 +185,9 @@ Anbindung der Anwendung an Google
   
   Zwischen TEst samt Deploy --Anwendung lkäuft. Aber. noch keine PErsistenz
 
-######################  
-- Persistent:
+--------------------------------------------------------------------------------
+Persistenz
+--------------------------------------------------------------------------------
 http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
 
 Anbindung: Hintegrund
@@ -161,50 +195,97 @@ Anbindung: Hintegrund
 - Zugriff auf DB via "Mapper" DataNucles
 = RI von JDO. JPA-Hook
 
+BigTable
+--------
+NoSQL, also "not only SQL", vereint die Familie der nicht relationalen Datenbanken.
+
+Im folgenden habe ich zunächst mal ein paar bekannte Vertreter aus der NoSQL-Bewegung in Kategorien aufgelistet:
+- Wide Column Store / Column Families: Google Bigtable, Hadoop / HBase (BigTable-Konzepte als OpenSource), Cassandra (freigeben von Facebook)
+- Key-Value, zB.: Amazon SimpleDB
+- Document Store: CouchDB
+
+Auf NoSQL bin ich konkret bei der Verwendung von Google App Engine (GAE) stoßen. Google's Cloud speichert die persistenten Daten in Bigtable, einem propritäres DBMS. Neben GAE setzt Google bereits seit 2004 auf diese Art der Persistenz und setzt Bigtable heute unter anderem bei folgenden Anwendungen ein: Google Maps, Google Book Search, Google Earth, Blogger.com, Google Code hosting und YouTube. Das Datenvolumen umfasst deutlich mehrere Petabytes (1Petabyte = 1000 Terrabyte).
+Column Store Datenbanken basieren auf dem Ansatz, Daten in Muster und Spalten-Familien zu unterteilen, was ein effizientes Speichern und Verteilen von Daten mit verwandten Attributen ermöglichen soll. Es werden mehrere Versionen eines Datenbestandes in einer Spalte verwaltet. Des Weiteren setzt Bigtable auf das in der NoSQL-Welt weit verbreitete MapReduce-Prinzip: Daten werden für Abfragen aufbereitet, ausgewählte Teile daraus in einem View abgelegt und anschließend aggregiert.
+
+Ein Beispiel für einen programmatischen Zugriff auf Bigtable:
+
+// Open the table
+Table *T = OpenOrDie("/bigtable/web/webtable");
+// Write a new anchor and delete an old anchor
+RowMutation r1(T, "com.cnn.www");
+r1.Set("anchor:www.c-span.org", "CNN");
+r1.Delete("anchor:www.abc.com");
+Operation op;
+Apply(&op, &r1)
+
+Zur Kapselung von Zugriffen dieser Art unterstützt beispielsweise Google App Engine die Anbindung von JDO und JPA, dank der entsprechenden Implementierungen von DataNucleus.
+
+* DataNucleus
+--------------
+ DataNucleus ist eine open source JPA-Implementierung. Berechtigt die Frage, warum man neben EclipseLink(ehem. TopLink), Hibernate, .. noch eine weitere Implementierung benötigt? Die Antwort ist einfach: Google (-:
+
+Google unterstützt die Verwendung von DataNucleus in Rahmen seines Cloud Computing (Google App Engine). Das spannende an DataNucleus ist, dass es nicht nur Implementierungen für JDO und JPA bereitstellt, sondern diese u.a. gegen Google's Bigtable DBMS "mappt". So sieht dann beispielsweise eine entsprechend konfigurierte persistence.xml aus:
+
+<persistence-unit name="transactions-optional">
+<provider>org.datanucleus.store.appengine.jpa.DatastorePersistenceProvider</provider>
+<properties>
+<property name="datanucleus.NontransactionalRead" value="true" />
+<property name="datanucleus.NontransactionalWrite" value="true" />
+<property name="datanucleus.ConnectionURL" value="appengine" />
+</properties>
+</persistence-unit>
+
+Einschränkungen ergeben sich nicht durch DataNucleus an sich, sondern durch die darunterliegende Bigtable Datenstruktur. So gibt es beispielsweise keine Unterstützung für unique Constraints. Auch bei Queries gibt es deutliche Einschränkungen (z.B. kein UPPER oder LIKE ).
+Momentan gibt es übrigens noch keine finale JPA 2.0 - Implementierung von DataNucleus.
+
 Resitrictions und Lösung:
 -nur JPA 1.0
 -keine unique Constraints
-- keine nzum
+- keine Many to many
 
-Übernahme von Altdaten:
+Übernahme von Altdaten??:
 
 
 fertig und test.
 Link auf Test-Ptojekt
 
-######################
+--------------------------------------------------------------------------------
 Administration:
-- DatenMigration
-Wie kommen die Daten der bereits profuktiben MySQL-Datenbank
+--------------------------------------------------------------------------------
+[screenshot]
 
--FEatures APP-Server --> Scheduling
-- Google Backend
-- Möglichkeiten
-- GQL
-- LOGS
-- Timer
-- Google-API
+Nachdem die Anwendung auf die Google App Enginge migriert ist, bleibt die Übernahme der IT-Infrastruktur. So müssen die bestehenden Daten der MySQL-Datenbank 
+nach BiGTable portiert werden. [??? Gibts da Hooks?]
 
-#####################
-Ausbau-Stufe
-- Build-Prozess
+Dienstleistungen auf Applikations-Server-Seite können leicht in der Google Admin Console konfiguriert werden. Diese umfassen:
+- Scheduling / Timer Service
+- Anbindung Google API (Maps, Picassa)
+- Verwendung von Authentication mittels Google Accounts
+- DB-Abfragen GQL
+- Log-File-Auswertung
+[Code-Beispiele??]
+
+--------------------------------------------------------------------------------
+Ausbau-Stufe --> zumindest nennen als "potentielle Erweiterungen"
+--------------------------------------------------------------------------------
+- Beispiel-Code und -Beschreibung vpn o.g. Punkten unter "Administrattion"
+- Vertiefung Build-Prozess, Spring, Maven
 - Maven Archetype?
 
-#####################
+--------------------------------------------------------------------------------
 Zusammenfassung /Fazit
+--------------------------------------------------------------------------------
 
-Tabelle: ÜBerblick der verwendeteen Versionen:
-	- Spring
-	- Maven
-	- Flex
-	- GAE
-	- DataNucleus
+Es ist geschafft, Pizza4U ist in der Wolke und ist damit hervorragend aufgestellt für die anstehende TV-Kampagne. Dafür werden die Ressourcen hochgefahren hochgefahren. 
 
+Probleme der Migration konnten gelöst werden. Im laufenden Betrieb ist meinen keinen Blockern zu rechnen, das Google sich um das System kümmert und unsere Daten nur sehr kleine Bruchteile der von 
+Google regelmäßig verwalteten Daten in Petabayte-Dimension darstellt.
 
+Der Code kann auf berlin-incubator.org heruntergeladen werden und lädt explizit zum Ausprobieren ein:
+1) Auschecken
+2) bauen: mvn clean install
+3) Lokal deployen
 
-... Bezug zum Kunden:
-Beispiel: Last steigt, Instanzen kaufen.
-- technische Einschränk
+Mit einer eigenen app-Id (Anpassung in der appengine.xml) kann die Anwendung auch direkt in die Google Cloud deployed werden.
 
-
-Code auf berlin-incubator.org (oder "../article")
+Erforderliche Tools: SVN-Client, Maven, GAE SDK, IDE
