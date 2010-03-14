@@ -31,6 +31,7 @@
 	<context:component-scan base-package="incubator.spring_flex.config" />
 	<context:component-scan base-package="incubator.spring_flex.service" />
 	<context:component-scan base-package="incubator.spring_flex.repository" />
+	<context:component-scan base-package="incubator.spring_flex.mapper" />
 
 	<!-- Instructs Spring to perfrom declarative transaction management on annotated classes -->
 	<tx:annotation-driven />

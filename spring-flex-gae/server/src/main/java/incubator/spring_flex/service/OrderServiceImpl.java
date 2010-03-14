@@ -1,6 +1,11 @@
 package incubator.spring_flex.service;
 
-import incubator.spring_flex.domain.Order;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import incubator.spring_flex.domain.OrderEntity;
+import incubator.spring_flex.dto.Order;
+import incubator.spring_flex.mapper.OrderMapper;
 import incubator.spring_flex.repository.OrderRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,31 +22,39 @@ import org.springframework.stereotype.Service;
  */
 @Service("orderService")
 @RemotingDestination(channels = { "my-amf" })
-@Secured( {"ROLE_USER", "ROLE_SUPERVISOR"} )
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	private OrderRepository orderRepository; 
+	
+	@Autowired
+	private OrderMapper orderMapper;
 	
     /**
      * Transactional method.
      * 
      * @see incubator.spring_flex.service.OrderService#saveOrder(Order)
      */
-	@Secured("ROLE_USER")
+	//@Secured("ROLE_USER")
     public Order saveOrder(Order order) {
-    	return this.orderRepository.saveOrder(order);
+        try {
+    	    OrderEntity orderEntity = this.orderMapper.mapToOrderEntity(order);
+    	    orderEntity = this.orderRepository.saveOrder(orderEntity);
+    	    return this.orderMapper.mapToOrder(orderEntity);
+        }catch(Exception e){
+            e.printStackTrace(System.out);
+        }
+        return null;
+
     }
 
-    /*
-     * Getter & Setter
-     */
-    
-	public OrderRepository getOrderManager() {
-		return this.orderRepository;
-	}
+    public Collection<Order> getAllOrders() {
+        Collection<OrderEntity> list = this.orderRepository.loadAll();
+        Collection<Order> orders = new ArrayList<Order>();
+        for(OrderEntity orderEntity : list){
+            orders.add(this.orderMapper.mapToOrder(orderEntity));
+        }
+        return orders;
+    }
 
-	public void setOrderManager(OrderRepository orderManager) {
-		this.orderRepository = orderManager;
-	}
 }

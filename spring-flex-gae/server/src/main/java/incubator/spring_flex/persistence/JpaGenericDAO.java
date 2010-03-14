@@ -24,7 +24,8 @@ public class JpaGenericDAO<E, ID extends Serializable> implements GenericDAO<E, 
 
     public E persist(E e) {
         E saved = this.entityManager.merge(e);
-        this.entityManager.flush();
+        //this.entityManager.flush();
+        //this.entityManager.getTransaction().commit();
         return saved;
     }
 
@@ -54,6 +55,10 @@ public class JpaGenericDAO<E, ID extends Serializable> implements GenericDAO<E, 
         return this.persistentClass;
     }
     
+    public List<E> findByNamedQuery(String namedQuery) {
+        return findByNamedQuery(namedQuery, null);
+    }    
+    
     public List<E> findByNamedQuery(String namedQuery, Map<String, Object> parameters) {
         return addParameters(this.entityManager.createNamedQuery(namedQuery), parameters).getResultList();
     }
@@ -71,5 +76,9 @@ public class JpaGenericDAO<E, ID extends Serializable> implements GenericDAO<E, 
 
     public List<E> findByNamedQuery(String namedQuery, Map<String, Object> parameters, int firstResult, int maxResults) {
         return addParameters(this.entityManager.createNamedQuery(namedQuery), parameters).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    public EntityManager getEntityManager(){
+        return this.entityManager;
     }
 }
