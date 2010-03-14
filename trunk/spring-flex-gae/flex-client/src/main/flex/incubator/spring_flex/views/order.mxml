@@ -8,9 +8,9 @@
 
 	<mx:Script>
 		<![CDATA[
-			import incubator.spring_flex.domain.OrderedPizza;
-			import incubator.spring_flex.domain.OrderedPizzaBase;
-			import incubator.spring_flex.domain.Pizza;
+			import incubator.spring_flex.dto.OrderedDish;
+			import incubator.spring_flex.dto.OrderedDishBase;
+			import incubator.spring_flex.dto.Pizza;
 			import incubator.spring_flex.events.PageChangeEvent;
 			import incubator.spring_flex.components.InfoPopup;
 			import mx.rpc.events.ResultEvent;
@@ -18,8 +18,8 @@
 			import mx.managers.PopUpManager;
 			import mx.rpc.events.FaultEvent;
 			import mx.collections.ArrayCollection;
-			import incubator.spring_flex.domain.Customer;
-			import incubator.spring_flex.domain.Order;
+			import incubator.spring_flex.dto.Customer;
+			import incubator.spring_flex.dto.Order;
 			
 			[Bindable]
 			public var customer:Customer;
@@ -33,7 +33,7 @@
 			private var popup:InfoPopup;
 			
 			private function init() : void { 
-			 	pizzaService.loadPizzas();
+			 	pizzaService.getAllPizzas();
 			}
 			
 			private function resultHandlerLoad(event:ResultEvent) : void {
@@ -50,7 +50,7 @@
             }
 
 			private function resultHandlerOrder(event:ResultEvent) : void {
-				//this.availablePizazs = event.result as ArrayCollection;
+				this.availablePizazs = event.result as ArrayCollection;
 				popup = new InfoPopup();
 				popup.onOk = onOkHandler;
 				popup.cancellabe = false;
@@ -75,33 +75,33 @@
 			public function onClickAddPizza(event:MouseEvent) : void {
 				var pizza:Pizza = dg_availablePizzas.selectedItem as Pizza;
 				
-				var orderedPizza:OrderedPizza = null;
+				var orderedDish:OrderedDish = null;
 				
 				for (var i:int = 0; i < shoppingCart.length; i++) {
-					orderedPizza = shoppingCart.getItemAt(i) as OrderedPizza;
-					if(orderedPizza.pizza.id == pizza.id){
-						orderedPizza.amount = orderedPizza.amount + 1;
+					orderedDish = shoppingCart.getItemAt(i) as OrderedDish;
+					if(orderedDish.dish.key == pizza.key){
+						orderedDish.amount = orderedDish.amount + 1;
 						// self assignment to cause view refresh
 						dg_selectedPizzas = dg_selectedPizzas;
 						return;
 					}
 				}
 				
-				orderedPizza = new OrderedPizza();
-				orderedPizza.pizza = pizza;
-				orderedPizza.amount = 1;
+				orderedDish = new OrderedDish();
+				orderedDish.dish = pizza;
+				orderedDish.amount = 1;
 				
-				shoppingCart.addItem(orderedPizza);
+				shoppingCart.addItem(orderedDish);
 			}
 			
 			public function onClickRemovePizza(event:MouseEvent) : void {
-				var orderedPizza:OrderedPizza = dg_selectedPizzas.selectedItem as OrderedPizza;
+				var orderedDish:OrderedDish = dg_selectedPizzas.selectedItem as OrderedDish;
 				
-				if(orderedPizza.amount == 1){
-					var index:int = shoppingCart.getItemIndex(orderedPizza);
+				if(orderedDish.amount == 1){
+					var index:int = shoppingCart.getItemIndex(orderedDish);
 					shoppingCart.removeItemAt(index);
 				} else {
-					orderedPizza.amount = orderedPizza.amount - 1;
+					orderedDish.amount = orderedDish.amount - 1;
 					// self assignment to cause view refresh
 					dg_selectedPizzas = dg_selectedPizzas;
 				}
@@ -113,8 +113,8 @@
   				pizzaOrder.customer = this.customer;
   				
   				for (var i:int = 0; i < shoppingCart.length; i++) {
-					var orderedPizza:OrderedPizza = shoppingCart.getItemAt(i) as OrderedPizza;
-					pizzaOrder.orderedPizzas.addItem(orderedPizza);
+					var orderedDish:OrderedDish = shoppingCart.getItemAt(i) as OrderedDish;
+					pizzaOrder.orderedDishes.addItem(orderedDish);
   				}
 
 				orderService.saveOrder(pizzaOrder);
@@ -133,7 +133,7 @@
 	</mx:Script>
 
 	<mx:RemoteObject id="pizzaService" destination="pizzaService">
-		<mx:method name="loadPizzas" result="resultHandlerLoad(event)" fault="handleFault(event)"/>
+		<mx:method name="getAllPizzas" result="resultHandlerLoad(event)" fault="handleFault(event)"/>
 	</mx:RemoteObject>
 
 	<mx:RemoteObject id="orderService" destination="orderService">
@@ -173,11 +173,11 @@
 				</mx:HBox>
 				<mx:DataGrid id="dg_selectedPizzas" width="100%" height="130" dataProvider="{shoppingCart}">
 		            <mx:columns>
-		                <mx:DataGridColumn dataField="pizza.name" headerText="Name"/>
+		                <mx:DataGridColumn dataField="dish.name" headerText="Name"/>
 		                <mx:DataGridColumn headerText="Preis">
 			                <mx:itemRenderer>
 						        <mx:Component>
-						            <mx:Label text="{data.pizza.price * data.amount}" />
+						            <mx:Label text="{data.dish.price * data.amount}" />
 						        </mx:Component>
 						    </mx:itemRenderer>
 		                </mx:DataGridColumn>
