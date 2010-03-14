@@ -11,7 +11,7 @@
 			
 			[Bindable]
 			public var info:String;
-			
+			sd
 			[Bindable]
 			public var cancellabe:Boolean = true;
 			
