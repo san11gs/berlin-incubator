@@ -46,6 +46,8 @@ http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
 == Deployment ==
 
  The project is deployed on Google App Engine cloud: http://weld-gae.appspot.com
+ 
+ https://appengine.google.com is used to manage apps.
 
 = Restrictions =
 == Java ==
@@ -55,6 +57,7 @@ http://berlin-incubator.googlecode.com/files/screenshot_gae_dataviewer.png
  * JPA1.0 implementation is used
  * Google restrictions --> link
  * java.lang.UnsupportedOperationException: No support for uniqueness constraints
+ * No support for many to many relation ships
 
 == EJB ==
  --> not avaiable --> double check
