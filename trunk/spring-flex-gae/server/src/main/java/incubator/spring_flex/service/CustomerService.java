@@ -1,6 +1,8 @@
 package incubator.spring_flex.service;
 
-import incubator.spring_flex.domain.Customer;
+import java.util.List;
+
+import incubator.spring_flex.dto.Customer;
 
 /**
  * Business interface of the customer services.
@@ -10,7 +12,7 @@ import incubator.spring_flex.domain.Customer;
  */
 public interface CustomerService {
 
-    void helloMichael();
+    boolean createDemoUser();
     
     /**
      * Checks whether a custoer with the passed phone number already exists. <br/>
@@ -34,9 +36,16 @@ public interface CustomerService {
     /**
      * Saves a new customer.
      * 
-     * @param customer
-     *            the new customer to be saved/created.
-     * @return the created customer
+     * @param customerEntity
+     *            the new customerEntity to be saved/created.
+     * @return the created customerEntity
      */
-    Customer createCustomer(Customer customer);
+    Customer createCustomer(Customer customerEntity);
+    
+    /**
+     * Return all perstent customer objects.
+     * 
+     * @return
+     */
+    List<Customer> getAllCustomers();
 }

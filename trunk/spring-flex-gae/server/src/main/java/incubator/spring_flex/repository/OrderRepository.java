@@ -1,6 +1,10 @@
 package incubator.spring_flex.repository;
 
-import incubator.spring_flex.domain.Order;
+import java.util.Collection;
+import java.util.List;
+
+import incubator.spring_flex.domain.CustomerEntity;
+import incubator.spring_flex.domain.OrderEntity;
 import incubator.spring_flex.persistence.JpaGenericDAO;
 
 import javax.persistence.EntityManager;
@@ -17,15 +21,22 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository("orderManager")
 public class OrderRepository {
 
-    private JpaGenericDAO<Order, Long> orderDao = null;
+    private JpaGenericDAO<OrderEntity, Long> orderDao = null;
     
     @PersistenceContext
     public void setEntityManager(EntityManager entityManager) {
-        this.orderDao = new JpaGenericDAO<Order, Long>(entityManager, Order.class);
+        this.orderDao = new JpaGenericDAO<OrderEntity, Long>(entityManager, OrderEntity.class);
     }
 
     @Transactional
-    public Order saveOrder(Order order) {
+    public OrderEntity saveOrder(OrderEntity order) {
     	return this.orderDao.persist(order);
+    }
+
+    @Transactional
+    public Collection<OrderEntity> loadAll() {
+        List<OrderEntity> list = this.orderDao.findByNamedQuery("OrderEntity.loadAll");
+        System.out.println("---list.size: " + list.size());
+        return list;
     }
 }

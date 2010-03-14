@@ -1,6 +1,6 @@
 package incubator.spring_flex.service;
 
-import incubator.spring_flex.domain.Pizza;
+import incubator.spring_flex.dto.Pizza;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public interface PizzaService {
      * 
      * @return List containing all pizzas.
      */
-    List<Pizza> loadPizzas();
+    List<Pizza> getAllPizzas();
 
     /**
      * Load the pizza with the passed id.

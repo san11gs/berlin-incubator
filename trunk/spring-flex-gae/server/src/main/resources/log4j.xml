@@ -15,6 +15,10 @@
 		<level value="info" />
 	</logger>
 	
+	<logger name="incubator.spring_flex">
+		<level value="info" />
+	</logger>
+	
 	<!-- Root Logger -->
 	<root>
 		<priority value="info" />

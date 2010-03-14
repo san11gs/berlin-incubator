@@ -7,18 +7,23 @@
 		
 		<provider>org.datanucleus.store.appengine.jpa.DatastorePersistenceProvider</provider>
 		
-		<class>incubator.spring_flex.domain.Customer</class>
-		<class>incubator.spring_flex.domain.Order</class>
-		<class>incubator.spring_flex.domain.OrderedPizza</class>
-		<class>incubator.spring_flex.domain.Pizza</class>
-		<class>incubator.spring_flex.domain.Topping</class>
+		<class>incubator.spring_flex.domain.CustomerEntity</class>
+		<class>incubator.spring_flex.domain.DishEntity</class>
+		<class>incubator.spring_flex.domain.IngredientEntity</class>
+		<class>incubator.spring_flex.domain.OrderedDishEntity</class>
+		<class>incubator.spring_flex.domain.OrderEntity</class>
+		<class>incubator.spring_flex.domain.PizzaEntity</class>
 		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>
-			<property name="datanucleus.ConnectionURL" value="appengine" />
-			<property name="datanucleus.NontransactionalRead" value="true" />
-			<property name="datanucleus.NontransactionalWrite" value="true" />
+	        <property name="javax.jdo.PersistenceManagerFactoryClass"
+	            value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/>
+	        <property name="javax.jdo.option.ConnectionURL" value="appengine"/>
+	        <property name="javax.jdo.option.NontransactionalRead" value="true"/>
+	        <property name="javax.jdo.option.NontransactionalWrite" value="true"/>
+	        <property name="javax.jdo.option.RetainValues" value="true"/>
+	        <property name="datanucleus.appengine.autoCreateDatastoreTxns" value="false"/>
 		</properties>
 		
 	</persistence-unit>

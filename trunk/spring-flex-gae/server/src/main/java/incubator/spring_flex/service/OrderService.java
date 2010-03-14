@@ -1,6 +1,8 @@
 package incubator.spring_flex.service;
 
-import incubator.spring_flex.domain.Order;
+import java.util.Collection;
+
+import incubator.spring_flex.dto.Order;
 
 /**
  * Business interface of the order services.
@@ -18,4 +20,6 @@ public interface OrderService {
      * @return the created order
      */
      Order saveOrder(Order order);
+     
+     Collection<Order> getAllOrders();
 }
