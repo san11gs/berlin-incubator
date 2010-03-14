@@ -5,6 +5,7 @@ import java.util.List;
 
 import incubator.spring_flex.domain.CustomerEntity;
 import incubator.spring_flex.domain.OrderEntity;
+import incubator.spring_flex.domain.OrderedDishEntity;
 import incubator.spring_flex.persistence.JpaGenericDAO;
 
 import javax.persistence.EntityManager;
@@ -36,7 +37,14 @@ public class OrderRepository {
     @Transactional
     public Collection<OrderEntity> loadAll() {
         List<OrderEntity> list = this.orderDao.findByNamedQuery("OrderEntity.loadAll");
+        //orderDao.getEntityManager().getTransaction().
         System.out.println("---list.size: " + list.size());
+        for(OrderEntity orderEntity : list){
+            orderEntity.getCustomer().getKey();
+            for(OrderedDishEntity entity : orderEntity.getOrderedDishes()){
+                entity.getDish().getKey();
+            }
+        }
         return list;
     }
 }
