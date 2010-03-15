@@ -39,10 +39,8 @@ Review (Artikel und Link zur Anwendung):
 - Thomas (the brain)
 - Frank Ratzlow (+ code Review)
 - Jan Groth
-- Dirk Ludwig
-- Alexandra Döring
-- Alphonse Bendt
 - Torsten Fink
+- Alexandra Döring
 - Steffi (Stil)
 
 --------------------------------------------------------------------------------
@@ -168,7 +166,7 @@ Anbindung der Anwendung an Google
 An der Projekstrucrur änder sich nicht nichts.
 
 - Build maangement
-	--> - Eclipse-Plugin | Ant | Maven - Build
+	--> GAE: - Eclipse-Plugin | Ant | Maven - Build | Console
 
 
 - Deployment, Google accounr, Jetty
@@ -249,13 +247,16 @@ Resitrictions und Lösung:
 fertig und test.
 Link auf Test-Ptojekt
 
+
+http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine?pli=1
+
 --------------------------------------------------------------------------------
 Administration:
 --------------------------------------------------------------------------------
 [screenshot]
 
 Nachdem die Anwendung auf die Google App Enginge migriert ist, bleibt die Übernahme der IT-Infrastruktur. So müssen die bestehenden Daten der MySQL-Datenbank 
-nach BiGTable portiert werden. [??? Gibts da Hooks?]
+nach BiGTable portiert werden. --> http://code.google.com/intl/de-DE/appengine/docs/python/datastore/gqlqueryclass.html
 
 Dienstleistungen auf Applikations-Server-Seite können leicht in der Google Admin Console konfiguriert werden. Diese umfassen:
 - Scheduling / Timer Service
@@ -285,6 +286,8 @@ Der Code kann auf berlin-incubator.org heruntergeladen werden und lädt explizit 
 1) Auschecken
 2) bauen: mvn clean install
 3) Lokal deployen
+
+Die Anwendung: http://spring-flex-gae.appspot.com/flex-app.swf
 
 Mit einer eigenen app-Id (Anpassung in der appengine.xml) kann die Anwendung auch direkt in die Google Cloud deployed werden.
 
