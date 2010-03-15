@@ -8,7 +8,7 @@
 
 = Deployment =
 
- The project is deployed on Google App Engine cloud: http://weld-gae.appspot.com
+ The project is deployed on Google App Engine cloud: http://spring-flex-gae.appspot.com
  
  https://appengine.google.com is used to manage apps.
 
