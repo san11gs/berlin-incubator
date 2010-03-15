@@ -5,7 +5,7 @@
       * [project_springFlexGae Spring Flex GAE]      
       * [project_weldGae Weld GAE]
       * [project_gwtCloud GWT GAE]
-    * [Java EE plain]
+    * Java EE plain
       * [project_weldJsfJee Weld JSF Java EE 6]
       * [project_springFacesPizza Spring JSF]
     
