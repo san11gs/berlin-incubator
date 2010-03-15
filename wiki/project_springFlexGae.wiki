@@ -1,0 +1,29 @@
+#summary springFlexGae project wiki site
+#labels GAE,Springs,Featured
+
+= Introduction =
+
+ It's a sample weld project running on Google App Engine. The project was created with the help of great tutorial by Shane Bryzak: http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+
+
+= Deployment =
+
+ The project is deployed on Google App Engine cloud: http://weld-gae.appspot.com
+ 
+ https://appengine.google.com is used to manage apps.
+
+= Restrictions =
+== Java ==
+ * Whitelist
+
+== JPA ==
+ * JPA1.0 implementation is used
+ * Google restrictions --> link
+ * java.lang.UnsupportedOperationException: No support for uniqueness constraints
+ * No support for many to many relation ships
+
+== EJB ==
+ --> not avaiable --> double check
+ 
+== Flex ==
+http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html
