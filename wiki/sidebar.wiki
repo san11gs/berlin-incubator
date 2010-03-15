@@ -5,5 +5,5 @@
     * [project_springFacesPizza Spring JSF]
     * [project_gwtCloud GWT GAE CSS and style]
     * [project_weldJsfJee Weld JSF Java EE 6]
-    * [project_springFlexGae] Spring Flex GAE]
-      * [project_springFlexGae/Spring Restrictions]
+    * [project_springFlexGae Spring Flex GAE]
+      * [project_springFlexGae#Restrictions Restrictions]
