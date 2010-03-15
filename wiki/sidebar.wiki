@@ -1,7 +1,7 @@
 #labels sidebar
   * [Welcome ↑ Home]
   * [Projects]
-    * [GAE cloud computing]
+    * GAE cloud computing
       * [project_springFlexGae Spring Flex GAE]      
       * [project_weldGae Weld GAE]
       * [project_gwtCloud GWT GAE]
