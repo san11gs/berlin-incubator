@@ -241,6 +241,8 @@ Resitrictions und Lösung:
 -keine unique Constraints
 - keine Many to many
 
+Flex - https://appengine.google.com/datastore/explorer?app_id=spring-flex-gae&viewby=kind&kind=ingredient
+
 Übernahme von Altdaten??: GSQL
 
 
@@ -287,7 +289,7 @@ Der Code kann auf berlin-incubator.org heruntergeladen werden und lädt explizit 
 2) bauen: mvn clean install
 3) Lokal deployen
 
-Die Anwendung: http://spring-flex-gae.appspot.com/flex-app.swf
+Die Anwendung: http://spring-flex-gae.appspot.com
 
 Mit einer eigenen app-Id (Anpassung in der appengine.xml) kann die Anwendung auch direkt in die Google Cloud deployed werden.
 
