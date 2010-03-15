@@ -241,7 +241,7 @@ Resitrictions und Lösung:
 -keine unique Constraints
 - keine Many to many
 
-Übernahme von Altdaten??:
+Übernahme von Altdaten??: GSQL
 
 
 fertig und test.
