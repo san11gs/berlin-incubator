@@ -1,5 +1,5 @@
 #summary springFlexGae project wiki site
-#labels GAE,Springs,Featured
+#labels GAE,Springs,Featured,Edit,JavaEE
 
 = Introduction =
 
