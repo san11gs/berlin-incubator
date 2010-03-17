@@ -33,7 +33,7 @@
 		- ...
 	- Projektumbau (Pizza4U anpassen)		mal schaun wer den Teil macht
 		- appengine.xml
-		- web.xml
+		- web.xml							(keine Anpassungen notwendig)
 		- persistence.xml 
 		- BlazeDS-Patch (blazeds.jar austauschen)
 		- EMF inklusive Aufruf beschreiben
@@ -44,7 +44,7 @@
 			- JDO-Key-Klasse für IDs
 				-> DTO-Schicht einbauen
 		  (Domain-Modell-Bild)
-		- bauen und deployen
+	- bauen und deployen
 6. Administration							Michael
 
 7. Fazit									Michael/Marek
