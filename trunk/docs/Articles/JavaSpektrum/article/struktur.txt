@@ -12,8 +12,9 @@
 
 3. Ab in die Wolke							Michael
 	- Einführung
-	- Warum Google
 	(Schichten-Bild: Anwendung - Plattform - Infrastruktur)	
+	- Warum Google?
+	- Jetty als Basis für Java&GAE 
 	
 4. Persistenz								Michael
  	- Bigtable <- von Google vorgegeben
@@ -43,7 +44,7 @@
 			- JDO-Key-Klasse für IDs
 				-> DTO-Schicht einbauen
 		  (Domain-Modell-Bild)
-		  
+		- bauen und deployen
 6. Administration							Michael
 
 7. Fazit									Michael/Marek
