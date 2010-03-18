@@ -1,3 +1,4 @@
 
 
-http://code.google.com/intl/de-DE/appengine/docs/java/config/appconfig.html    Konfiguration der GAE
+http://code.google.com/intl/de-DE/appengine/docs/java/config/appconfig.html    	Konfiguration der GAE
+http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html		BlazeDS-Patch
