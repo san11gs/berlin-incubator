@@ -1,22 +1,22 @@
 
-1. Einleitung								Marek
+1. Einleitung								DONE | Marek
 	- Start-Up								
 	- Pizza4U
 
-2. Projektstruktur							Marek
+2. Projektstruktur							DONE | Marek
 	- Hibernate/JPA
 	- Flex
 	- Maven
 	- Spring
 	-> Architekturbild
 
-3. Ab in die Wolke							Michael
+3. Ab in die Wolke							DONE | Michael
 	- Einführung
 	(Schichten-Bild: Anwendung - Plattform - Infrastruktur)	
 	- Warum Google?
 	- Jetty als Basis für Java&GAE 
 	
-4. Persistenz								Michael
+4. Persistenz								OPEN | Michael
  	- Bigtable <- von Google vorgegeben
  	- Datanucleus <- von uns wegen JPA benötigt
  		- Enhancer (muss man ggf. nicht explizit erwähnen - ist ja kein Tutorial)
@@ -26,7 +26,7 @@
  			- keine Many-To-Many-Beziehungen
  			- keine polymorphe Referenzen
 
-5. Migration								Michael/Marek
+5. Migration								OPEN | Michael/Marek
 	- alles rund um GAE						Michael
 		- Account anlegen
 		- einrichten
@@ -45,8 +45,8 @@
 				-> DTO-Schicht einbauen
 		  (Domain-Modell-Bild)
 	- bauen und deployen
-6. Administration							Michael
+6. Administration							OPEN | Michael
 
-7. Fazit									Michael/Marek
+7. Fazit									OPEN | Michael/Marek
 
 	
