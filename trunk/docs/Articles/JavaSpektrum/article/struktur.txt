@@ -46,7 +46,12 @@
 		  (Domain-Modell-Bild)
 	- bauen und deployen
 6. Administration							OPEN | Michael
+--> Scrrenshots vorbereitet--> Lückenfüller.
+Vorschlag: 2 + Text
+
+
 
 7. Fazit									OPEN | Michael/Marek
 
-	
+jpa 1.0?
+datemigration??	
