@@ -26,8 +26,8 @@
  			- keine Many-To-Many-Beziehungen
  			- keine polymorphe Referenzen
 
-5. Migration								OPEN | Michael/Marek
-	- alles rund um GAE						Michael
+5. Migration								DONE  | Michael/Marek
+	- alles rund um GAE						
 		- Account anlegen
 		- einrichten
 		- ...
@@ -45,6 +45,8 @@
 				-> DTO-Schicht einbauen
 		  (Domain-Modell-Bild)
 	- bauen und deployen
+	
+	
 6. Administration							OPEN | Michael
 --> Scrrenshots vorbereitet--> Lückenfüller.
 Vorschlag: 2 + Text
