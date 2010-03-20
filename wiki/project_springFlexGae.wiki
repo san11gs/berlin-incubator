@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Why don't use a Spring+Flex+Maven App deployed on GAE to order your pizza? Here you go:
+Why don't use a Spring+Flex+Maven App deployed on GAE *to order your pizza*? Here you go:
 
 http://spring-flex-gae.appspot.com
 
