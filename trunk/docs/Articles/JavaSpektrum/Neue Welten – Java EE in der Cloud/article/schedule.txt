@@ -1,0 +1,44 @@
+INFO
+
+Neue Welten - Java EE in der Cloud
+(Neue Welten - Java EE mit Spring und Flex in der Cloud)
+wir schicken Ihnen heute wie besprochen die gewünschten Dokumente. Eine Anmerkung zum Abstract: Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass die Menge der in unserer Beispielanwendung eingesetzten Technologien den Umfang eines Artikels sprengen würde. Daher betrachten wir in dem Artikel nur einen Teil und setzen den Fokus auf das Zusammenspiel von Java EE und GAE. Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur ausgewählte Technologien separat betrachtet werden.
+
+Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air zu veröffentlichen. Oder fänden Sie eine Serie besser geeignet?
+
+Wir freuen uns auf ein kurzes Feedback.
+
+
+Umfang: 21.3. eine Version an mich zu senden - vielleicht klappt's ja doch noch.Umfang wären 5 Wordseiten inkl. Bilder + Listings
+
+Stil siehe: JS_Formatierungsrichtlinien
+http://www.sigs-datacom.de/fachzeitschriften/javaspektrum/hinweise-fuer-autoren/aufruf-zu-beitraegen.html
+14.000 und 22.000 Zeichen haben (ohne Leerzeichen)
+
+Links:
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart2
+
+- Verwendung von CDI (@Inject statt @Autowire)??
+
+
+    * Was genau verbirgt sich hinter Cloud Computing?
+    * Welche Plattformen existieren und was sind deren charekteristischen Eigenschaften, Vorteile aber auch Grenzen?
+    * Wie nutzt der Java-Entwickler oder -Architekt diese Plattformen effektiv?
+    * Welche Entwicklungswerkzeuge unterstützen die Entwicklung von Cloud-Applikationen am besten?
+    * Wie schaut es mit Interoperabilitätsaspekten aus?
+    * Welche Anwendungsdomänen sind für die Nutzung von Cloud-Technologien prädestiniert?
+    * Welche Beispielsanwendungen gibt es bereits?
+
+Schedule:
+- Fertig bis  19.
+- Review bis 21. 15:Uhr
+- Abgabe 21. bis 24.00 Uhr
+
+Review (Artikel und Link zur Anwendung):
+- Thomas (the brain)
+- Frank (+ code Review)
+- Jan
+- Torsten
+- Alex
+- Steffi (Stil)

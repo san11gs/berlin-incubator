@@ -1,0 +1,59 @@
+
+1. Einleitung								DONE | Marek
+	- Start-Up								
+	- Pizza4U
+
+2. Projektstruktur							DONE | Marek
+	- Hibernate/JPA
+	- Flex
+	- Maven
+	- Spring
+	-> Architekturbild
+
+3. Ab in die Wolke							DONE | Michael
+	- Einführung
+	(Schichten-Bild: Anwendung - Plattform - Infrastruktur)	
+	- Warum Google?
+	- Jetty als Basis für Java&GAE 
+	
+4. Persistenz								OPEN | Michael
+ 	- Bigtable <- von Google vorgegeben
+ 	- Datanucleus <- von uns wegen JPA benötigt
+ 		- Enhancer (muss man ggf. nicht explizit erwähnen - ist ja kein Tutorial)
+ 		- Restriktionen:
+ 			- JPA 1.0
+ 			- keine uniquie Contraints
+ 			- keine Many-To-Many-Beziehungen
+ 			- keine polymorphe Referenzen
+
+5. Migration								DONE  | Michael/Marek
+	- alles rund um GAE						
+		- Account anlegen
+		- einrichten
+		- ...
+	- Projektumbau (Pizza4U anpassen)		mal schaun wer den Teil macht
+		- appengine.xml
+		- web.xml							(keine Anpassungen notwendig)
+		- persistence.xml 
+		- BlazeDS-Patch (blazeds.jar austauschen)
+		- EMF inklusive Aufruf beschreiben
+	
+		- Domain-Modell						Marek
+			- Umbau, da keine polymorphen 
+			  Referenzen möglich
+			- JDO-Key-Klasse für IDs
+				-> DTO-Schicht einbauen
+		  (Domain-Modell-Bild)
+	- bauen und deployen
+	
+	
+6. Administration							OPEN | Michael
+--> Scrrenshots vorbereitet--> Lückenfüller.
+Vorschlag: 2 + Text
+
+
+
+7. Fazit									OPEN | Michael/Marek
+
+jpa 1.0?
+datemigration??	
