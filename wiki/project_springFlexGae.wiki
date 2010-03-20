@@ -3,18 +3,31 @@
 
 = Introduction =
 
- It's a sample weld project running on Google App Engine. The project was created with the help of great tutorial by Shane Bryzak: http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
+sdfsdft1
 
-= Tooling =
-SVN-Client, Maven, GAE SDK, IDE
+= Technology =
+
+* Spring 3
+* Flex 3.5
+
+= Tools =
+
+== required ==
+* Java 1.6, SVN-Client, Maven, GAE
+
+== extended  =
+* Eclipse Plugin
 
 = Deployment =
 
- The project is deployed on Google App Engine cloud: http://spring-flex-gae.appspot.com
- 
- https://appengine.google.com is used to manage apps.
+The project is deployed on Google App Engine cloud:
+http://spring-flex-gae.appspot.com
+
 
 = Restrictions =
+Java Enterprise Edition (Java EE) Technologies:
+http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine
+
 == Java ==
 Whitelist: Access to the classes in the Java standard library (the Java Runtime Environment, or JRE) is limited to the following classes: 
 
