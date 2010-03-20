@@ -2,3 +2,20 @@ extended article:
 backend focus
 
 features of Google App Engine Web Access...
+
+- Scheduling / Timer Service
+- Anbindung Google API (Maps, Picassa)
+- Verwendung von Authentication mittels Google Accounts
+- DB-Abfragen GQL
+- Log-File-Auswertung
+[Code-Beispiele??]
+
+tooooooling
+
+
+Vertiefung Build-Prozess, Spring, Maven
+- Maven Archetype?
+
+
+
+Migration von Altdaten
