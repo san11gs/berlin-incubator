@@ -14,7 +14,9 @@
 
 = Restrictions =
 == Java ==
- * Whitelist
+Whitelist: Access to the classes in the Java standard library (the Java Runtime Environment, or JRE) is limited to the following classes: 
+
+http://code.google.com/intl/de-DE/appengine/docs/java/jrewhitelist.html
 
 == JPA ==
  * JPA1.0 implementation is used
@@ -23,7 +25,7 @@
  * No support for many to many relation ships
 
 == EJB ==
- --> not avaiable --> double check
+ --> not supported
  
 == Flex ==
 http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html
