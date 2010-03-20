@@ -5,6 +5,8 @@
 
  It's a sample weld project running on Google App Engine. The project was created with the help of great tutorial by Shane Bryzak: http://in.relation.to/Bloggers/WeldJSF20AndGoogleAppEngineNavigatingTheMinefieldPart1
 
+= Tooling =
+SVN-Client, Maven, GAE SDK, IDE
 
 = Deployment =
 
