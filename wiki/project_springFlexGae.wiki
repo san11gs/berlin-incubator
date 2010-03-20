@@ -21,11 +21,13 @@ sdfsdft1
 = Deployment =
 
 The project is deployed on Google App Engine cloud:
+
 http://spring-flex-gae.appspot.com
 
 
 = Restrictions =
 Java Enterprise Edition (Java EE) Technologies:
+
 http://groups.google.com/group/google-appengine-java/web/will-it-play-in-app-engine
 
 == Java ==
