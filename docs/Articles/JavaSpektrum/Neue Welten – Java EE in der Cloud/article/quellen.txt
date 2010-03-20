@@ -1,0 +1,7 @@
+
+
+http://code.google.com/intl/de-DE/appengine/docs/java/config/appconfig.html    	Konfiguration der GAE
+http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html		BlazeDS-Patch
+https://www.google.com/accounts/NewAccount										Neue Google Mail
+https://appengine.google.com/													GAE Account
+link --> über XING??															Überblick NoSQL

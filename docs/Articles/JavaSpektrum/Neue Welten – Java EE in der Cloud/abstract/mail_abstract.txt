@@ -1,0 +1,24 @@
+michael.stal@gmail.com
+Abstract "Neue Welten - Java EE in der Cloud"
+
+Hallo Herr Stal,
+
+wir schicken Ihnen heute wie besprochen die gewünschten Dokumente.
+
+Eine Anmerkung zum Abstract: 
+Beim Ausarbeiten des Themenkomplexes haben wir festgestellt, dass die Menge der in unserer Beispielanwendung 
+eingesetzten Technologien den Umfang eines Artikels sprengen würde. Daher betrachten wir in dem Artikel 
+nur einen Teil und setzen den Fokus auf das Zusammenspiel von Java EE und GAE.
+
+Uns liegt aber eigentlich sehr viel daran, die Ganzheitlichkeit der Thematik zu beleuchten, da meistens nur 
+ausgewählte Technologien separat betrachtet werden. 
+
+Daher der Vorschlag von uns, einen weiteren Artikel zum Thema Spring + Flex/Air zu veröffentlichen. Oder 
+fänden Sie eine Serie besser geeignet?
+
+Wir freuen uns auf ein kurzes Feedback.
+
+
+viele Grüße
+Michael Schütz (akquinet AG)
+Marek Iwaszkiewicz (adesso AG)
