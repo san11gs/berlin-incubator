@@ -16,6 +16,24 @@ tooooooling
 Vertiefung Build-Prozess, Spring, Maven
 - Maven Archetype?
 
-
+####################################################################################################################
 
 Migration von Altdaten
+Entwicklung, Deployment und Konfiguration sind abgeschlossen. Ein finaler und wichtiger Punkt wäre die Migration von Alt-Daten. 
+In diesem Beispiel heißt das, die bestehenden 60.000 Datensätze der MySQL-Datenbank nach Bigtable zu migrieren. Obgleich eine Beleuchtung der 
+verschiedenen Möglichkeiten ein spannendes und eventuell anstrengendes Thema darstellen, sprengt auch das leider den Rahmen dieses Artikels.
+
+####################################################################################################################
+
+Und was ist mit Flex?
+Abschließend widmen wir einen Absatz einem zu Beginn erwähnten, seither jedoch vernachlässigten Teil der Anwendung – dem Frontend. 
+Im Frontend wird Flex zusammen mit BlazeDS eingesetzt. Im Rahmen der Migration fallen auch hier Änderungen an. So gibt es zum Beispiel auf 
+der GAE Probleme mit dem Session-Handling. Auch gibt es Probleme mit Klassen, die sich nicht auf der White-List der Java-Klassen der GAE befinden, 
+welche jedoch von Flex benötigt werden. Für diese Probleme gibt es einen GAE-spezifischen BlazeDS-Patch in Form eines auszutauschenden Jar-Files 
+[GAE & BlazeDS Patch]. Ein weiteres Problem ergibt sich durch die Änderungen der ID-Typen im Domain-Modell. In der Kommunikation zwischen einem 
+Flex-Client und dem Server werden serialisierte Objekte ausgetauscht. Da es für die Klasse Key der IDs auf Flex-Seite keine Entsprechung gibt, 
+scheitert die Serialisierung und Deserialisierung. Um dieses Problem zu lösen, muss auf dem Server eine weitere Schicht mit Data Transfer Objekten 
+(DTOs) eingeführt werden, deren Typ der IDs der DTOs ein String ist. Durch die neue Schicht ergibt sich, dass auch Klassen für das Mapping von Objekten 
+der einen in Objekte der anderen Schicht implementiert werden müssen. Das Mapping von Key-Instanzen erfolgt über die KeyFactory-Klasse, welche die 
+stringToKey- und die keyToString-Methoden anbietet. 
+[MaZo]	Martin Zoldano, BlazeDS-Patch, siehe: http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html
