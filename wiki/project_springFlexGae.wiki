@@ -3,7 +3,9 @@
 
 = Introduction =
 
-sdfsdft1
+Why not us a Spring+Flex+Maven App deployes on GAE to order your pizza? Here you go:
+
+http://spring-flex-gae.appspot.com
 
 = Technology =
 
@@ -12,18 +14,9 @@ sdfsdft1
 
 = Tools =
 
-== required ==
-* Java 1.6, SVN-Client, Maven, GAE
-
-== extended  =
-* Eclipse Plugin
-
-= Deployment =
-
-The project is deployed on Google App Engine cloud:
-
-http://spring-flex-gae.appspot.com
-
+== Tooling ==
+* required: Java 1.6, SVN-Client, Maven, GAE
+* extended: Eclipse Plugin
 
 = Restrictions =
 Java Enterprise Edition (Java EE) Technologies:
