@@ -5,9 +5,10 @@ features of Google App Engine Web Access...
 
 - Scheduling / Timer Service
 - Anbindung Google API (Maps, Picassa)
-- Verwendung von Authentication mittels Google Accounts
-- DB-Abfragen GQL
+- Verwendung von Authentisierung mittels Google Accounts
+- DB-Abfragen mit der Google Query Language (GQL)
 - Log-File-Auswertung
+
 [Code-Beispiele??]
 
 tooooooling
@@ -37,3 +38,21 @@ scheitert die Serialisierung und Deserialisierung. Um dieses Problem zu lösen, m
 der einen in Objekte der anderen Schicht implementiert werden müssen. Das Mapping von Key-Instanzen erfolgt über die KeyFactory-Klasse, welche die 
 stringToKey- und die keyToString-Methoden anbietet. 
 [MaZo]	Martin Zoldano, BlazeDS-Patch, siehe: http://martinzoldano.blogspot.com/2009/04/appengine-adobe-blazeds-fix.html
+
+####################################################################
+
+Da ist sehr viel Vertrauen zu Google herauszuhören. Für den Artikel kann das ok sein. Ich finde, dass kritische Artikel meistens wertvoller sind.
+Also, was passiert denn, wenn Daten verloren gehen? Was garantiert Google? Wer zahlt die daraus resultierenden Verluste? Das gleiche gilt auch für 
+die Anwendungen. Was passiert, wenn bei der TV-Kampagne Google ein Problem hat? Was passiert durch Daten- oder Programmfehler, die durch Fehler in 
+der GAE auftreten.
+Außerdem, wie schlimm ist das Lock-In? Also, wie leicht kommt man wieder aus der GAE heraus?
+
+Ist jetzt wahrscheinlich zu spät, das könnte aber ein für die strategischen Entscheidung wichtiger Absatz sein.
+
+#####################################################################
+
+Was bedeutet, dass „echte“ JEE-Anwendungen draußen sind. Der Industriestandard JEE ist damit nicht unterstützt.
+
+#######################
+
+API-Zugriff JPA/Bigtable
