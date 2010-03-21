@@ -56,3 +56,16 @@ Was bedeutet, dass „echte“ JEE-Anwendungen draußen sind. Der Industriestandard J
 #######################
 
 API-Zugriff JPA/Bigtable
+################################################################
+ejb 3.1 --> jetty
+
+###############################
+Einige durchaus sehr praxisrelavante Fragen wie z.B. die Verantwortlichkeit von Google gegenüber Datenverlusten konnten im Rahmen dieses Artikels nicht geklärt werden. 
+##################################
+gae unterstützt jdo nativ --> soll das auch direkt verwendet werden
+##############################
+richfaces geht nicht wegen java lib, die nicht im whitelist ist --> untersuchen oder patchen
+###################################
+Könnte man auch noch mit Erwartungswerten hinterlegen (1000 / Bestellungen pro Studne oder so was, 1000 Neuregistrierungen nach Fernsehwerbung etc.) 
+Dieser wie auch obiger Kommentar hat nix mit den Technologie Themen zu tun und ist eher interessant für die Wahl und die Erfahrungen mit Google ... das 
+lässt sich aber sicher nicht mit Pizza4U belegen---
