@@ -1,8 +1,6 @@
 
 Marek Iwaszkiewicz
-Marek arbeitet bei der adesso AG als Software Engineer mit dem Schwerpunkt EJB und Java EE Architekturen mit Spring.  
-Derzeit arbeitet er an einem Maven-basierten Generator im Rahmen der Anbindung von Flex an Java EE und stellt seine 
-aktuellen Arbeitsergebnisse unter code.google.com/p/berlin-incubator öffentlich zur Verfügung.
+Marek arbeitet als Software Engineer beim IT-Dienstleistungs- und Beratungsunternehmen adesso AG. Seine Schwerpunkte dort sind EJB sowie Java Enterprise Architekturen mit Spring.  
 marek.iwaszkiewicz@adesso.de
 
 ################################
