@@ -68,4 +68,4 @@ richfaces geht nicht wegen java lib, die nicht im whitelist ist --> untersuchen 
 ###################################
 Könnte man auch noch mit Erwartungswerten hinterlegen (1000 / Bestellungen pro Studne oder so was, 1000 Neuregistrierungen nach Fernsehwerbung etc.) 
 Dieser wie auch obiger Kommentar hat nix mit den Technologie Themen zu tun und ist eher interessant für die Wahl und die Erfahrungen mit Google ... das 
-lässt sich aber sicher nicht mit Pizza4U belegen---
+lässt sich aber sicher nicht mit Pizza4U belegen---> Kalkulation: wann lohnt sich das, wenn nicht
