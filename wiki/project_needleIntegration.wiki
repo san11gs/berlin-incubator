@@ -1,4 +1,5 @@
 #summary Tests integrating Needle.
+#labels Featured
 
 = What's Needle =
 
