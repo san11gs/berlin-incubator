@@ -8,6 +8,8 @@
     * Java EE plain
       * [project_weldJsfJee Weld JSF Java EE 6]
       * [project_springFacesPizza Spring JSF]
+    * Core
+      * [project_needleIntegration Needle Integration]
     
     
     
