@@ -1,12 +1,12 @@
 #summary Tests integrating Needle.
 
-= What's Needlde =
+= What's Needle =
 
-EasyMock + Inject
-Link sf
+Needle is a small but powerful framework on top of EasyMock and JUnit to inject mock objects for unit testing of EJB 3.0 and Seam components outside the container.
+
+It's open source an hostet here: http://sourceforge.net/projects/jbosscc-needle.
 
 
 = Example =
 
 == Testing Entities ==
-
