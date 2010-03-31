@@ -1,0 +1,10 @@
+
+Zusammenspiel von internen und Externen Clouds:
+
+- Infrastruktur
+
+ --  AmazonEC2 --> Admin erfordlerich
+ 
+ Security --> siehe ixExtra1003.pdf
+ http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-risk-assessment
+ http://www.cloudsecurityalliance.org/
