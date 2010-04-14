@@ -10,6 +10,7 @@
       * [project_springFacesPizza Spring JSF]
     * Core
       * [project_needleIntegration Needle Integration]
+  * [maven_repo Maven Repository]
     
     
     
