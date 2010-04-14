@@ -1,0 +1,14 @@
+#summary berlin-incubator Maven Repository.
+#labels Featured,Maven,repository
+
+= Reposity URL=
+
+  * https://code.google.com/p/berlin-incubator/
+
+= Maven Integration =
+
+<repository>
+    <id>berlin-incubator maven repository</id>
+    <url>http://berlin-incubator.googlecode.com/svn/maven</url>
+    <snapshots><enabled>false</enabled></snapshots>
+ </repository>
