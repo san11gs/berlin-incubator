@@ -1,7 +1,7 @@
 #summary berlin-incubator Maven Repository.
 #labels Featured,Maven,repository
 
-= Reposity URL=
+= Repository URL=
 
   * https://code.google.com/p/berlin-incubator/
 
