@@ -9,7 +9,7 @@ Design pattern are in every developers mind. The source is mainly based on examp
 
 The project is build with Maven and uses JUnit. The project is preconfigured to run on Sonar.
 
-Browse source code here: http://berlin-incubator.googlecode.com/svn/trunk/design-patterns/
+Browse source code here: https://code.google.com/p/berlin-incubator/source/browse/trunk/design-patterns/
 Checkout source code here: http://berlin-incubator.googlecode.com/svn/trunk/design-patterns/
 
 == The book ==
