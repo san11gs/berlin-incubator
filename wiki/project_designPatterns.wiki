@@ -1,0 +1,24 @@
+#summary One-sentence summary of this page.
+#labels Featured,designpatterns
+
+= Introduction =
+
+Des
+
+The source is mainly based on examples provided by book "Head First Design Patterns"
+
+== The source ==
+
+Browse source here:
+
+== The book ==
+
+http://www.headfirstlabs.com/books/hfdp/
+
+Head First Design Patterns
+ * By Eric T Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra
+ * Publisher: O'Reilly Media
+ * Released: October 2004 
+ * Pages: 688 
+
+The book itself is based on GOF patterns: http://c2.com/cgi-bin/wiki?DesignPatternsBook
