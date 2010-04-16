@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Design pattern are in every developers mind. The source is mainly based on examples provided by book "Head First Design Patterns". All basic "Gang of Four" (GOF) design patterns are covered.
+Design patterns are in every developers mind. The source is mainly based on examples provided by book "Head First Design Patterns". All basic "Gang of Four" (GOF) design patterns are covered.
 
 == The source ==
 
