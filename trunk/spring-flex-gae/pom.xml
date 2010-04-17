@@ -69,7 +69,7 @@
 	</build>
 
 	<repositories>
-        <repository>
+	    <repository>
             <id>java.net.m2</id>
             <url>http://download.java.net/maven/2</url>
         </repository>
@@ -129,6 +129,14 @@
             <id>www.mvnsearch.org</id>
             <url>http://www.mvnsearch.org/maven2/</url>
         </repository>
+		
+		<repository>
+			<id>berlin-incubator maven repository</id>
+			<url>http://berlin-incubator.googlecode.com/svn/maven</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
         
 	</repositories>
 
