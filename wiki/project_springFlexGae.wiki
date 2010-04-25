@@ -5,7 +5,9 @@
 
 Why don't use a Spring+Flex+Maven App deployed on GAE *to order your pizza*? Here you go:
 
-http://spring-flex-gae.appspot.com
+ * Live demo: http://spring-flex-gae.appspot.com
+ * Browse source code here: https://code.google.com/p/berlin-incubator/source/browse/trunk/spring-flex-gae/
+ * Checkout source code here: http://berlin-incubator.googlecode.com/svn/trunk/spring-flex-gae/ 
 
 = Technology =
  * Java 1.6, Spring 3, Flex 3.5
