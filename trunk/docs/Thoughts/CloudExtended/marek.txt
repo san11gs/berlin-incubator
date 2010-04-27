@@ -1,0 +1,26 @@
+
+Migration der Pizza4U-Anwendung auf GAE war toll, jedoch gravierenden Nachteilen unterworfen
+- Domain-Modell muss wegen keiner polymorphen Beziehungen umstrukturiert werden
+	- bei größeren Modellen nicht praktikabel (Lesbarkeit, Wartung, ...)
+- Nichteinhaltung von Java EE Standards ist bei komplexen professionellen Anwendunen ein KO-Kriterium
+- Zudem begibt man sich in die Abhängigkeit eines propritären Herstellers
+	- Abhängig von Release-Zyklen --> wann und wird JPA2 unterstützt
+- etablierte Bibliotheken wie Richfaces werden nicht unterstützt / Einsatz nicht möglicht
+
+Was bedeutet das?
+- Können diese Nachteile/Probleme gelöst/umgangen werden, indem auf eine andere Cloud  igriert wird?
+- Welche Möglichkeiten gibt es für die bestehende Pizza4U Anwendung? (d.h. Spring, Flex, BlazeDS, Maven, JPA)
+- Die bisherige Lösung wurde auf PaaS-Ebene erzielt (und führte zu den genannten Problemeb/Nachteilen)
+	- Gibt es Alternativen auf Paas-Ebene? 
+	-> YES! Cloud Foundry
+
+Eine Alternative bietet die auf Amazon's EC basierende Cloud Foundry, welche eine Laufzeitumgebung für auf 
+Java EE basierende Anwednungen bietet. Die hier zugrunde liegende Cloud ist Amazon's EC2. Damit haben wir eine 
+PaaS-Umgebung auf der IaaS Clod von Amazon - na wenn das nicht coooooool ist.
+
+Also, was wollen/machen wir?
+Pizza4U im Originalzustand auf Foundry zu deployen und der vorherigen Lösung gegebüber stellen. Was ist besser?
+
+Ausblick:   Wie kann eine eigene Laufzeitumgebung für andere Profile/Pakete auf der EC2 realisieren (siehe michael.txt).
+Ausblick 2: Realisierung einer hybriden Cloud. Also eine Java EE Anwednung auf zwei Clouds verteilen. Also auch  Aspekte 
+			wie Sicherheit (also private Cloud) einbringen

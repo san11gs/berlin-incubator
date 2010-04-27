@@ -1,0 +1,8 @@
+1) pizza4u in GAE --> ERLEDIFGT
+2) pizza4u auf Cloud Foundry
+3) pizza4u auf EC2 / eigenes Profil/Paket à là Foundry
+4) Aufbau einer hybriden Cloud inklusive Security
+
+
+--------------------
+javaSEKTRUM
