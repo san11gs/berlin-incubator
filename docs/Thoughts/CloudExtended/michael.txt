@@ -1,0 +1,12 @@
+
+
+Idee von Michael:
+Mit Spring/Cloud Foundry wird eine Spezialiserung bzw. Laufzeitumgebung für Java EE Anwendungen auf der EC von Amazon geboten. Hierbei 
+wird ein festes Paket von eingesetzten Technologien wie Spring, Tomcat und MySQL vorgegeben.
+
+Die (Hammer geile Idee von Michael) ist nun, ein eigenes alternatives Technologiepaket (hier Gedanken zr Benennung machen!!!) zu 
+realisieren. D.h. dass man eine PaaS-basierende Lösung auf IaaS-Ebene erreicht. 
+Bsp.: Pizza4U bietet Dienste und stellt somit ein SaaS dar und läuft auf der GAE und somit auf PaaS-Ebene
+Wir bieten nun eine auf Amazon's EC basierende (also auf IaaS basierende) Laufzeitumgebung für ein bestimmtes Java EE Profil/Paket an. Unsere 
+Lösung selbst betrifft demnach die IaaS-Schicht, bietet jedoch einen einfacheren Weg, Java EE Anwendungen auf dieser laufen zu lassen. 
+Für Anwender ergibt sich in diesem Fall (durch die Laufzeitumgebung) die PaaS-Persepektive. 
