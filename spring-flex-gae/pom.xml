@@ -91,6 +91,17 @@
 		</repository>
 
 		<repository>
+			<id>flex-mojos-repository2</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>		
+
+		<repository>
 			<id>ObjectWEB</id>
 			<url>http://maven.ow2.org/maven2/</url>
 			<releases>
@@ -129,7 +140,9 @@
             <id>www.mvnsearch.org</id>
             <url>http://www.mvnsearch.org/maven2/</url>
         </repository>
+	
 		
+		<!-- uncomment if necessary
 		<repository>
 			<id>berlin-incubator maven repository</id>
 			<url>http://berlin-incubator.googlecode.com/svn/maven</url>
@@ -137,13 +150,14 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+		-->
         
 	</repositories>
 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>flex-mojos-repository</id>
-			<url>http://repository.sonatype.org/content/groups/public</url>
+			<url>http://repository.sonatype.org/content/groups/flexgroup</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
