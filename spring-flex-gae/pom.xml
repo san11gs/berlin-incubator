@@ -127,7 +127,6 @@
             <id>DataNucleus_Repos</id>
             <name>DataNucleus Repository</name>
             <url>http://www.datanucleus.org/downloads/maven</url>
-            <layout>legacy</layout>
         </repository>
         
         <repository>
