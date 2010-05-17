@@ -1,0 +1,10 @@
+"Next generation testing mit Arquillian"
+
+Ausgangssituation:
+TODO
+Context --> Testen von Java EE Gesamtsystem
+Problem --> viele verschiedene Lösungen, nichts aus einem Guss. Testen mehrere Container nur mit starker Umkonfiguration möglich.
+
+Abstract:
+Im Rahmen des Artikels soll aufgezeigt werden, wie man ein Java-EE-Projekt als Gesamtsystem Testen kann. Dabei geht es um die Möglichkeiten, Tests direkt im Container und damit 
+sehr realitätsnah ausführen zu lassen. ...
