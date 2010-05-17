@@ -1,0 +1,9 @@
+
+Michael Schütz
+Michael ist Software Engineer bei der akquinet AG in Berlin und beschäftigt sich seit Jahren mit Java Enterprise Architekturen und Technologien. Er ist Gründer und 
+Moderator der Seam-Plattform auf Xing und widmet sich gerade dem Thema Java EE 6 und CDI/Weld.
+Michael.Schuetz@akquinet.de
+
+################################
+
+Jan Groth
