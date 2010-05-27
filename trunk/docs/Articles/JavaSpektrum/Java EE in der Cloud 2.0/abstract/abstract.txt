@@ -1,0 +1,11 @@
+"Java EE in der Cloud 2.0"
+
+Ausgangssituation:
+Die Migration der Pizza4U-Anwendung auf die GAE war erfolgreich, jedoch gravierenden Nachteilen unterworfen. So musste z.B. das Domain-Modell muss wegen keiner polymorphen Beziehungen umstrukturiert werden. Außerdem stellt die Nichteinhaltung von Java EE Standards bei komplexen professionellen Anwendunen ein KO-Kriterium dar. Aus 1000m aus der Luft scheint die starke Abhängigkeit eines propritären Herstellers auf Dauer nicht erstrebenswert.
+
+Abstract:
+Dieser Artikel soll untersuchen, ob diese Nachteile gelöst bzw umgangen werden können, indem auf eine andere Cloud migriert wird. Welche Möglichkeiten gibt es für die bestehende Pizza4U Anwendung? (d.h. Spring, Flex, BlazeDS, Maven, JPA). Die bisherige Lösung wurde auf PaaS-Ebene erzielt (und führte zu den genannten Problemeb/Nachteilen). Eine Alternative bietet die auf Amazon's EC2 (IaaS) basierende PaaS Cloud Foundry, welche eine Laufzeitumgebung für auf 
+Spring basierende Anwednungen bietet. Damit würden wir auf eine PaaS-Umgebung auf der IaaS Clod von Amazon setzen. Das klingt sehr vielversprechend.
+
+Das haben wir konkret vor:
+Pizza4U im Originalzustand auf die Cloud Foundry deployen und der vorherigen Lösung gegebüber stellen. Nachdem sich der letzte Artikel auf die technologische MAchbarkeit der Cloud-Umgebung auf der GAE konzentriert hat, soll hier der Fokus auf eine möglichst praxisnahe und professionelle Lösung gelegt werden, ohne die bestehende Anwendung technisch entscheidend zu verändern.
