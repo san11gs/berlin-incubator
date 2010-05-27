@@ -1,0 +1,17 @@
+GAE --> PaaS
+EC2 --> IaaS
+
+OK, man kennt die jeweilige Technologie.
+
+Aber ist es möglich, diese beiden Technologien in einen sinnvollen Context zusammen einzusetzen?
+
+Konkrete Idee: GAE stellt die PaaS zur Konfiguration der Amazon EC2 (IaaS) dar. Das ist quasi der Cloud Foundry-Ansatz von Spring.
+
+Untersuchung: Profil, Instanz; eigenes Image anpassen
+ICh möchte meine Anwendung auf der EC2 laufen lassen, Konfiguration aber über ein WebInterface steuern, was auf der GAE läuft. Dieses Verwendet intern die von Amazon bereit-gestellten WebServices
+
+
+Features zur Steuerung:
+- Instanz starten, stoppen --> OK, convinience
+- spannender: Instanz automatisch hinzu, also skalieren
+- Monitoring?
