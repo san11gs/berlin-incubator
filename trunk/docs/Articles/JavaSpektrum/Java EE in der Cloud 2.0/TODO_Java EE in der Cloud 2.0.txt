@@ -46,3 +46,10 @@ Ausblick:   Wie kann eine eigene Laufzeitumgebung für andere Profile/Pakete (nic
             auf der EC2 realisieren (siehe michael.txt). Oder gibt es gar schon hierzu alternative Paas-Anbieter?
 Ausblick 2: Realisierung einer hybriden Cloud. Also eine Java EE Anwednung auf zwei Clouds verteilen. Also auch  Aspekte 
 			wie Sicherheit (also private Cloud) einbringen
+			
+#####################
+
+// Das klingt sehr vielversprechend, da man seine Anwendung nun nicht mehr an die Cloud-Umgebung anpasst, sondern die Umgebung direkt 
+// auf die Anwendung zuschneiden kann.
+
+Im theoretischen Teil beleuchten wir Cloud Foundry und die Vorteile und Möglichkeiten, die sich aus dieser und einer PaaS ergeben.
