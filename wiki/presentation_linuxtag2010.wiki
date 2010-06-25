@@ -1,14 +1,18 @@
-#summary JavaEE livecoding @ Linuxtag2010.
+#summary JavaEE livecoding at Linuxtag2010.
 #labels javaEE,Featured,ejb31,cdi
 
 = Introduction =
 
-Add your content here.
+Java EE 6 Presentation and live coding at LinuxTag2010. Focussing on CDI, EJB3.1 and JSF2.0
 
+Used JBossAS6M3 server.
 
-= Details =
+http://www.linuxtag.org/2010
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== The source ==
+
+The project is build with Maven and uses JUnit.
+The project is version controlled with git and hosted on github:
+ * http://github.com/michaelschuetz/linuxtag2010_javaEE6
+
+If you are not using git, you can download zip file, alternatively.
