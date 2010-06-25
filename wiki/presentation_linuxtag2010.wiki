@@ -3,7 +3,7 @@
 
 = Introduction =
 
-Java EE 6 presentation and live coding at LinuxTag 2010. Focussing on CDI, EJB3.1 and JSF2.0
+Java EE 6 presentation and live coding at Linuxtag 2010. Focussing on CDI, EJB3.1 and JSF2.0
 
 Used JBossAS6M3 server.
 
