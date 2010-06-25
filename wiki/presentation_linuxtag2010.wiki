@@ -1,5 +1,5 @@
 #summary JavaEE livecoding @ Linuxtag2010.
-#labels javaEE
+#labels javaEE,Featured,ejb31,cdi
 
 = Introduction =
 
