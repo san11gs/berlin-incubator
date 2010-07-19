@@ -1,5 +1,5 @@
 #summary Combining HTML5 and Google BUZZ API.
-#labels html5,buzz
+#labels html5,buzz,Featured
 
 = Introduction =
 
