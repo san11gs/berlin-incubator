@@ -3,7 +3,7 @@
 
 = Introduction =
 
- * Browse source code here: http://berlin-incubator.googlecode.com/svn/trunk/html5buzz/web/
+ * Browse source code here: https://code.google.com/p/berlin-incubator/source/browse/#svn/trunk/html5buzz
  * Checkout source code here: http://berlin-incubator.googlecode.com/svn/trunk/html5buzz/
 
 = Details =
