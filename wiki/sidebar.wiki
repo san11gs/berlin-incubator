@@ -11,6 +11,7 @@
     * Core
       * [project_needleIntegration Needle Integration]
       * [project_designPatterns Design Patterns]
+      * [project_html5Buzz HTML5 & BUZZ]
   * Presentations
     * [presentation_linuxtag2010 Linuxtag2010]
   * [maven_repo Maven Repository]
