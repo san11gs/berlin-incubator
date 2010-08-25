@@ -1,0 +1,40 @@
+TODO:
+
+CloudFoundry oder GAE
+
+--->###################################
+
+
+Rückblick
+
+----------------------
+
+Problem --> Lösungsmöglickeiten: CloudFoundry, GAE
+
+- Wie könnten beide Lösungen kurz anreißen 
+	1) GAE extended --> neue Features (SLA, Speichermöglichkeit, etc.)
+	--> Vorteil: Stack bleibt, Anpassungen, keine Reimplementierunge
+	2) Spring Foundry
+	--> fest fixierter Stack
+	--> Vendor Lock?
+	
+- dann für eine entscheiden
+	- Wegen Vendor-Lock, Verbreitung etc würde ich auf GAE extended setzen
+
+Cloud Foundry ist zwar nett, hat aber gerade mit VMWare einstieg so einen vendorlastigen faden beigeschmack.
+
+Ich fände es daher konsequent, weiter auf GAE zu setzen
+
+------------------
+
+Detail-Beschreibung: Was ist neu???
+
+Schritt für schritt:
+das Problem hatten wir
+ -> so wird es gelöst
+ -> so wird es nicht gelöst
+ 
+---------------------------
+
+Fazit:
+sollte rauskommen, dass Java EE prof. jetzt benutzbar ist, auch wenn es noch Optimierungen gibt.
